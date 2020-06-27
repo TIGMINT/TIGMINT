@@ -2,10 +2,14 @@ const express = require('express');
 const { spawn } = require('child_process');
 const app = express();
 const port = 3000;
-app.get('/', (req, res) => {
+app.get('/:param1/:param2', (req, res) => {
 	var dataToSend;
 	// spawn new child process to call the python script
-	const python = spawn('python', ['script1.py', 'node.js', 'python']);
+	const python = spawn('python', [
+		'D:\\Web Development\\OSINT-Tool\\API server\\script1.py',
+		req.params.param1,
+		req.params.param2,
+	]);
 	// collect data from script
 	python.stdout.on('data', function (data) {
 		console.log('Pipe data from python script ...');
