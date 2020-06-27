@@ -4,7 +4,7 @@
 	"description": "Osint tool for social media websites",
 	"main": "API server/server.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": "node API server/server.js"
 	},
 	"repository": {
 		"type": "git",
