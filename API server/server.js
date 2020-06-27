@@ -8,7 +8,7 @@ app.get('/python', (req, res) => {
 	var dataToSend;
 	// spawn new child process to call the python script
 	const python = spawn('python', [
-		'D:\\Web Development\\OSINT-Tool\\API server\\script1.py',
+		'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\script1.py',
 		req.query.firstName,
 		req.query.lastName,
 	]);
