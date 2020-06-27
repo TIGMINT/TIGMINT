@@ -3,7 +3,7 @@ const { spawn } = require('child_process');
 const app = express();
 app.set('view engine', 'ejs');
 
-const port = 3000;
+const port = process.env.port || 3000;
 app.get('/api', (req, res) => {
 	var dataToSend;
 	// spawn new child process to call the python script
