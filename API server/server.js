@@ -1,14 +1,16 @@
 const express = require('express');
 const { spawn } = require('child_process');
 const app = express();
+app.set('view engine', 'ejs');
+
 const port = 3000;
-app.get('/:param1/:param2', (req, res) => {
+app.get('/python', (req, res) => {
 	var dataToSend;
 	// spawn new child process to call the python script
 	const python = spawn('python', [
 		'D:\\Web Development\\OSINT-Tool\\API server\\script1.py',
-		req.params.param1,
-		req.params.param2,
+		req.query.firstName,
+		req.query.lastName,
 	]);
 	// collect data from script
 	python.stdout.on('data', function (data) {
@@ -21,6 +23,9 @@ app.get('/:param1/:param2', (req, res) => {
 		console.log(`child process close all stdio with code ${code}`);
 		// send data to browser
 	});
+});
+app.get('/', (req, res) => {
+	res.render('home.ejs');
 });
 app.listen(port, () =>
 	console.log(`Example app listening on port 
