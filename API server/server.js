@@ -4,7 +4,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 const port = 3000;
-app.get('/python', (req, res) => {
+app.get('/api', (req, res) => {
 	var dataToSend;
 	// spawn new child process to call the python script
 	const python = spawn('python', [
