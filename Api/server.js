@@ -1,4 +1,5 @@
 const express = require('express');
+const csv = require('csvtojson');
 const { spawn } = require('child_process');
 const app = express();
 app.set('view engine', 'ejs');
@@ -26,6 +27,17 @@ app.get('/api', (req, res) => {
 });
 app.get('/', (req, res) => {
 	res.render('home.ejs');
+});
+app.get('/result', (req, res) => {
+	const csv = require('csvtojson');
+	// Invoking csv returns a promise
+
+	const converter = csv()
+		.fromFile(__dirname + '/../demo_result/result.csv')
+		.then((json) => {
+			console.log(json);
+			res.send(json);
+		});
 });
 app.listen(port, () =>
 	console.log(`Example app listening on port 

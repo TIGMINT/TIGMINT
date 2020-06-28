@@ -2,9 +2,9 @@
 	"name": "osint-tool",
 	"version": "1.0.0",
 	"description": "Osint tool for social media websites",
-	"main": "API server/server.js",
+	"main": "Api/server.js",
 	"scripts": {
-		"start": "node API server/server.js"
+		"start": "node Api/server.js"
 	},
 	"repository": {
 		"type": "git",
