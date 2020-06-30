@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 def get_similar_hashtags(seed_hashtag, limit):
   c = twint.Config()
-  c.Hide_output = False  # hides command line verbose output
+  c.Hide_output = True  # hides command line verbose output
   c.Limit = limit  # maximum number of tweets to pull
   c.Store_object = True
   c.Search = seed_hashtag
