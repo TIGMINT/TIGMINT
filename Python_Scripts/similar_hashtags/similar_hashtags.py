@@ -38,7 +38,7 @@ def get_similar_hashtags(seed_hashtag, limit):
   twint.output.tweets_list = []
 
 def main():
-  seed_hashtags =["#tiktok", "#blacklivesmatter", "#google", "#covid19", "#google"]
+  seed_hashtags =["#tiktok", "#blacklivesmatter", "#google", "#covid19", "#carryminati"]
   limit = 500  # limits the number of tweets to pull
   for seed_hashtag in seed_hashtags:
     get_similar_hashtags(seed_hashtag, limit)
