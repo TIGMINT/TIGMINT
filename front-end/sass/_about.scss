@@ -1,0 +1,113 @@
+/*---------------------
+  About
+-----------------------*/
+.about__title {
+
+    h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: #323232;
+        line-height: 54px;
+        margin-bottom: 26px;
+    }
+}
+
+.about__text {
+
+    h5 {
+        font-size: 20px;
+        color: #323232;
+        line-height: 34px;
+        margin-bottom: 16px;
+    }
+
+    p {
+        font-size: 20px;
+        line-height: 34px;
+        margin-bottom: 0;
+    }
+}
+
+.about__video {
+    height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .play-btn {
+        height: 90px;
+        width: 90px;
+        background: #f03250;
+        border-radius: 50%;
+        line-height: 92px;
+        text-align: center;
+        font-size: 34px;
+        display: inline-block;
+        color: #ffffff;
+    }
+}
+
+/*---------------------
+  Team
+-----------------------*/
+.team {
+    padding-bottom: 70px;
+}
+
+.team__item {
+    text-align: center;
+    margin-bottom: 30px;
+
+    img {
+        border-radius: 2px;
+        margin-bottom: 20px;
+    }
+
+    span {
+        font-size: 13px;
+        color: $primary-color;
+        font-weight: 600;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    h5 {
+        font-size: 20px;
+        color: #323232;
+        font-weight: 600;
+        margin-top: 5px;
+        margin-bottom: 12px;
+    }
+    
+    .team__item__social {
+
+        a {
+            display: inline-block;
+            height: 38px;
+            width: 38px;
+            background: #344973;
+            line-height: 38px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 6px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.twitter {
+                background: #2C83AE;
+            }
+
+            &.google {
+                background: #DD4437;
+            }
+
+            i {
+                font-size: 15px;
+                color: $white-color;
+            }
+        }
+    }
+}
