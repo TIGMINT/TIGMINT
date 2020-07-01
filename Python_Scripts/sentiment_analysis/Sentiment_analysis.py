@@ -136,4 +136,3 @@ plt.xlabel('Sentiment')
 plt.ylabel('Counts')
 df['Analysis'].value_counts().plot(kind = 'bar')
 plt.show()
-
