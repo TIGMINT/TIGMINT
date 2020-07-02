@@ -1,0 +1,240 @@
+/*---------------------
+  Listing
+-----------------------*/
+.nice-scroll {
+    height: 100%;
+    overflow-y: hidden; 
+}
+
+.listing__text__top {
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.listing__text__top__left {
+    float: left;
+
+    h5 {
+        font-size: 20px;
+        color: #323232;
+        font-weight: 600;
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    span {
+        font-size: 15px;
+        color: #707070;
+        display: inline-block;
+    }
+}
+
+.listing__text__top__right {
+    font-size: 15px;
+    color: #323232;
+    float: right;
+
+    i {
+        font-size: 16px;
+        margin-left: 6px;
+    }
+}
+
+.listing {
+    width: 55%;
+    height: 100%;
+    padding: 0 40px;
+    padding-top: 140px;
+    overflow-y: auto;
+    float: left;
+
+    .listing__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -30px;
+
+        .listing__item {
+            max-width: calc(50% - 30px);
+            float: left;
+            margin-right: 30px;
+            flex: 0 0 50%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.listing__item {
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.listing__item__pic {
+    height: 260px;
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        left: 30px;
+        bottom: -30px;
+        border-radius: 50%;
+    }
+}
+
+.listing__item__pic__tag {
+    font-size: 12px;
+    color: $white-color;
+    background: $primary-color;
+    font-weight: 600;
+    display: inline-block;
+    padding: 5px 15px 5px 10px;
+    border-radius: 2px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+
+    &.top_rate {
+        background: #00a7ea;
+    }
+
+    &.hot_deal {
+        background: #D9D137;
+    }
+}
+
+.listing__item__pic__btns {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+
+    a {
+        font-size: 13px;
+        color: $white-color;
+        height: 34px;
+        width: 34px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        line-height: 34px;
+        text-align: center;
+        display: inline-block;
+        margin-right: 6px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.listing__item__text {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+}
+
+.listing__item__text__inside {
+
+    h5 {
+        font-size: 20px;
+        color: #323232;
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    ul {
+        margin-bottom: 20px;
+
+        li {
+            font-size: 15px;
+            color: #323232;
+            list-style: none;
+            line-height: 25px;
+            position: relative;
+            padding-left: 25px;
+
+            span {
+                color: #A8A8A8;
+                position: absolute;
+                left: 0;
+                top: 5px;
+            }
+        }
+    }
+}
+
+.listing__item__text__rating {
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    .listing__item__rating__star {
+        float: left;
+
+        span {
+            font-size: 14px;
+            color: #F09D17;
+            margin-right: -3px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    h6 {
+        font-size: 15px;
+        color: $primary-color;
+        font-weight: 600;
+        float: right;
+    }
+}
+
+.listing__item__text__info {
+    padding: 10px 30px;
+    border-top: 1px solid #e1e1e1;
+    overflow: hidden;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.listing__item__text__info__left {
+    float: left;
+
+    img {
+        display: inline-block;
+        margin-right: 10px;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+    }
+
+    span {
+        font-size: 14px;
+        color: #323232;
+        font-weight: 600;
+    }
+}
+
+.listing__item__text__info__right {
+    float: right;
+    font-size: 14px;
+    color: #50D437;
+    font-weight: 700;
+    padding-top: 4px;
+
+    &.closed {
+        color: $primary-color;
+    }
+}
+
+.listing__map {
+    height: 100%;
+    width: 45%;
+    margin-top: 105px;
+    float: left;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
