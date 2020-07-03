@@ -3,7 +3,7 @@ const csv = require('csvtojson');
 const { spawn } = require('child_process');
 const app = express();
 app.set('view engine', 'ejs');
-
+app.use(express.static(__dirname+"/../public"));
 const port = process.env.port || 3000;
 app.get('/api', (req, res) => {
 	var dataToSend;
@@ -26,7 +26,7 @@ app.get('/api', (req, res) => {
 	});
 });
 app.get('/', (req, res) => {
-	res.render('home.ejs');
+	res.render('index.ejs');
 });
 app.get('/result', (req, res) => {
 	const csv = require('csvtojson');
