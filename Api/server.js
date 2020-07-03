@@ -5,6 +5,22 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
 const port = process.env.port || 3000;
+//* GET Routes
+app.get('/', (req, res) => {
+	res.render('index.ejs');
+});
+
+app.get('/about', (req, res) => {
+	res.render('about-us.ejs');
+});
+
+
+
+
+
+
+
+
 app.get('/api', (req, res) => {
 	var dataToSend;
 	// spawn new child process to call the python script
@@ -25,9 +41,7 @@ app.get('/api', (req, res) => {
 		// send data to browser
 	});
 });
-app.get('/', (req, res) => {
-	res.render('index.ejs');
-});
+
 app.get('/result', (req, res) => {
 	const csv = require('csvtojson');
 	// Invoking csv returns a promise
