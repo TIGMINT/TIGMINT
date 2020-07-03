@@ -1,0 +1,302 @@
+/*---------------------
+  Filter
+-----------------------*/
+.filter {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 270px;
+  height: 100%;
+  background: $white-color;
+  padding: 30px 34px 30px 30px;
+  overflow-y: auto;
+  box-shadow: 0px 5px 14px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  padding-top: 140px;
+}
+
+.ov-hid {
+  overflow: hidden;
+  padding-left: 270px;
+}
+
+.filter__title {
+
+  h5 {
+    font-size: 20px;
+    color: #323232;
+    font-weight: 600;
+
+    i {
+      margin-right: 5px;
+    }
+  }
+}
+
+.filter__search {
+  background: $white-color;
+  margin-bottom: 12px;
+
+  input {
+    width: 100%;
+    color: #323232;
+    font-size: 15px;
+    border: none;
+    height: 46px;
+    border-bottom: 2px solid #f7f7f7;
+    @include transition(all, .3s);
+
+    &:focus {
+      border-color: $primary-color;
+    }
+
+    &::placeholder {
+      color: #323232;
+    }
+  }
+}
+
+.filter__select {
+  border-bottom: 2px solid #f7f7f7;
+  margin-bottom: 18px;
+
+  .nice-select {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    height: 50px;
+    line-height: 52px;
+    float: none;
+    padding-left: 0;
+
+    span {
+      font-size: 15px;
+      color: #323232;
+    }
+
+    .list {
+      border-radius: 0;
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+
+  .nice-select:after {
+    border-right: 7px solid #183456;
+    border-top: 7px solid transparent;
+    height: 6px;
+    margin-top: 0;
+    right: 0;
+    width: 10px;
+    border-bottom: none;
+    top: 40%;
+  }
+}
+
+.filter__location {
+  background: $white-color;
+  margin-bottom: 26px;
+  position: relative;
+
+  input {
+    width: 100%;
+    color: #707070;
+    font-size: 15px;
+    border: none;
+    height: 46px;
+    border-bottom: 2px solid #f7f7f7;
+    @include transition(all, .3s); 
+
+    &:focus {
+      border-color: $primary-color;
+    }
+
+    &::placeholder {
+      color: #323232;
+    }
+  }
+
+  i {
+    font-size: 20px;
+    color: $primary-color;
+    position: absolute;
+    right: 0;
+    bottom: 17px;
+  }
+}
+
+.filter__radius {
+  position: relative;
+  margin-bottom: 30px;
+
+  p {
+    font-size: 15px;
+    color: #707070;
+  }
+
+  .ui-widget.ui-widget-content {
+    border: none;
+    height: 5px;
+    background: #f5f5f5;
+  }
+
+  .ui-slider-horizontal .ui-slider-range-min {
+    background: $primary-color;
+  }
+
+  .ui-slider .ui-slider-handle {
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    background: #f03250;
+    cursor: pointer;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    z-index: 9;
+  }
+
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -3px;
+    margin-left: -8px;
+  }
+
+  .price-input {
+    position: absolute;
+    left: 55px;
+    top: 0;
+
+    input {
+      color: $primary-color;
+      font-weight: 600;
+      font-size: 15px;
+      width: 50px;
+      background: transparent;
+      border: none;
+    }
+  }
+}
+
+.filter__price {
+  position: relative;
+  margin-bottom: 30px;
+
+  p {
+    font-size: 15px;
+    color: #707070;
+  }
+
+  .ui-widget.ui-widget-content {
+    border: none;
+    height: 5px;
+    background: #f5f5f5;
+  }
+
+  .ui-slider .ui-slider-range {
+    background: $primary-color;
+}
+
+  .ui-slider .ui-slider-handle {
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    background: #f03250;
+    cursor: pointer;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    z-index: 9;
+  }
+
+  .ui-slider-horizontal .ui-slider-handle {
+    top: -3px;
+    margin-left: -8px;
+  }
+
+  .price-input {
+    position: absolute;
+    left: 42px;
+    top: 0;
+
+    &:after {
+      position: absolute;
+      right: 44px;
+      top: 12px;
+      height: 2px;
+      width: 4px;
+      background: $primary-color;
+      content: '';
+    }
+
+    input {
+      color: $primary-color;
+      font-weight: 600;
+      font-size: 15px;
+      width: 35px;
+      background: transparent;
+      border: none;
+    }
+  }
+}
+
+.filter__tags {
+  margin-bottom: 30px;
+
+  h6 {
+    font-size: 15px;
+    color: #323232;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 15px;
+    color: #323232;
+    position: relative;
+    display: block;
+    padding-left: 24px;
+    cursor: pointer;
+    margin-bottom: 15px;
+
+    input {
+      position: absolute;
+      visibility: hidden;
+
+      &:checked {
+
+        & ~ .checkmark {
+          background: #a8a8a8;
+        }
+      }
+    }
+
+    .checkmark {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      height: 14px;
+      width: 14px;
+      border: 2px solid #a8a8a8;
+      content: '';
+      border-radius: 4px;
+    }
+  }
+}
+
+.filter__btns {
+
+  button {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white-color;
+    background: $primary-color;
+    border: none;
+    border-radius: 2px;
+    width: 100%;
+    padding: 14px 0 12px;
+
+    &.filter__reset {
+      background: #f2f2f2;
+      color: #323232;
+      margin-top: 15px;
+    }
+  }
+}

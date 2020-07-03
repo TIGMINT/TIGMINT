@@ -1,0 +1,87 @@
+/*---------------------
+  Contact
+-----------------------*/
+.contact__map {
+  height: 550px;
+  box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 90px;
+  border-radius: 15px;
+
+  iframe {
+    width: 100%;
+  }
+}
+
+.contact__widget__address {
+  margin-bottom: 45px;
+
+  h4 {
+    color: #323232;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  ul {
+
+    li {
+      list-style: none;
+      font-size: 18px;
+      color: #323232;
+      line-height: 34px;
+
+      i {
+        color: #a8a8a8;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.contact__widget__time {
+  @extend .contact__widget__address;
+}
+
+.contact__form {
+
+  input {
+    width: 100%;
+    height: 50px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    padding-left: 24px;
+    padding-right: 5px;
+    font-size: 15px;
+    color: #777C81;
+    margin-bottom: 20px;
+
+    &::placeholder {
+      color: #777C81;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    height: 110px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    padding-left: 24px;
+    padding-right: 5px;
+    font-size: 15px;
+    color: #777C81;
+    margin-bottom: 34px;
+    padding-top: 14px;
+
+    &::placeholder {
+      color: #777C81;
+    }
+  }
+
+  button {
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 2px;
+    padding: 13px 42px 12px;
+  }
+}
