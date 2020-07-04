@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation Tweet Analysis</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+      	margin-top: 1%;
+      	margin-left: 25%;
+        height: 50%;
+        width: 50%;
+
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+  	<center><h1>Choose The Location Below!</h1></center>
+    <div id="map"></div>
+<div style="margin-top: 1%;padding:1%;border-radius:2px;border-color:blue;background:silver;border: 1px solid;width: 48%;margin-left: 25%;">
+	<label style="padding: 10%;font-size: 20px;">Selected Geo Coordinates: </label>
+	<input  style="width:40%;line-height: 2em;" type="text" id = "geoinput" name="" value="Not Selected" disabled/>
+</div>
+<script>
+      
+      function initMap() {
+        var myLatlng = {lat: -25.363, lng: 131.044};
+
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: myLatlng});
+
+        // Create the initial InfoWindow.
+        var infoWindow = new google.maps.InfoWindow(
+            {content: 'Click the map to get Lat/Lng!', position: myLatlng});
+        infoWindow.open(map);
+
+        // Configure the click listener.
+        map.addListener('click', function(mapsMouseEvent) {
+          // Close the current InfoWindow.
+          infoWindow.close();
+
+          // Create a new InfoWindow.
+          infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+          infoWindow.setContent(mapsMouseEvent.latLng.toString());
+          console.log(mapsMouseEvent.latLng.toString());
+          infoWindow.open(map);
+          document.getElementById("geoinput").value = mapsMouseEvent.latLng.toString();
+        });
+      }
+    </script>
+   <script async defer
+src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+</script>
+  </body>
+</html>
