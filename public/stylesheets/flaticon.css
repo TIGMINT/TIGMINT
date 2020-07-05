@@ -1,0 +1,80 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 25/07/2018 08:46
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-size: 20px;
+  font-style: normal;
+}
+
+.flaticon-001-popcorn:before { content: "\f100"; }
+.flaticon-002-tea:before { content: "\f101"; }
+.flaticon-003-chinese-food:before { content: "\f102"; }
+.flaticon-004-tomato-sauce:before { content: "\f103"; }
+.flaticon-005-cola-1:before { content: "\f104"; }
+.flaticon-006-burger-2:before { content: "\f105"; }
+.flaticon-007-burger-1:before { content: "\f106"; }
+.flaticon-008-fried-potatoes:before { content: "\f107"; }
+.flaticon-009-coffee:before { content: "\f108"; }
+.flaticon-010-burger:before { content: "\f109"; }
+.flaticon-011-ice-cream-1:before { content: "\f10a"; }
+.flaticon-012-cola:before { content: "\f10b"; }
+.flaticon-013-milkshake:before { content: "\f10c"; }
+.flaticon-014-sauces:before { content: "\f10d"; }
+.flaticon-015-hot-dog-1:before { content: "\f10e"; }
+.flaticon-016-chicken-leg-1:before { content: "\f10f"; }
+.flaticon-017-croissant:before { content: "\f110"; }
+.flaticon-018-cheese:before { content: "\f111"; }
+.flaticon-019-sausage:before { content: "\f112"; }
+.flaticon-020-fried-egg:before { content: "\f113"; }
+.flaticon-021-fried-chicken:before { content: "\f114"; }
+.flaticon-022-serving-dish:before { content: "\f115"; }
+.flaticon-023-pizza-slice:before { content: "\f116"; }
+.flaticon-024-chef-hat:before { content: "\f117"; }
+.flaticon-025-meat:before { content: "\f118"; }
+.flaticon-026-ice-cream:before { content: "\f119"; }
+.flaticon-027-donut:before { content: "\f11a"; }
+.flaticon-028-rice:before { content: "\f11b"; }
+.flaticon-029-package:before { content: "\f11c"; }
+.flaticon-030-kebab:before { content: "\f11d"; }
+.flaticon-031-delivery:before { content: "\f11e"; }
+.flaticon-032-food-truck:before { content: "\f11f"; }
+.flaticon-033-waiter-1:before { content: "\f120"; }
+.flaticon-034-waiter:before { content: "\f121"; }
+.flaticon-035-taco:before { content: "\f122"; }
+.flaticon-036-chips:before { content: "\f123"; }
+.flaticon-037-soda:before { content: "\f124"; }
+.flaticon-038-take-away:before { content: "\f125"; }
+.flaticon-039-fork:before { content: "\f126"; }
+.flaticon-040-coffee-cup:before { content: "\f127"; }
+.flaticon-041-waffle:before { content: "\f128"; }
+.flaticon-042-beer:before { content: "\f129"; }
+.flaticon-043-chicken-leg:before { content: "\f12a"; }
+.flaticon-044-pitcher:before { content: "\f12b"; }
+.flaticon-045-coffee-machine:before { content: "\f12c"; }
+.flaticon-046-noodles:before { content: "\f12d"; }
+.flaticon-047-menu:before { content: "\f12e"; }
+.flaticon-048-hot-dog:before { content: "\f12f"; }
+.flaticon-049-breakfast:before { content: "\f130"; }
+.flaticon-050-french-fries:before { content: "\f131"; }
