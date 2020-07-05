@@ -2,6 +2,8 @@ import twint
 import sys,os
 import time
 import sentiment_analysis
+from similar_hashtags import similar_hashtags 
+from top_mentions_hashtags import top_mentions_hashtags as mentions
 
 class HiddenPrints:
     def __enter__(self):
@@ -12,7 +14,7 @@ class HiddenPrints:
         sys.stdout.close()
         sys.stdout = self._original_stdout
 
-def get_user_tweets(c,username,search):
+def get_user_tweets(c,username,search,analyse):
     c.Username = username
     c.Search = search
     c.Pandas = True
@@ -23,9 +25,9 @@ def get_user_tweets(c,username,search):
     twets = c.Custom["tweet"]
     twint.run.Search(c)
     Tweets_df = twint.storage.panda.Tweets_df
-    analyse = True
+    # analyse = True
     if analyse == True:
-        display_analysis_result(Tweets_df)
+        display_analysis_result(Tweets_df,username)
 
 
 
@@ -76,8 +78,8 @@ def available_columns():
 def twint_to_pandas(columns):
     return twint.output.panda.Tweets_df[columns]
 
-def display_analysis_result(twets_df):
-    sentiment_analysis.analysis(twets_df)
+def display_analysis_result(twets_df,username):
+    sentiment_analysis.analysis(twets_df,username)
 
 # if __name__ == "__main__":
 #     c = twint.Config()

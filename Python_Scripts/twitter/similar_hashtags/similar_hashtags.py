@@ -29,9 +29,9 @@ def get_similar_hashtags(seed_hashtag, limit):
   plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
   plt.gca().invert_yaxis()  # just to have the highest bar at the top
   plt.title("Most Related Hashtags to " + seed_hashtag)
-  plt.savefig(seed_hashtag + '.png', bbox_inches='tight') # saves the visualization as png
+  plt.savefig('twitter_'+seed_hashtag + '.png', bbox_inches='tight') # saves the visualization as png
   #plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-  plt.show()
+  # plt.show()
   print("List of most related hashtags to "+ seed_hashtag + " :")
   print(top_hashtags) # displays the top 15 hashtags as a list.
   plt.close()
@@ -45,4 +45,4 @@ def main():
 # main()
 
 if __name__ == '__main__':
-    main()
+  main()
