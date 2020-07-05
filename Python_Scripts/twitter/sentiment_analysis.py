@@ -1,11 +1,10 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
 import re
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt 
 import string
-import nltk
+# import nltk
 import warnings 
 # from nltk.stem.porter import *
 from wordcloud import WordCloud

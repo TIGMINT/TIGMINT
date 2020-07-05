@@ -42,4 +42,7 @@ def main():
   limit = 500  # limits the number of tweets to pull
   for seed_hashtag in seed_hashtags:
     get_similar_hashtags(seed_hashtag, limit)
-main()
+# main()
+
+if __name__ == '__main__':
+    main()
