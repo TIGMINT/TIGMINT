@@ -1,0 +1,49 @@
+/*---------------------
+  Breadcrumb
+-----------------------*/
+.breadcrumb-area {
+    padding-top: 200px;
+    padding-bottom: 120px;
+}
+
+.breadcrumb__text {
+
+    h2 {
+        font-size: 40px;
+        color: $white-color;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+}
+
+.breadcrumb__option {
+
+    a {
+        display: inline-block;
+        font-size: 15px;
+        color: $white-color;
+        font-weight: 600;
+        margin-right: 20px;
+        position: relative;
+
+        i {
+            color: $primary-color;
+        }
+
+        &:after {
+            position: absolute;
+            right: -15px;
+            top: 0;
+            font-family: "FontAwesome";
+            color: $white-color;
+            content: '\f105';
+        }
+    }
+
+    span {
+        display: inline-block;
+        font-size: 15px;
+        color: #a8a8a8;
+        font-weight: 600;
+    }
+}

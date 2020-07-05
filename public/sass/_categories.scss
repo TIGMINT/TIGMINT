@@ -1,0 +1,41 @@
+/*---------------------
+  Checkout
+-----------------------*/
+.categories {
+    padding-bottom: 70px;
+    background: #f9f9f9;
+    overflow: hidden;
+}
+
+.categories__item__list {
+    margin-right: -16px;
+}
+
+.categories__item {
+    width: calc(20% - 16px);
+    float: left;
+    text-align: center;
+    margin-right: 16px;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+    padding-top: 40px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background: $white-color;
+
+    img {}
+
+    h5 {
+        color: #323232;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 4px;
+    }
+
+    span {
+        font-size: 14px;
+        color: #707070;
+        display: block;
+        font-weight: 600;
+    }
+}

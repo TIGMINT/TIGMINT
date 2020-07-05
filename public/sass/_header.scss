@@ -1,0 +1,167 @@
+/*---------------------
+  Header
+-----------------------*/
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+
+    &.header--normal {
+        background: $white-color;
+        box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.1);
+        position: fixed;
+
+        .header__menu {
+
+            ul {
+
+                li {
+
+                    a {
+                        color: #323232;
+                    }
+                }
+            }
+        }
+
+        .login-btn {
+            color: #707070;
+            border-color: #e1e1e1;
+            ;
+        }
+    }
+}
+
+.header__logo {
+    padding: 30px 0;
+}
+
+.header__nav {
+    text-align: right;
+    padding: 30px 0;
+}
+
+.header__menu {
+    display: inline-block;
+
+    ul {
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 55px;
+            position: relative;
+
+            &:hover {
+
+                .dropdown {
+                    top: 32px;
+                    opacity: 1;
+                    visibility: visible;
+
+                    li {
+
+                        a {
+                            color: $white-color;
+
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+
+                &>a {
+
+                    &:after {
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+            }
+
+            &.active {
+
+                a {
+
+                    &:after {
+                        opacity: 1;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .dropdown {
+                position: absolute;
+                left: 0;
+                top: 50px;
+                width: 180px;
+                background: #222222;
+                text-align: left;
+                @include transition(all, .3s);
+                opacity: 0;
+                visibility: hidden;
+                padding: 5px 0;
+
+                li {
+                    margin-right: 0;
+                    display: block;
+
+                    a {
+                        padding: 6px 15px;
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            a {
+                font-size: 15px;
+                color: $white-color;
+                font-weight: 600;
+                padding: 5px 0;
+                display: block;
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    height: 2px;
+                    width: 0%;
+                    background: $primary-color;
+                    content: '';
+                    opacity: 0;
+                    @include transition(all, .3s);
+                }
+            }
+        }
+    }
+
+}
+
+.header__menu__right {
+    display: inline-block;
+
+    .primary-btn {
+        margin-right: 15px;
+    }
+
+    .login-btn {
+        font-size: 20px;
+        color: $white-color;
+        height: 42px;
+        width: 42px;
+        border: 1px solid $white-color;
+        border-radius: 50%;
+        line-height: 38px;
+        text-align: center;
+        display: inline-block;
+    }
+}
+
+.slicknav_menu {
+    display: none;
+}
