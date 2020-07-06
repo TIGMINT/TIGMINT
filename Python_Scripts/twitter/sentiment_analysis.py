@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt 
 import string
-# import nltk
+import os
 import warnings 
 # from nltk.stem.porter import *
 from wordcloud import WordCloud
@@ -69,10 +69,12 @@ def print_wordcloud(combi,username):
 
     plt.imshow(wordCloud, interpolation="bilinear")
     plt.axis('off')
-    plt.show()
-    plt.savefig('twitter_'+ 'wordcloud_' + username + '.png', bbox_inches='tight')
+    # plt.show()
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(os.getcwd()+'/result/'+'twitter_'+ 'wordcloud_' + username + '.png', bbox_inches='tight')
+    plt.close()
     
-
 # Show the dataframe
 #print(combi)
 def print_positive_tweets(combi):
@@ -107,8 +109,10 @@ def plotting(combi,username):
     plt.title('Sentiment Analysis') 
     plt.xlabel('Polarity') 
     plt.ylabel('Subjectivity') 
-    plt.show()
-    plt.savefig('tweets_'+ 'sentiments_plot_' + username + '.png', bbox_inches='tight')
+    # plt.show()
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(os.getcwd()+'/result/'+'tweets_'+ 'sentiments_plot_' + username + '.png', bbox_inches='tight')
 
 
 def print_values(combi,username):
@@ -131,7 +135,9 @@ def print_values(combi,username):
     plt.xlabel('Sentiment')
     plt.ylabel('Counts')
     df['Analysis'].value_counts().plot(kind = 'bar')
-    plt.show()
-    plt.savefig('tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
+    # plt.show()
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(os.getcwd()+'/result/'+'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
 
 
