@@ -1,9 +1,11 @@
 import twint
 import heapq
 import matplotlib.pyplot as plt
+import os
+
 
 """ This script is used to generate top 10 mentions and hashtags for a particular username."""
-def get_top_mentions_hashtags(username, limit):
+def get_top_mentions_hashtags(username, limit=500):
     twint.output.tweets_list = []
     c = twint.Config()
     c.Username = username
@@ -39,17 +41,24 @@ def get_top_mentions_hashtags(username, limit):
     plt.yticks(range(len(mentions_ranked)), list(mentions_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Most Mentions of username: " + username)
-    plt.savefig(username + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
+    # currentDirectory = os.getcwd()
+    os.chdir('..')
+    currentDirectory = os.getcwd()
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(currentDirectory + '/result/' +username + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
     plt.close()
     plt.barh(range(len(hashtags_ranked)), list(hashtags_ranked.values()), align='center', color='maroon')
     plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Hashtags of " + username)
-    plt.savefig(username + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(currentDirectory + '/result/' +username + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-    plt.show()
+    # plt.show()
     plt.close()
 
     print("List of Top 10 mentions by " + username + " :")
@@ -58,10 +67,9 @@ def get_top_mentions_hashtags(username, limit):
     print(top_hashtags)  # displays the top 15 hashtags as a list.
 
 
-def main():
-    seed_usernames = ["kiranbabumuddam", "iamvkohli", "twitter"]
-    limit = 500  # limits the number of tweets to pull
-    for username in seed_usernames:
-        get_top_mentions_hashtags(username, limit)
+# def main():
+#     seed_usernames = ["kiranbabumuddam", "iamvkohli", "twitter"]
+#     limit = 500  # limits the number of tweets to pull
+#     for username in seed_usernames:
+#         get_top_mentions_hashtags(username, limit)
 
-main()
