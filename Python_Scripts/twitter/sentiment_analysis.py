@@ -1,11 +1,10 @@
-#!/usr/bin/env python3
-
+#!/usr/bin/python3
 import re
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt 
 import string
-import nltk
+import os
 import warnings 
 # from nltk.stem.porter import *
 from wordcloud import WordCloud
@@ -45,7 +44,7 @@ def getAnalysis(score):
         return 'Positive'
 
 
-def analysis(tweets_df):
+def analysis(tweets_df,username):
     # train  = pd.read_csv('user_tweets.csv')
     # test = pd.read_csv('test_data.csv')
 
@@ -58,10 +57,11 @@ def analysis(tweets_df):
     # Show the new dataframe with columns 'Subjectivity' & 'Polarity'
     # combi
     combi['Analysis'] = combi['Polarity'].apply(getAnalysis)
-    print_wordcloud(combi)
-    print_values(combi)
+    # print_wordcloud(combi)
+    print_values(combi,username)
+    # plotting(combi,username)
 
-def print_wordcloud(combi):
+def print_wordcloud(combi,username):
     # Creation of wordcloud
     allWords = ' '.join([twts for twts in combi['tweet']])
     wordCloud = WordCloud(width=500, height=300, random_state=21, max_font_size=110).generate(allWords)
@@ -69,10 +69,12 @@ def print_wordcloud(combi):
 
     plt.imshow(wordCloud, interpolation="bilinear")
     plt.axis('off')
-    plt.show()
-
+    # plt.show()
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(os.getcwd()+'/result/'+'twitter_'+ 'wordcloud_' + username + '.png', bbox_inches='tight')
+    plt.close()
     
-
 # Show the dataframe
 #print(combi)
 def print_positive_tweets(combi):
@@ -97,9 +99,8 @@ def print_negative_tweets(combi):
             j=j+1
 
 
-
 # Plotting 
-def plotting(combi):
+def plotting(combi,username):
     df = combi
     plt.figure(figsize=(8,6)) 
     for i in range(0, df.shape[0]):
@@ -108,10 +109,13 @@ def plotting(combi):
     plt.title('Sentiment Analysis') 
     plt.xlabel('Polarity') 
     plt.ylabel('Subjectivity') 
-    plt.show()
+    # plt.show()
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(os.getcwd()+'/result/'+'tweets_'+ 'sentiments_plot_' + username + '.png', bbox_inches='tight')
 
 
-def print_values(combi):
+def print_values(combi,username):
     df = combi
     # Print the percentage of positive tweets
     ptweets = df[df.Analysis == 'Positive']
@@ -131,5 +135,9 @@ def print_values(combi):
     plt.xlabel('Sentiment')
     plt.ylabel('Counts')
     df['Analysis'].value_counts().plot(kind = 'bar')
-    plt.show()
+    # plt.show()
+    if not os.path.exists('result'):
+        os.makedirs('result')
+    plt.savefig(os.getcwd()+'/result/'+'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
+
 
