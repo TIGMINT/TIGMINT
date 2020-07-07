@@ -1,0 +1,336 @@
+body {
+  font-family: 'Lato', sans-serif;
+  transition: background-color 0.5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.2s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.6s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+#small {
+  width: 40px;
+  height: 40px;
+}
+
+/* --------------------   Logo   ----------- */
+.logo img {
+  margin: 0 auto;
+  width: 100px;
+  left: 46%;
+  top: 15px;
+  display: inline-block;
+}
+
+/*                 Navigation                */
+#menu-outer {
+  background: url(img/navbg.jpg) repeat-x;
+  display: inline-flexbox;
+  position: fixed;
+  z-index: +1;
+}
+
+.table {
+  display: table; /* Allow the centering to work */
+  margin: 0 auto;
+}
+ul#horizontal-list {
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
+}
+ul#horizontal-list li {
+  display: inline;
+}
+
+.left-nav {
+  float: left;
+  min-width: 696px;
+  list-style: none;
+  padding-top: 20px;
+  display: inline;
+}
+
+/* ----------      Dropdown TEST button ------------------ */
+
+/* Style buttons */
+.btn {
+  background-color: teal; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 4px 8px; /* Some padding */
+  margin-bottom: 10%;
+  font-size: 20px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: rgb(87, 230, 255);
+}
+.dropbtn {
+  background-color: #b233b7;
+  color: white;
+  padding: 5px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+  position: relative;
+  margin-left: 110%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: inherit;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #64088fab;
+  color: wheat;
+}
+
+/* background gif */
+#bg1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 54em;
+  width: 100%;
+  padding-top: 150px;
+}
+
+.content-style {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  margin-top: -2em;
+  text-align: center;
+}
+
+.content-style p {
+  color: rgb(174, 246, 248);
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  text-align: center;
+}
+
+.jumbotron {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+  color: inherit;
+  background-color: #eee;
+}
+
+/*   To Top button */
+#myBtn {
+  display: inline; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgba(0, 0, 0); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
+
+/*   ----------      About   ----------------- */
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.8s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+  background-color: salmon;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: #333;
+  /* display: unset; */
+  max-height: 0;
+  height: fit-content;
+  width: 100%;
+  overflow: hidden;
+  transition: max-height 1s ease-out;
+  transition-delay: 0.2s;
+  align-items: center;
+  color: #eee;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: '\2796'; /* Unicode character for "minus" sign (-) */
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #555;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.flex-container > div {
+  background-color: #d9eff5;
+  padding: 5px;
+  margin: 5px;
+  text-align: 30px;
+  height: fit-content;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+/*  ----- Toggle -------  */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #555555;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: linear-gradient(45deg, #ff03f9, #00c6ff);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

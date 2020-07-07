@@ -67,5 +67,5 @@ def main():
     for coordinate in seed_coordinates:
         get_top_mentions_hashtags_geo(coordinate, radius, limit)
 
-
-main()
+if __name__ == "__main__":
+	main()
