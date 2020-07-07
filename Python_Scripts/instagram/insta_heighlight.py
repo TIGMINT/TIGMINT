@@ -116,7 +116,7 @@ class downloader(object):
             os.mkdir(self.sdname)
 def main():
     urllib3.disable_warnings(InsecureRequestWarning)
-    # downloader('rakshit.tandon', 'stories')
+    # downloader('', 'stories')
     # args = usage()
     # print(args)
     usern = input()
