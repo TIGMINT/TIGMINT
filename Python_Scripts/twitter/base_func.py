@@ -1,7 +1,7 @@
 import twint
 import sys,os
 import time
-import sentiment_analysis
+import Python_Scripts.twitter.sentiment_analysis as sentiment_analysis
 
 class HiddenPrints:
     def __enter__(self):
@@ -68,10 +68,12 @@ def get_user_bio(c,username,search):
 
 def save_result(c, filename):
     # timestr = time.strftime("%Y%m%d-%H%M%S")
+    os.chdir('..')
+    currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
     c.Store_csv = True
-    c.Output = os.getcwd()+'/result/' + filename + ".csv"
+    c.Output = currentDirectory+'/result/' + filename + ".csv"
     
     return True
 
