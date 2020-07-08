@@ -4,6 +4,7 @@
 from bs4 import BeautifulSoup as insta
 import requests 
 import json
+import os
 from json import loads 
 
 def Username(user):
@@ -19,22 +20,27 @@ def Username(user):
 	output = {
 	    'full_name': json_data['full_name'],
 	    'username': json_data['username'],
-            'biography': json_data['biography'],
+        'biography': json_data['biography'],
 	    'followers_count': json_data['edge_followed_by'],
-            'following_count': json_data['edge_follow'],
-            'Private_Account': json_data['is_private'],
+        'following_count': json_data['edge_follow'],
+        'Private_Account': json_data['is_private'],
 	    'Business_Account' : json_data['is_business_account'],
 	    'Business_category' :json_data['business_category_name'],
 	    'Verified_Account' : json_data['is_verified'],
 	    'Connected_Fb_Page': json_data['connected_fb_page'],
-            'total_posts': json_data['edge_owner_to_timeline_media']['count'],
-            'profile_pic_url' : json_data['profile_pic_url_hd'],
-            'external_url': json_data['external_url']
+        'total_posts': json_data['edge_owner_to_timeline_media']['count'],
+        'profile_pic_url' : json_data['profile_pic_url_hd'],
+        'external_url': json_data['external_url']
         }
-	print(output)
+	# print(output)
+	if not os.path.exists('result'):
+		os.makedirs('result')
+	
 	with open('insta.json', 'w') as json_file:
 		json.dump(output, json_file)
+
+	return json_data['is_private']
 	
-user = input("Enter Username : ")
-Username(user)
+# user = input("Enter Username : ")
+# # Username(user)
 
