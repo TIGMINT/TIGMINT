@@ -1,5 +1,5 @@
 import sys
-import base_func as base
+import Python_Scripts.twitter.base_func as base
 import twint
 from similar_hashtags import similar_hashtags 
 from top_mentions_hashtags import top_mentions_hashtags as mentions
