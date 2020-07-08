@@ -114,15 +114,15 @@ class downloader(object):
                 os.mkdir(self.username)
         else:
             os.mkdir(self.sdname)
-def main():
+def main(user):
     urllib3.disable_warnings(InsecureRequestWarning)
     # downloader('', 'stories')
     # args = usage()
     # print(args)
-    usern = input()
-    a= downloader(usern, 'True')
+    # usern = input()
+    a= downloader(user, 'True')
     a.getStories()
-    # downloader.getStories(args.user)
+    downloader.getStories(user)
 
 # def usage():
 #     parser = argparse.ArgumentParser()
@@ -131,5 +131,5 @@ def main():
 #     return parser.parse_args()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
