@@ -12,7 +12,8 @@ class HiddenPrints:
         sys.stdout.close()
         sys.stdout = self._original_stdout
 
-def get_user_tweets(c,username,search,analyse):
+def get_user_tweets(username,search,analyse):
+    c = twint.Config()    
     c.Username = username
     c.Search = search
     c.Pandas = True
@@ -29,7 +30,8 @@ def get_user_tweets(c,username,search,analyse):
 
 
 
-def get_tweets(c,key, limit=100):
+def get_tweets(key, limit=100):
+    c = twint.Config()
     c.Search = key
     if limit != 0:
         c.Limit = limit
@@ -40,39 +42,48 @@ def get_tweets(c,key, limit=100):
     twets = c.Custom["tweet"]
     twint.run.Search(c)
     Tweets_df = twint.storage.panda.Tweets_df
-    # analyse = True
-    # if analyse == True:
-    display_analysis_result(Tweets_df,key)
+    analyse = True
+    if analyse == True:
+        display_analysis_result(Tweets_df,key)
     
     # with HiddenPrints():
     #     print(twint.run.Search(c))
     #     return twint.output.panda.Tweets_df[["username","tweet"]]
 
-def get_user_bio(c,username,search):
+def get_user_bio(username,search):
+    c = twint.Config()
     # a = input("Enter username: ")
     c.Username = username
     save_result(c,username + "_user_bio")
     twint.run.Lookup(c)
     # df = pd.read_csv (r'user_bio')
+    get_user_followers(username,search)
 
-# def get_user_followers(c,username):
+def get_user_followers(username,search):
+    c = twint.Config()
     c.Username = username
     save_result(c,username + "user_followers")
     twint.run.Followers(c)
+    # save_result(c,username + "user_followers")
+    get_user_following(username,search)
     
-# def get_user_following(c,username):
-    c,Username = username
+def get_user_following(username,search):
+    c = twint.Config()
+    c.Username = username
     save_result(c,username + "user_following")
     twint.run.Following(c)
-    get_user_tweets(c,username,search,True)
+    get_user_tweets(username,search,True)
 
 def save_result(c, filename):
     # timestr = time.strftime("%Y%m%d-%H%M%S")
+    # os.chdir('..')
+    # currentDirectory = os.getcwd()
+
     if not os.path.exists('result'):
         os.makedirs('result')
     c.Store_csv = True
+    # 
     c.Output = os.getcwd()+'/result/' + filename + ".csv"
-    
     return True
 
 def available_columns():
@@ -83,3 +94,7 @@ def twint_to_pandas(columns):
 
 def display_analysis_result(twets_df,username):
     sentiment_analysis.analysis(twets_df,username)
+
+# if __name__ == "__main__":
+#     c = twint.Config()
+#     get_user_tweets(c,'kaustubhsh_','',False)

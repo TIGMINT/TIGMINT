@@ -26,7 +26,7 @@ class downloader(object):
             exit()
 
         stories = []
-        print(stories)
+        # print(stories)
         soup = BeautifulSoup(r, features="lxml")
         links =  soup.findAll('a', attrs={'href': re.compile("^https://scontent")})
 
@@ -41,9 +41,11 @@ class downloader(object):
                 r = requests.get(url, verify=False)
                 parser = urlparse(url)
                 filename = os.path.basename(parser.path)
+                os.chdir('..')
+                currentDirectory = os.getcwd()
                 if not os.path.exists(self.sdname):
                     os.makedirs(self.sdname)
-                with open(self.sdname + '/' + filename, 'wb') as f:
+                with open(currentDirectory+ self.sdname + '/' + filename, 'wb') as f:
                     f.write(r.content)
                     f.close()
         except KeyboardInterrupt:
@@ -114,15 +116,17 @@ class downloader(object):
                 os.mkdir(self.username)
         else:
             os.mkdir(self.sdname)
-def main():
+def main(user):
     urllib3.disable_warnings(InsecureRequestWarning)
-    # downloader('rakshit.tandon', 'stories')
+    # downloader('', 'stories')
     # args = usage()
     # print(args)
-    usern = input()
-    a= downloader(usern, 'True')
+    # usern = input()
+    a= downloader(user, 'True')
     a.getStories()
-    # downloader.getStories(args.user)
+    downloader.getStories(user)
+    a.getHighlights()
+    downloader.getHighlights(user)
 
 # def usage():
 #     parser = argparse.ArgumentParser()
@@ -131,5 +135,5 @@ def main():
 #     return parser.parse_args()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
