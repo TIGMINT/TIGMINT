@@ -10,3 +10,4 @@ twint
 numpy
 wordcloud
 pillow
+json
