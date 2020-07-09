@@ -26,7 +26,7 @@ class downloader(object):
             exit()
 
         stories = []
-        print(stories)
+        # print(stories)
         soup = BeautifulSoup(r, features="lxml")
         links =  soup.findAll('a', attrs={'href': re.compile("^https://scontent")})
 
@@ -41,9 +41,11 @@ class downloader(object):
                 r = requests.get(url, verify=False)
                 parser = urlparse(url)
                 filename = os.path.basename(parser.path)
+                os.chdir('..')
+                currentDirectory = os.getcwd()
                 if not os.path.exists(self.sdname):
                     os.makedirs(self.sdname)
-                with open(self.sdname + '/' + filename, 'wb') as f:
+                with open(currentDirectory+ self.sdname + '/' + filename, 'wb') as f:
                     f.write(r.content)
                     f.close()
         except KeyboardInterrupt:
@@ -123,6 +125,8 @@ def main(user):
     a= downloader(user, 'True')
     a.getStories()
     downloader.getStories(user)
+    a.getHighlights()
+    downloader.getHighlights(user)
 
 # def usage():
 #     parser = argparse.ArgumentParser()
