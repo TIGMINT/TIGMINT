@@ -36,7 +36,7 @@ def Username(user):
 	if not os.path.exists('result'):
 		os.makedirs('result')
 	
-	with open('insta.json', 'w') as json_file:
+	with open('instagram'+user+'.json', 'w') as json_file:
 		json.dump(output, json_file)
 
 	return json_data['is_private']
