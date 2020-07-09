@@ -1,5 +1,5 @@
 import sys
-import Python_Scripts.twitter.base_func as base
+import base_func as base
 import twint
 from similar_hashtags import similar_hashtags 
 from top_mentions_hashtags import top_mentions_hashtags as mentions
@@ -38,5 +38,5 @@ if __name__ == "__main__":
     #     print(NameError)
     #     exit()
     # # calling = input()
-    # basic(c,username,string)
+    basic(c,username,string)
     # get_keyword(c,string,limit=100)

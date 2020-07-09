@@ -1,7 +1,7 @@
 import twint
 import sys,os
 import time
-import Python_Scripts.twitter.sentiment_analysis as sentiment_analysis
+import sentiment_analysis
 
 class HiddenPrints:
     def __enter__(self):
@@ -61,7 +61,7 @@ def get_user_bio(c,username,search):
     twint.run.Followers(c)
     
 # def get_user_following(c,username):
-    c,Username = username
+    c.Username = username
     save_result(c,username + "user_following")
     twint.run.Following(c)
     get_user_tweets(c,username,search,True)
