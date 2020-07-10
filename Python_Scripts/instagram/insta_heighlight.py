@@ -16,7 +16,8 @@ class downloader(object):
         self.storiesLink = self.api + '/stories/' + self.username
         self.user = self.api + '?username=' + self.username
         self.root = requests.get(self.user, verify=False).text
-        self.sdname = self.username + "_{}".format(datetime.now().strftime("%m%d%Y-%H%M%S"))
+        self.sdname = self.username 
+        # + "_{}".format(datetime.now().strftime("%m%d%Y-%H%M%S"))
 
     def getStories(self):
         r = requests.get(self.storiesLink, verify=False).text
@@ -41,11 +42,18 @@ class downloader(object):
                 r = requests.get(url, verify=False)
                 parser = urlparse(url)
                 filename = os.path.basename(parser.path)
+                # print(filename)
                 os.chdir('..')
-                currentDirectory = os.getcwd()
-                if not os.path.exists(self.sdname):
-                    os.makedirs(self.sdname)
-                with open(currentDirectory+ self.sdname + '/' + filename, 'wb') as f:
+                retval = os.getcwd()
+                # print(retval)
+                if not os.path.exists('instagram_'+self.sdname):
+                    os.makedirs('instagram_'+self.sdname)
+                os.chdir(retval+'/instagram_'+self.sdname)
+
+                # currentDirectory = os.getcwd()
+                
+                    # 'instagram_'+self.sdname + 
+                with open( filename, 'wb') as f:
                     f.write(r.content)
                     f.close()
         except KeyboardInterrupt:
