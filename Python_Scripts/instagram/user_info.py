@@ -1,6 +1,4 @@
 ## Code for Instagram osint
-
-
 from bs4 import BeautifulSoup as insta
 import requests 
 import json
@@ -33,10 +31,18 @@ def Username(user):
         'external_url': json_data['external_url']
         }
 	# print(output)
-	if not os.path.exists('result'):
-		os.makedirs('result')
+	os.chdir('..')
+	retval = os.getcwd()
+	os.chdir(retval +'/result/')
+	# if not os.path.exists('result'):
+	# 	os.makedirs('result')
+	if not os.path.exists('instagram_'+user):
+			os.makedirs('instagram_'+user)
+	retval = os.getcwd()
+	os.chdir(retval + '/instagram_'+user)
+
 	
-	with open('instagram'+user+'.json', 'w') as json_file:
+	with open('instagram_'+user+'.json', 'w') as json_file:
 		json.dump(output, json_file)
 
 	return json_data['is_private']
