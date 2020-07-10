@@ -1,5 +1,4 @@
-import Python_Scripts.username_check.module as module
-
+import module
 
 
 username = input()
