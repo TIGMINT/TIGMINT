@@ -40,7 +40,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.barh(range(len(mentions_ranked)), list(mentions_ranked.values()), align='center', color='maroon')
     plt.yticks(range(len(mentions_ranked)), list(mentions_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
-    plt.title("Top Mentions of the Geo-location: " + lat_long)
+    plt.title("Top 10 Trending Mentions from the Geo-location: " + lat_long)
     plt.savefig(lat_long + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     plt.show()
@@ -48,7 +48,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.barh(range(len(hashtags_ranked)), list(hashtags_ranked.values()), align='center', color='maroon')
     plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
-    plt.title("Top Hashtags of the Geo-location:" + lat_long)
+    plt.title("Top 10 Trending Hashtags from the Geo-location:" + lat_long)
     plt.savefig(lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     plt.show()
