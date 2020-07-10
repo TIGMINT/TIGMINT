@@ -9,3 +9,5 @@ pandas
 twint
 numpy
 wordcloud
+pillow
+json
