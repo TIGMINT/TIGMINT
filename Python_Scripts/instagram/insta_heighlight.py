@@ -51,7 +51,6 @@ class downloader(object):
                 os.chdir(retval+'/instagram_'+self.sdname)
 
                 # currentDirectory = os.getcwd()
-                
                     # 'instagram_'+self.sdname + 
                 with open( filename, 'wb') as f:
                     f.write(r.content)
@@ -136,12 +135,3 @@ def main(user):
     a.getHighlights()
     downloader.getHighlights(user)
 
-# def usage():
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument('-u','--user', nargs="?", help="Instagram username (required)", required=True)
-#     parser.add_argument('-s', '--stories', dest="stories", action="store_true", help="Only download last 24h stories")
-#     return parser.parse_args()
-
-
-# if __name__ == '__main__':
-#     main()

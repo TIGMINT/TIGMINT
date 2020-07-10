@@ -46,7 +46,7 @@ def get_top_mentions_hashtags(username, limit=500):
     currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    plt.savefig(currentDirectory + '/result/' +username + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
+    plt.savefig(currentDirectory + '/result/' +username + '_mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     # plt.show()
     plt.close()
@@ -56,7 +56,7 @@ def get_top_mentions_hashtags(username, limit=500):
     plt.title("Top 10 Hashtags of " + username)
     if not os.path.exists('result'):
         os.makedirs('result')
-    plt.savefig(currentDirectory + '/result/' +username + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
+    plt.savefig(currentDirectory + '/result/' +username + '_hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     # plt.show()
     plt.close()
@@ -65,11 +65,3 @@ def get_top_mentions_hashtags(username, limit=500):
     print(top_mentions)  # displays the top 10 hashtags as a list.
     print("List of Top 10 hashtags hashtags by " + username + " :")
     print(top_hashtags)  # displays the top 15 hashtags as a list.
-
-
-# def main():
-#     seed_usernames = ["kiranbabumuddam", "iamvkohli", "twitter"]
-#     limit = 500  # limits the number of tweets to pull
-#     for username in seed_usernames:
-#         get_top_mentions_hashtags(username, limit)
-
