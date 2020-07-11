@@ -1,2 +1,4 @@
 node_modules/
 package-lock.json
+twitter/__pycache__
+img-metadata/__pycache__
