@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiGMint</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./img/favicon2.png" />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <!-- Css Files -->
+    <link rel="stylesheet" href="./css/backgrounds.css" />
+    <link rel="stylesheet" href="./css/bootstrap-style.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/preloader.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.5em;
+        color: #ffffff;
+      }
+
+      .cover {
+        background-size: cover !important;
+      }
+
+      .dt {
+        display: table;
+      }
+
+      .dtc {
+        display: table-cell;
+      }
+
+      .athelas {
+        font-family: athelas, georgia, serif;
+      }
+
+      .i {
+        font-style: italic;
+      }
+
+      .fs-normal {
+        font-style: normal;
+      }
+
+      .fw1 {
+        font-weight: 100;
+      }
+
+      .vh-100 {
+        height: 100vh;
+      }
+
+      .tracked {
+        letter-spacing: 0.1em;
+      }
+
+      .lh-title {
+        line-height: 1.25;
+      }
+
+      .lh-copy {
+        line-height: 1.5;
+      }
+
+      .w-100 {
+        width: 100%;
+      }
+
+      .white-70 {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .white-60 {
+        color: rgb(255, 255, 255);
+      }
+
+      .white {
+        color: #fff;
+      }
+
+      .bg-dark-gray {
+        background-color: #333;
+      }
+
+      .pv5 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .ph0 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .ph2 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+
+      .mb2 {
+        margin-bottom: 0.5rem;
+      }
+
+      .mh0 {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .tc {
+        text-align: center;
+      }
+
+      .ttu {
+        text-transform: uppercase;
+      }
+
+      .f1 {
+        font-size: 3rem;
+        color: #dec010;
+      }
+
+      .f4 {
+        font-size: 1.25rem;
+      }
+
+      .f5 {
+        font-size: 1rem;
+      }
+
+      .f6 {
+        font-size: 0.875rem;
+      }
+
+      .measure {
+        max-width: 30em;
+      }
+
+      .measure-wide {
+        max-width: fit-content;
+        padding: 50px;
+      }
+
+      .center {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .v-mid {
+        vertical-align: middle;
+      }
+
+      @media screen and (min-width: 60em) {
+        .f-headline-l {
+          font-size: 6rem;
+        }
+      }
+    </style>
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Libre Baskerville', serif;
+font-family: 'Open Sans', sans-serif; -->
+
+    <!-- JS Files Imported here -->
+    <script type="text/javascript" src="./js/nav.js"></script>
+  </head>
+
+  <body onload="wait()">
+    <!-- HEADER -->
+    <header>
+      <div class="topnav" id="myTopnav">
+        <img
+          onclick="location.href='index.html'"
+          class="logo-top"
+          src="./img/tigmint_logo.png"
+        />
+        <a href="index.html">Get Started</a>
+        <a href="documentation.html" class="active">Documentation</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="navRes()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </header>
+    <!-- HEADER ends here -->
+
+    <article class="athelas">
+      <div
+        class="vh-100 dt w-100 tc bg-dark-gray white cover"
+        style="
+          background: url(./img/documentation/2.png);
+          background-size: 100%;
+          margin-top: 3%;
+          height: fit-content;
+        "
+      >
+        <div class="dtc v-mid">
+          <header class="white-70"></header>
+          <h1
+            class="f1 f-headline-l fw1 i white-60"
+            style="width: min-content;"
+          >
+            Twitter,Instagram and GeoTagging Media Intelligence
+          </h1>
+          <blockquote
+            style="margin-left: 2%;"
+            class="ph0 mh0 measure f4 lh-copy center"
+          >
+            <p class="fw1 white-70">
+              One-stop information about Social Networking sites.
+            </p>
+            <cite class="f6 ttu tracked fs-normal">TIGMINT</cite>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="center measure-wide f5 pv5 lh-copy ph2">
+        <h1 class="f1 lh-title">
+          Analyse the users. Maintain harmony in Social Media.
+        </h1>
+        <p>
+          <br />
+          <u
+            ><b
+              >Tech Stack of Module: RE, NLTK, TextBlob, Matplotlib,
+              Pandas,Python, Nodejs, HTML, CSS, JS</b
+            ></u
+          >
+          <br />
+          <br />
+          RE: Regular expression operations to identify whether a pattern exists
+          in a given sequence of characters or not
+          <br />
+          <br />
+          NLTK: Natural Language Toolkit, a leading platform for building Python
+          programs to work with human language data
+          <br /><br />
+          TextBlob: Natural Language Processing library for processing textual
+          data, providing a simple API for diving into common NLP. <br /><br />
+          Matplotlib: Matplotlib is a comprehensive library for creating static,
+          animated, and interactive visualizations in Python.
+        </p>
+
+        <div
+          class="vh-100 dt w-100 tc bg-dark-gray white cover"
+          style="
+            background: url(./img/documentation/3.jpg);
+            background-size: 100%;
+            margin-top: 3%;
+            height: fit-content;
+          "
+        >
+          <div class="dtc v-mid">
+            <header class="white-70"></header>
+            <h1
+              class="f1 f-headline-l fw1 i white-60"
+              style="
+                width: 50%;
+                color: rgb(0, 83, 83);
+                margin: 50px;
+                padding: 2%;
+              "
+            >
+              These online platforms can provide many benefits, but these can
+              make attractive targets for criminals too.
+            </h1>
+          </div>
+        </div>
+        <p>
+          <br>
+          <br>
+          The Internet is a useful way to reach a mass audience without spending a lot of time or money. A website, online
+          message, or social media site can reach large numbers with minimum effort. 
+          <br>
+          <br>
+          It's easy for fraudsters to make their
+          messages look real and credible and sometimes hard for investors to tell the difference between fact and fiction.
+        </p>
+      </div>
+
+      <div class="vh-100 dt w-100 tc bg-dark-gray white cover" style="
+                  background: url(./img/documentation/account.jpg);
+                  background-size: 100%;
+                  margin-top: 3%;
+                  height: 500vh;
+                ">
+        <div class="dtc v-mid">
+          <header class="white-70"></header>
+          <h1 class="f1 f-headline-l fw1 i white-60" style="
+                      width: 50%;
+                      color: rgb(0, 83, 83);
+                      margin: 50px;
+                      padding: 2%;
+                    ">
+                    Module I :
+                    <br>
+                    <hr width="550px">
+            Account Finder
+            <hr  width="550px">
+          </h1>
+          <blockquote style="margin-left: 2%;" class="ph0 mh0 measure f4 lh-copy center">
+            <p style="color: #333;" class="fw1 white-70">
+              Give User name as input. Traces the social media account from all platforms.
+            </p>
+          </blockquote>                
+        </div>
+      </div>
+      
+      <div class="vh-100 dt w-100 tc bg-dark-gray white cover" style="
+                        background: url(./img/documentation/twitter.jpg);
+                        background-size: 100%;
+                        height: 500vh;
+                      ">
+        <div class="dtc v-mid">
+          <header class="white-70"></header>
+          <h1 class="f1 f-headline-l fw1 i white-60" style="
+                            width: 50%;
+                            color: rgb(0, 83, 83);
+                            margin: 50px;
+                            padding: 2%;
+                          ">
+            Module II :
+            <br>
+            <hr width="550px">
+            Twitter Analysis
+            <hr width="550px">
+          </h1>
+          <blockquote style="margin-left: 2%;" class="ph0 mh0 measure f4 lh-copy center">
+            <p style="color: #333;" class="fw1 white-70">
+              Sentiment Analysis
+              <br>
+              Top ‘N’ Hashtags & Mentions
+              <br> Geo-Tagging / Analysis
+             <br>Similar Hashtags Analysis
+
+            </p>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="vh-100 dt w-100 tc bg-dark-gray white cover" style="
+                              background: url(./img/documentation/5.jpg);
+                              background-size: 100%;                      
+                              height: 500vh;
+                            ">
+        <div class="dtc v-mid">
+          <header class="white-70"></header>
+          <h1 class="f1 f-headline-l fw1 i white-60" style="
+                                  width: 50%;
+                                  color: rgb(0, 83, 83);
+                                  margin: 50px;
+                                  padding: 2%;
+                                ">
+            Module III :
+            <br>
+            <hr width="550px">
+            Instagram Analysis
+            <hr width="550px">
+          </h1>
+          <blockquote style="margin-left: 2%;" class="ph0 mh0 measure f4 lh-copy center">
+            <p style="color: #333;" class="fw1 white-70">
+              A majority of crimes comes from Instagram which includes stocking, harassment, bullying, etc.
+              <br>
+              <br>
+              Gives a brief of that particular profile with the last 24 hr stories and the highlights of the same.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="vh-100 dt w-100 tc bg-dark-gray white cover" style="
+                                    background: url(./img/documentation/4.jpg);
+                                    background-size: 100%;
+                                    height: 500vh;
+                                  ">
+        <div class="dtc v-mid">
+          <header class="white-70"></header>
+          <h1 class="f1 f-headline-l fw1 i white-60" style="
+                                        width: 50%;
+                                        color: rgb(0, 83, 83);
+                                        margin: 50px;
+                                        padding: 2%;
+                                      ">
+            Module IV :
+            <br>
+            <hr width="550px">
+            Meta Data Module
+            <hr width="550px">
+          </h1>
+          <blockquote style="margin-left: 2%;" class="ph0 mh0 measure f4 lh-copy center">
+            <p style="color: #333;" class="fw1 white-70">
+              Extract metadata from various files uploaded from the web interface.
+            </p>
+          </blockquote>
+        </div>
+      </div>
+
+      <div class="vh-100 dt w-100 tc bg-dark-gray white cover" style="
+                                          background: url(./img/documentation/path2.jpg);
+                                          width: fit-content;
+                                          height: fit-content;                                  
+                                          margin-top: 10px;
+                                        ">
+        
+      </div>
+
+      </div>
+    </article>
+
+    <p>    _____________________________________________  </p>
+
+    <!--  Footer here -->
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <img src="./img/footer-logo.png" />
+        <p class="footer-links">
+          <a href="./documentation.html" class="link-1">Documentation</a>
+          <a href="./contact.html">Contact Us</a>
+        </p>
+        <p>TiGMint © 2020</p>
+      </div>
+
+      <div class="footer-center">
+        <h1>MADE in INDIA</h1>
+        <hr />
+        <p>
+          This Website is made under the Gurugram Police Cyber Security
+          Internship.
+        </p>
+        <hr />
+        Stay Safe! Stay Secure!
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About TIGMINT</span>
+          Twitter, Instagram, GeoTagging Media Intelligence
+        </p>
+
+        <div class="footer-icons">
+          <a target="_blank" href="./contact.html"
+            ><i class="fa fa-group"></i
+          ></a>
+          <a target="_blank" href="https://github.com/Yajassardana/TIGMINT"
+            ><i class="fa fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="waiting" class="loader-wrapper">
+      <!-- Loading square for squar.red network -->
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script>
+      var preloader = document.getElementById('waiting');
+      function wait() {
+        setTimeout(function () {
+          preloader.style.display = 'none';
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header,
+.footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.logo-top {
+  width: 10%;
+  float: left;
+  margin-right: 10px;
+}
+
+.main {
+  margin-top: 45px;
+}
+
+.bg-1 {
+  height: fit-content;
+  padding: 20px;
+  padding-bottom: 30px;
+}
+/* -------------------------------------   NAVIGATION -------------------------------- */
+
+.topnav {
+  background: linear-gradient(90deg, #10083f, #4a1f4b, #ff7070);
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index: 100;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #4bff9a;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+/* NAVigation Responsivnesss */
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    font-size: 28px;
+  }
+  .logo-top {
+    width: 50%;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+    z-index: 1000;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: table-caption;
+    text-align: center;
+  }
+}
+
+/* Search bar */
+#sample {
+  border: 5px solid #00acee;
+  width: 80%;
+  margin-left: 10%;
+}
+#sample h2 {
+  text-align: center;
+}
+#sample p {
+  text-align: center;
+  padding: 0.4em 3em 0em;
+  color: #000000;
+}
+#my-form {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-left: 6em;
+  text-align: left;
+  width: 70%;
+  color: #009966;
+}
+#my-form label {
+  color: #000000;
+}
+#my-form .data-entry {
+  padding: 0.5em 8%;
+}
+#my-form textarea {
+  padding: 0.1em 8%;
+}
+#my-form p {
+  text-align: left;
+  margin: 0;
+  padding: 1em 0 0.1em;
+}
+#my-form select {
+  margin-bottom: 1em;
+  font-size: 95%;
+  padding: 0.1em 0.5em;
+}
+#my-form .button {
+  width: 85px;
+  height: 30px;
+  font-size: 140%;
+  background-color: #1eff81;
+  margin-left: 95%;
+  margin-bottom: 5%;
+  color: black;
+}
+#my-form .radio {
+  white-space: nowrap;
+  display: inline-block;
+  line-height: 2em;
+  margin: 0.1em 0;
+  font-size: 20px;
+}
+#my-form input[type='radio'] {
+  margin-right: 0.6em;
+}
+/* resize table for mobile */
+@media all and (min-width: 10px) and (max-width: 660px) {
+  #sample {
+    font-size: 90%;
+    border: 1px solid #666;
+    width: 99%;
+    text-align: center;
+    margin: auto !important;
+  }
+  #sample p {
+    margin: 0;
+    padding: 0 0.2em;
+  }
+  #my-form {
+    box-sizing: border-box;
+    width: 96%;
+    margin: 0;
+    padding: 1em 1.5em 1em 3.5em;
+    text-align: left !important;
+  }
+  #my-form p {
+    margin: 0;
+    padding: 0 0.2em;
+  }
+  #my-form .radio {
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 1em;
+    margin-top: 0.2em;
+  }
+}
+
+/* ------------------ contact ---------  us --------- page----- css ------*/
+.team-profile {
+  border-radius: 2rem;
+}
+.pb-4,
+.py-4 {
+  padding-bottom: 1.5rem !important;
+  margin-top: 6%;
+}

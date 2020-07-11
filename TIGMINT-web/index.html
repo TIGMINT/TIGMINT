@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiGMint</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="./img/favicon2.png" />
+
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+
+    <!-- Css Files -->
+    <link rel="stylesheet" href="./css/backgrounds.css" />
+    <link rel="stylesheet" href="./css/bootstrap-style.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/preloader.css" />
+    <link rel="stylesheet" href="./css/button-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font-family: 'Libre Baskerville', serif;
+font-family: 'Open Sans', sans-serif; -->
+
+    <!-- JS Files Imported here -->
+    <script type="text/javascript" src="./js/nav.js"></script>
+  </head>
+  <script>
+    src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <body onload="wait()">
+    <!-- HEADER -->
+    <header>
+      <div class="topnav" id="myTopnav">
+        <img
+          onclick="location.href='index.html'"
+          class="logo-top"
+          src="./img/tigmint_logo.png"
+        />
+        <a href="index.html" class="active">Get Started</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="javascript:void(0);" class="icon" onclick="navRes()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </header>
+    <!-- HEADER ends here -->
+
+    <main class="main">
+      <div class="flex-container">
+        <div>
+          <img
+            src="./img/osint-working.png"
+            style="width: 100%; background-color: #ededed;"
+          />
+        </div>
+        <!--  topic  -->
+        <div style="align-items: left; left: 0; margin-top: -50%;">
+          <h1>
+            SOCMINT
+          </h1>
+
+          <p>
+            Social Media Intelligence:
+            <br />Social media intelligence refers to the collective tools and
+            solutions that allow organizations to and conversations, respond to
+            social signals and synthesize social data points into meaningful
+            trends and analysis based on the user's needs.
+          </p>
+        </div>
+      </div>
+
+ 
+    </main>
+
+    <!------------------ MAIN SECTION  --------------- SEARCH BARS -------------- HERE------------ -->
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Module Selector</h1>
+        <p style="color: #888;">
+          A collection modules are given. Choose module, give input & get your
+          results.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="mrng-60-top">List</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="btnClick1" class="col-md-3 col-sm-3 col-xs-6">
+        <a class="btn btn-sm animated-button thar-one">Account Finder</a>
+      </div>
+      <div id="btnClick2" class="col-md-3 col-sm-3 col-xs-6">
+        <a class="btn btn-sm animated-button thar-two">Twitter Module</a>
+      </div>
+      <div id="btnClick3" class="col-md-3 col-sm-3 col-xs-6">
+        <a class="btn btn-sm animated-button thar-three">Instagram Module</a>
+      </div>
+      <div id="btnClick4" class="col-md-3 col-sm-3 col-xs-6">
+        <a class="btn btn-sm animated-button thar-four">Meta Data</a>
+      </div>
+    </div>
+
+    <!-- ----------------OUTPUT -------------------------------- -->
+    <div class="jumbotron text-center">
+      <div class="container">
+        <h1>Analysis</h1>
+        <p style="color: #888;">
+          Analysed output from backend is displayed here...
+        </p>
+      </div>
+
+      <div style="width: 100%; color: darkslategrey;">
+        <div id="0">
+          OUTPUT
+        </div>
+        <div id="1" style="display: none;">
+          My Dynamic tiwrt
+        </div>
+        <div id="2" style="display: none;">
+          <div id="sample">
+            <h2>Twitter Module Ready!</h2>
+            <p>
+              Please click "Submit" after making your selections. Thank you.
+            </p>
+            <form id="my-form">
+              <div id="align">
+                <label for="name1">Username ⌨</label><br />
+                <span
+                  ><input
+                    type="text"
+                    name="name"
+                    id="name1"
+                    placeholder="Username"
+                    class="data-entry" /></span
+                ><br /><br />
+
+                <!-- --------- SUBMIT ------------ -->
+                <span><input type="submit" class="button" value="Search" /></span><br />
+
+                <p>Apply Filters:</p>
+                <br />
+                <span class="radio"
+                  ><input type="radio" name="software" value="Excel" />Top
+                  Hashtags</span
+                ><br />
+                <span class="radio"
+                  ><input type="radio" name="software" value="QBP" />Sentiment
+                  Analysis</span
+                ><br />
+                <span class="radio"
+                  ><input
+                    type="radio"
+                    name="software"
+                    value="Peachtree"
+                  />Graphs</span
+                ><br />
+
+                <!-- --------- SUBMIT ------------ -->
+                <span><input type="submit" class="button" value="Search" /></span><br />
+
+                <h2>&#129488 Word Finder &#129488</h2>
+                <br />
+                <label for="name1">String ⌨</label><br />
+                <span
+                  ><input
+                    type="text"
+                    name="name"
+                    id="name1"
+                    placeholder="String"
+                    class="data-entry"
+                /></span>
+                <br />
+                <br />
+                <label for="name1">Limit &#128172</label><br />
+                <span
+                  ><input
+                    type="text"
+                    name="name"
+                    id="name1"
+                    placeholder="Limit"
+                    class="data-entry"
+                /></span>
+                <br />
+                <br /><br />
+                <!-- --------- SUBMIT ------------ -->
+                
+                <span><input type="submit" class="button" value="Search" /></span><br />
+                
+                <h2>&#x1F310; GeoTagging Media &#x1F310;</h2>
+                <label for="name1">Latitude : </label><br />
+                <span><input type="text" name="name" id="name1" placeholder="::Latitude" class="data-entry" /></span>
+                <br />
+                <br /><br />
+                <label for="name1">Longitude :</label><br />
+                <span><input type="text" name="name" id="name1" placeholder="::Longitude::" class="data-entry" /></span>
+                <br />
+                <br /><br />
+                <label for="name1">Limit : </label><br />
+                <span><input type="text" name="name" id="name1" placeholder="::Limit::" class="data-entry" /></span>
+                <br />
+                <br /><br />
+                <label for="name1">Radius (in kilometers)</label><br />
+                <span><input type="text" name="name" id="name1" placeholder="::radius::" class="data-entry" /></span>
+                <br />
+                <br /><br />
+                <!-- --------- SUBMIT ------------ -->
+
+                <span><input type="submit" class="button" value="Search" /></span>
+                <br />
+              </div>
+              <!--end div align-->
+            </form>
+          </div>
+          <!--end div sample-->
+        </div>
+
+        <div id="3" style="display: none;">
+        <div id="sample">
+          <h2>Instagram Module Ready!</h2>
+          <p>
+            Please click "Submit" after making your selections. Thank you.
+          </p>
+          <form id="my-form">
+            <div id="align">
+              <label for="name1">Username ⌨</label><br />
+              <span><input type="text" name="name" id="name1" placeholder="Username" class="data-entry" /></span><br /><br />
+        
+              <!-- --------- SUBMIT ------------ -->
+              <span><input type="submit" class="button" value="Search" /></span><br />
+        
+              
+              <h2> Public Account Finder </h2>
+              <p> Finds the Public account's stories and highlights...</p>
+              <br />
+              <label for="name1">Username ⌨</label><br />
+              <span><input type="text" name="name" id="name1" placeholder="Username" class="data-entry" /></span>
+              <br />
+              <br />
+              <!-- --------- SUBMIT ------------ -->
+              <span><input type="submit" class="button" value="Search" /></span><br />
+
+            </div>
+            <!--end div align-->
+          </form>
+        </div>
+        <!--end div sample-->
+        </div>
+        <div id="4" style="display: none;">
+          <div id="sample">
+            <h2>Meta Data Module Ready!</h2>
+            <p>
+              Please click "Submit" after making your selections. Thank you.
+            </p>
+            <form id="my-form">
+              <div id="align">
+                
+                <p style="font-weight: bolder;">&#128193; Photo/video local input &#128193;</p>
+                
+                <form>
+                  <input style="width: fit-content;
+                  font-size: 20px;
+                  padding: 10px;" type="file" id="myFile" name="filename">
+                </form>
+                <!-- --------- SUBMIT ------------ -->
+                <span><input type="submit" class="button" value="Search" /></span><br />
+        
+              </div>
+              <!--end div align-->
+            </form>
+          </div>
+          <!--end div sample-->
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------------- OUTPUT manipulation jQuery & JavaScript ------------------- -->
+    <script>
+      $('#btnClick1').on('click', function () {
+        if (
+          $('#0').css('display') != 'none' ||
+          $('#2').css('display') != 'none' ||
+          $('#3').css('display') != 'none' ||
+          $('#4').css('display') != 'none'
+        ) {
+          $('#1').show().siblings('div').hide();
+        } else if ($('#1').css('display') != 'none') {
+          $('#0').show().siblings('div').hide();
+        }
+      });
+
+      $('#btnClick2').on('click', function () {
+        if (
+          $('#0').css('display') != 'none' ||
+          $('#1').css('display') != 'none' ||
+          $('#3').css('display') != 'none' ||
+          $('#4').css('display') != 'none'
+        ) {
+          $('#2').show().siblings('div').hide();
+        } else if ($('#2').css('display') != 'none') {
+          $('#0').show().siblings('div').hide();
+        }
+      });
+
+      $('#btnClick3').on('click', function () {
+        if (
+          $('#0').css('display') != 'none' ||
+          $('#1').css('display') != 'none' ||
+          $('#2').css('display') != 'none' ||
+          $('#4').css('display') != 'none'
+        ) {
+          $('#3').show().siblings('div').hide();
+        } else if ($('#3').css('display') != 'none') {
+          $('#0').show().siblings('div').hide();
+        }
+      });
+
+      $('#btnClick4').on('click', function () {
+        if (
+          $('#0').css('display') != 'none' ||
+          $('#1').css('display') != 'none' ||
+          $('#2').css('display') != 'none' ||
+          $('#3').css('display') != 'none'
+        ) {
+          $('#4').show().siblings('div').hide();
+        } else if ($('#4').css('display') != 'none') {
+          $('#0').show().siblings('div').hide();
+        }
+      });
+    </script>
+    <!--  --------------------------------- Footer here  ----------------------------------      -->
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <img src="./img/footer-logo.png" />
+        <p class="footer-links">
+          <a href="./documentation.html" class="link-1">Documentation</a>
+          <a href="./contact.html">Contact Us</a>
+        </p>
+        <p>TiGMint © 2020</p>
+      </div>
+
+      <div class="footer-center">
+        <h1>MADE in INDIA</h1>
+        <hr />
+        <p>
+          This Website is made under the Gurugram Police Cyber Security
+          Internship.
+        </p>
+        <hr />
+        Stay Safe! Stay Secure!
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>About TIGMINT</span>
+          Twitter, Instagram, GeoTagging Media Intelligence
+        </p>
+
+        <div class="footer-icons">
+          <a target="_blank" href="./contact.html"
+            ><i class="fa fa-group"></i
+          ></a>
+          <a target="_blank" href="https://github.com/Yajassardana/TIGMINT"
+            ><i class="fa fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <div id="waiting" class="loader-wrapper">
+      <!-- Loading square for squar.red network -->
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+      var preloader = document.getElementById('waiting');
+      function wait() {
+        setTimeout(function () {
+          preloader.style.display = 'none';
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
