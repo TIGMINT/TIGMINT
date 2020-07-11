@@ -1,5 +1,5 @@
 import requests, urllib3
-import os, re, argparse
+import os, re
 from tqdm import tqdm
 from sys import exit
 from html import unescape
@@ -45,7 +45,8 @@ class downloader(object):
                 # print(filename)
                 os.chdir('..')
                 retval = os.getcwd()
-                # print(retval)
+                print("directory is")
+                print(retval)
                 if not os.path.exists('instagram_'+self.sdname):
                     os.makedirs('instagram_'+self.sdname)
                 os.chdir(retval+'/instagram_'+self.sdname)

@@ -3,7 +3,7 @@ const csv = require('csvtojson');
 const { spawn } = require('child_process');
 const app = express();
 const bodyParser = require("body-parser");
-
+let username = "";
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
@@ -16,21 +16,27 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
 	res.render('about-us.ejs');
 });
-
+app.get('/instagram/result',(req,res)=>{
+	console.log('username is',username);
+		const python = spawn('python', [
+		'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram\\main.py'
+	]);
+		python.on('close', (code) => {
+		console.log(`child process close all stdio with code ${code}`);
+		// send data to browser
+	});
+	python.stdout.on('data', function (data) {
+		console.log('Pipe data from python script ...');
+		dataToSend = data.toString();
+		res.send(dataToSend);
+	});
+});
 // app.get('/api', (req, res) => {
 // 	var dataToSend;
 // 	// spawn new child process to call the python script
-// 	const python = spawn('python', [
-// 		'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\script1.py',
-// 		req.query.firstName,
-// 		req.query.lastName,
-// 	]);
+
 // 	// collect data from script
-// 	python.stdout.on('data', function (data) {
-// 		console.log('Pipe data from python script ...');
-// 		dataToSend = data.toString();
-// 		res.send(dataToSend);
-// 	});
+
 // 	// in close event we are sure that stream from child process is closed
 // 	python.on('close', (code) => {
 // 		console.log(`child process close all stdio with code ${code}`);
@@ -50,13 +56,14 @@ app.get('/about', (req, res) => {
 // 		});
 // });
 //*POST
-app.post('/username',(req,res)=>{
-	const {username} = req.body;
-	sessionStorage.setItem("username", username);//saving username in the current session storage
-	res.redirect('/basicresult');//redircting to send basic result
+app.post('/instagram/:username',(req,res)=>{
+  username = req.params.username;//saving username in the current session storage
+	res.redirect('/instagram/result');//redircting to send basic result
 })
 
-app.listen(port, () =>
+const server = app.listen(port, () =>
 	console.log(`Example app listening on port 
 ${port}!`)
 );
+
+server.timeout = 48000;
