@@ -8,6 +8,9 @@ const app = express();
 const bodyParser = require("body-parser");
 let instaUsername = "";
 let twitterUsername = "";
+let lattitude="";
+let longitude="";
+let radius="";
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
@@ -38,6 +41,24 @@ app.get('/instagram/result',(req,res)=>{
 		let data = JSON.parse(rawdata);
 		console.log(data);
 		res.render('instaOutput.ejs',{data:data})
+	});
+});
+
+app.get('/geotagging/result',(req,res)=>{
+	console.log('called')
+	let options = {
+		mode: 'text', 
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\geolocation_analysis',
+		args: [lattitude,longitude,radius]
+	}
+	PythonShell.run('top_mentions_hashtags_geo.py', options, function (err, results) {
+		if (err) throw err;
+		// results is an array consisting of messages collected during execution
+		// let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/instagram/instagram_${instaUsername}/instagram_${instaUsername}.json`);
+		// let data = JSON.parse(rawdata);
+		// console.log(data);
+		res.render('map.ejs')
 	});
 });
 
@@ -97,7 +118,13 @@ app.post('/twitter/:username',(req,res)=>{
 	twitterUsername = req.params.username;//saving username in the current session storage
 	res.redirect('/twitter/result');//redircting to send basic result
 })
-
+app.post('/geotagging',(req,res)=>{
+	lattitude = req.body.lattitude;
+	longitude = req.body.longitude;
+	radius = req.body.radius;
+	console.log(radius,lattitude,longitude)
+	res.redirect('/geotagging/result')
+})
 const server = app.listen(port, () =>
 	console.log(`Example app listening on port 
 ${port}!`)
