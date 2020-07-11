@@ -1,0 +1,53 @@
+.flex-container {
+  display: grid;
+  flex-wrap: wrap;
+}
+
+.flex-container p {
+  margin: 5px;
+  width: 40%;
+  height: fit-content;
+  border-radius: 20px;
+  color: #000000;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.flex-container h1 {
+  width: 40%;
+  height: fit-content;
+  border-radius: 20px;
+  color: #000000;
+  font-size: 100px;
+  margin-top: -4%;
+}
+
+/*    -------------  Content Flex ----------------------- */
+/* NAVigation Responsivnesss */
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .flex-container {
+    margin-top: 20%;
+  }
+  .flex-container p {
+    display: flex;
+    display: block;
+    margin-top: 30px;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    margin-top: 45%;
+    width: 100%;
+  }
+
+  .flex-container h1 {
+    display: flex;
+    display: block;
+    margin-top: 30px;
+    top: 0;
+    left: 0;
+    font-size: 40px;
+    margin-top: -8%;
+    width: 50%;
+  }
+}
