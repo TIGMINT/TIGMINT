@@ -7,6 +7,7 @@ const fs = require('fs');
 const app = express();
 const bodyParser = require("body-parser");
 let instaUsername = "";
+let twitterUsername = "";
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
@@ -35,6 +36,17 @@ app.get('/instagram/result',(req,res)=>{
 		let data = JSON.parse(rawdata);
 		console.log(data);
 	});
+});
+
+app.get('/twitter/result',(req,res)=>{
+	let options = {
+		mode: 'text', 
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\twitter',
+		args: [twitterUsername]
+	}
+
+})
 	// console.log('username is',username);
 	// 	const python = spawn('python', [
 	// 	'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram\\main.py'
@@ -48,7 +60,7 @@ app.get('/instagram/result',(req,res)=>{
 	// 	dataToSend = data.toString();
 	// 	res.send(dataToSend);
 	// });
-});
+
 // app.get('/api', (req, res) => {
 // 	var dataToSend;
 // 	// spawn new child process to call the python script
@@ -77,6 +89,10 @@ app.get('/instagram/result',(req,res)=>{
 app.post('/instagram/:username',(req,res)=>{
   instaUsername = req.params.username;//saving username in the current session storage
 	res.redirect('/instagram/result');//redircting to send basic result
+})
+app.post('/twitter/:username',(req,res)=>{
+  twitterUsername = req.params.username;//saving username in the current session storage
+	res.redirect('/twitter/result');//redircting to send basic result
 })
 
 const server = app.listen(port, () =>
