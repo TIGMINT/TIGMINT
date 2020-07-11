@@ -23,7 +23,7 @@ class downloader(object):
         r = requests.get(self.storiesLink, verify=False).text
         if 'No stories to show' in r:
             print("[*] User '{}' did not post any recent story/stories!".format(self.username))
-            exit()
+            exit(0)
 
         stories = []
         # print(stories)

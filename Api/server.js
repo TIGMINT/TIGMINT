@@ -1,6 +1,6 @@
 const express = require('express');
+const {PythonShell} = require ('python-shell');
 const csv = require('csvtojson');
-const { spawn } = require('child_process');
 const app = express();
 const bodyParser = require("body-parser");
 let username = "";
@@ -17,19 +17,32 @@ app.get('/about', (req, res) => {
 	res.render('about-us.ejs');
 });
 app.get('/instagram/result',(req,res)=>{
-	console.log('username is',username);
-		const python = spawn('python', [
-		'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram\\main.py'
-	]);
-		python.on('close', (code) => {
-		console.log(`child process close all stdio with code ${code}`);
-		// send data to browser
+
+	let options = {
+		mode: 'text', 
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram',}
+	PythonShell.run('main.py', options, function (err, results) {
+		if (err) throw err;
+		// results is an array consisting of messages collected during execution
+		console.log(results);
 	});
-	python.stdout.on('data', function (data) {
-		console.log('Pipe data from python script ...');
-		dataToSend = data.toString();
-		res.send(dataToSend);
-	});
+
+
+
+	// console.log('username is',username);
+	// 	const python = spawn('python', [
+	// 	'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram\\main.py'
+	// ]);
+	// 	python.on('close', (code) => {
+	// 	console.log(`child process close all stdio with code ${code}`);
+	// 	// send data to browser
+	// });
+	// python.stdout.on('data', function (data) {
+	// 	console.log('Pipe data from python script ...');
+	// 	dataToSend = data.toString();
+	// 	res.send(dataToSend);
+	// });
 });
 // app.get('/api', (req, res) => {
 // 	var dataToSend;
