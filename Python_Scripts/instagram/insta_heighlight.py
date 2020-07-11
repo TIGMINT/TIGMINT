@@ -16,7 +16,8 @@ class downloader(object):
         self.storiesLink = self.api + '/stories/' + self.username
         self.user = self.api + '?username=' + self.username
         self.root = requests.get(self.user, verify=False).text
-        self.sdname = self.username + "_{}".format(datetime.now().strftime("%m%d%Y-%H%M%S"))
+        self.sdname = self.username 
+        # + "_{}".format(datetime.now().strftime("%m%d%Y-%H%M%S"))
 
     def getStories(self):
         r = requests.get(self.storiesLink, verify=False).text
@@ -26,7 +27,7 @@ class downloader(object):
             exit()
 
         stories = []
-        print(stories)
+        # print(stories)
         soup = BeautifulSoup(r, features="lxml")
         links =  soup.findAll('a', attrs={'href': re.compile("^https://scontent")})
 
@@ -41,9 +42,18 @@ class downloader(object):
                 r = requests.get(url, verify=False)
                 parser = urlparse(url)
                 filename = os.path.basename(parser.path)
-                if not os.path.exists(self.sdname):
-                    os.makedirs(self.sdname)
-                with open(self.sdname + '/' + filename, 'wb') as f:
+                # print(filename)
+                os.chdir('..')
+                retval = os.getcwd()
+                # print(retval)
+                if not os.path.exists('instagram_'+self.sdname):
+                    os.makedirs('instagram_'+self.sdname)
+                os.chdir(retval+'/instagram_'+self.sdname)
+
+                # currentDirectory = os.getcwd()
+                
+                    # 'instagram_'+self.sdname + 
+                with open( filename, 'wb') as f:
                     f.write(r.content)
                     f.close()
         except KeyboardInterrupt:
@@ -114,15 +124,17 @@ class downloader(object):
                 os.mkdir(self.username)
         else:
             os.mkdir(self.sdname)
-def main():
+def main(user):
     urllib3.disable_warnings(InsecureRequestWarning)
-    # downloader('rakshit.tandon', 'stories')
+    # downloader('', 'stories')
     # args = usage()
     # print(args)
-    usern = input()
-    a= downloader(usern, 'True')
+    # usern = input()
+    a= downloader(user, 'True')
     a.getStories()
-    # downloader.getStories(args.user)
+    downloader.getStories(user)
+    a.getHighlights()
+    downloader.getHighlights(user)
 
 # def usage():
 #     parser = argparse.ArgumentParser()
@@ -131,5 +143,5 @@ def main():
 #     return parser.parse_args()
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

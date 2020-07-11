@@ -1,0 +1,13 @@
+requests
+urllib3
+tqdm
+bs4
+textblob
+nltk
+matplotlib
+pandas
+twint
+numpy
+wordcloud
+pillow
+json

@@ -136,6 +136,8 @@ def print_values(combi,username):
     plt.ylabel('Counts')
     df['Analysis'].value_counts().plot(kind = 'bar')
     # plt.show()
+    # os.chdir('..')
+    # currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
     plt.savefig(os.getcwd()+'/result/'+'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')

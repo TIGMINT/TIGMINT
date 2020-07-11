@@ -4,11 +4,12 @@ import twint
 from similar_hashtags import similar_hashtags 
 from top_mentions_hashtags import top_mentions_hashtags as mentions
 
-def basic(c,username,search):
-    base.get_user_bio(c,username,search)
+def basic(username,search):
+    base.get_user_bio(username,search)
+    # base.get_user_tweets(c,username,search,True)
 
-def get_keyword(c,key,limit=100):
-    base.get_tweets(c,key,limit)
+def get_keyword(key,limit=100):
+    base.get_tweets(key,limit)
 
 def top_mention():
     key_val = int(input('no of users'))
@@ -26,7 +27,7 @@ def similar_hashtag():
 
 
 if __name__ == "__main__":
-    c = twint.Config()
+    # c = twint.Config()
     username = input("enter username")
     string = input("Enter string to be searched or leave blank for all tweets")
     # analysis = input('Enter yes/no for analysis of tweets ')
@@ -38,5 +39,5 @@ if __name__ == "__main__":
     #     print(NameError)
     #     exit()
     # # calling = input()
-    # basic(c,username,string)
+    basic(username,string)
     # get_keyword(c,string,limit=100)
