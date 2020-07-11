@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
 app.get('/contact', (req, res) => {
 	res.render('contact.ejs');
 });
+app.get('/geotagging',(req,res)=>{
+	res.render('map.ejs')
+})
+
 app.get('/instagram/result',(req,res)=>{
 	let options = {
 		mode: 'text', 

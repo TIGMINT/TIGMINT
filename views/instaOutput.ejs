@@ -4,10 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TiGMint</title>
+  <link rel="icon" type="image/png" href="/img/favicon2.png" />
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+/>
+<style>
+  .container{
+    text-align: center;
+  }
+</style>
 </head>
 <body>
-  <h3><%=data.full_name%></h3>
+  <div class="container">
+    <img src="<%=data.profile_pic_url%>" alt="dp">
+    <h3><%=data.full_name%></h3>
   <h3><%=data.total_posts%></h3>
-  <h3>FUCKKKKKKKKKK</h3>
+  <h3><%=data.followers_count.count%></h3>
+  <h3><%=data.following_count.count%></h3>
+  <button class="btn btn-info" href='/'>Back</button>
+  </div>
+  
 </body>
 </html>
