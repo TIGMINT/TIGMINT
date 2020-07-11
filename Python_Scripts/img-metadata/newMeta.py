@@ -15,4 +15,4 @@ with exiftool.ExifTool() as et:
     metadata = et.get_metadata(files)
 print(metadata)
 with open('newMetaData.json', 'w') as fp:
-    json.dump(metadata, fp)
+    json.dump(metadata, fp, indent=4)
