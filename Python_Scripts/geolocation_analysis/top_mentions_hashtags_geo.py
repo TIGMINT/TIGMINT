@@ -43,17 +43,12 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.title("Top 10 Trending Mentions from the Geo-location: " + lat_long)
     plt.savefig(lat_long + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-    plt.show()
-    plt.close()
     plt.barh(range(len(hashtags_ranked)), list(hashtags_ranked.values()), align='center', color='maroon')
     plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Trending Hashtags from the Geo-location:" + lat_long)
     plt.savefig(lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-    plt.show()
-    plt.close()
-
     print("List of Top 10 mentions " + lat_long + " :")
     print(top_mentions)  # displays the top 10 hashtags as a list.
     print("List of Top 10 hashtags " + lat_long + " :")
