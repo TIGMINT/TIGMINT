@@ -30,11 +30,10 @@ app.get('/instagram/result',(req,res)=>{
 	PythonShell.run('main.py', options, function (err, results) {
 		if (err) throw err;
 		// results is an array consisting of messages collected during execution
-		console.log(results);
-		
 		let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/instagram/instagram_${instaUsername}/instagram_${instaUsername}.json`);
 		let data = JSON.parse(rawdata);
 		console.log(data);
+		res.render('instaOutput.ejs',{data:data})
 	});
 });
 
@@ -45,7 +44,6 @@ app.get('/twitter/result',(req,res)=>{
 		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\twitter',
 		args: [twitterUsername]
 	}
-
 })
 	// console.log('username is',username);
 	// 	const python = spawn('python', [
@@ -86,12 +84,13 @@ app.get('/twitter/result',(req,res)=>{
 // 		});
 // });
 //*POST
-app.post('/instagram/:username',(req,res)=>{
-  instaUsername = req.params.username;//saving username in the current session storage
+app.post('/instagram',(req,res)=>{
+	instaUsername = req.body.username;//saving username in the current session storage
+	console.log('username',instaUsername);
 	res.redirect('/instagram/result');//redircting to send basic result
 })
 app.post('/twitter/:username',(req,res)=>{
-  twitterUsername = req.params.username;//saving username in the current session storage
+	twitterUsername = req.params.username;//saving username in the current session storage
 	res.redirect('/twitter/result');//redircting to send basic result
 })
 

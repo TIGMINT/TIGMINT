@@ -245,31 +245,13 @@ font-family: 'Open Sans', sans-serif; -->
 
         <div id="3" style="display: none;">
         <div id="sample">
-          <h2>Instagram Module Ready!</h2>
-          <p>
-            Please click "Submit" after making your selections. Thank you.
-          </p>
-          <form id="my-form">
-            <div id="align">
-              <label for="name1">Username ⌨</label><br />
-              <span><input type="text" name="name" id="name1" placeholder="Username" class="data-entry" /></span><br /><br />
-        
-              <!-- --------- SUBMIT ------------ -->
-              <span><input type="submit" class="button" value="Search" /></span><br />
-        
-              
-              <h2> Public Account Finder </h2>
-              <p> Finds the Public account's stories and highlights...</p>
-              <br />
-              <label for="name1">Username ⌨</label><br />
-              <span><input type="text" name="name" id="name1" placeholder="Username" class="data-entry" /></span>
-              <br />
-              <br />
-              <!-- --------- SUBMIT ------------ -->
-              <span><input type="submit" class="button" value="Search" /></span><br />
-
+          <form action="/instagram" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="username" placeholder="Username">
             </div>
-            <!--end div align-->
+              <div class="form-group">
+                <button class="btn btn-md btn-block btn-primary">Search</button>
+                </div>
           </form>
         </div>
         <!--end div sample-->
