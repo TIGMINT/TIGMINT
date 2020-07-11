@@ -11,3 +11,4 @@ numpy
 wordcloud
 pillow
 json
+lxml
