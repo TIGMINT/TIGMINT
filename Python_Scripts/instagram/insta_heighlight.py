@@ -23,7 +23,6 @@ class downloader(object):
         r = requests.get(self.storiesLink, verify=False).text
         if 'No stories to show' in r:
             print("[*] User '{}' did not post any recent story/stories!".format(self.username))
-            os.rmdir(self.sdname)
             exit()
 
         stories = []
@@ -45,8 +44,8 @@ class downloader(object):
                 # print(filename)
                 os.chdir('..')
                 retval = os.getcwd()
-                print("directory is")
-                print(retval)
+                # print("directory is")
+                # print(retval)
                 if not os.path.exists('instagram_'+self.sdname):
                     os.makedirs('instagram_'+self.sdname)
                 os.chdir(retval+'/instagram_'+self.sdname)
