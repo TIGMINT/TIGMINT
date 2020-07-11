@@ -1,9 +1,12 @@
 const express = require('express');
 const {PythonShell} = require ('python-shell');
 const csv = require('csvtojson');
+
+const fs = require('fs');
+
 const app = express();
 const bodyParser = require("body-parser");
-let username = "";
+let instaUsername = "";
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
@@ -17,19 +20,21 @@ app.get('/about', (req, res) => {
 	res.render('about-us.ejs');
 });
 app.get('/instagram/result',(req,res)=>{
-
 	let options = {
 		mode: 'text', 
 		pythonOptions: ['-u'], // get print results in real-time
-		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram',}
+		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram',
+		args: [instaUsername]
+	}
 	PythonShell.run('main.py', options, function (err, results) {
 		if (err) throw err;
 		// results is an array consisting of messages collected during execution
 		console.log(results);
+		
+		let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/instagram/instagram_${instaUsername}/instagram_${instaUsername}.json`);
+		let data = JSON.parse(rawdata);
+		console.log(data);
 	});
-
-
-
 	// console.log('username is',username);
 	// 	const python = spawn('python', [
 	// 	'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram\\main.py'
@@ -70,7 +75,7 @@ app.get('/instagram/result',(req,res)=>{
 // });
 //*POST
 app.post('/instagram/:username',(req,res)=>{
-  username = req.params.username;//saving username in the current session storage
+  instaUsername = req.params.username;//saving username in the current session storage
 	res.redirect('/instagram/result');//redircting to send basic result
 })
 

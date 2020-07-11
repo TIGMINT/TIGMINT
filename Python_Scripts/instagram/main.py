@@ -2,7 +2,7 @@ import insta_heighlight
 import user_info
 import sys
 
-username = "beingsalmankhan"
+username = sys.argv[1]
 
 # try:
 private = user_info.Username(username)
