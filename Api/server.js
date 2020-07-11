@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
 
-app.get('/about', (req, res) => {
-	res.render('about-us.ejs');
+app.get('/contact', (req, res) => {
+	res.render('contact.ejs');
 });
 app.get('/instagram/result',(req,res)=>{
 	let options = {
