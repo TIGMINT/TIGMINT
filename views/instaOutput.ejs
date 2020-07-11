@@ -18,10 +18,10 @@
 <body>
   <div class="container">
     <img src="<%=data.profile_pic_url%>" alt="dp">
-    <h3><%=data.full_name%></h3>
-  <h3><%=data.total_posts%></h3>
-  <h3><%=data.followers_count.count%></h3>
-  <h3><%=data.following_count.count%></h3>
+    <h3>Name: <%=data.full_name%></h3>
+  <h4>Total Posts: <%=data.total_posts%></h4>
+  <h4>Followers: <%=data.followers_count.count%></h4>
+  <h4>Following: <%=data.following_count.count%></h4>
   <button class="btn btn-info" href='/'>Back</button>
   </div>
   
