@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GeoTagging</title>
   <link rel="icon" type="image/png" href="/img/favicon2.png" />
-  <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
   <style>
-    .container{
+    .container {
       text-align: center;
-      width: 60%;
-      max-width: 800px;   
-      margin-top: 5%; 
+      width: fit-content;
+      max-width: fit-content;
+      margin-top: 5%;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      width: fit-content;
+      align-items: center;
+      padding: 5%;
     }
-    form{
+
+    form {
       margin-top: 7%;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h3>Enter Lattitude , longitude and the Radius to search</h3>
@@ -27,18 +33,22 @@
       <div class="form-group">
         <input class="form-control" type="text" name="lattitude" placeholder="lattitude">
       </div>
+      <div class="form-group">
         <div class="form-group">
-          <div class="form-group">
-            <input class="form-control" type="text" name="longitude" placeholder="longitude">
-          </div>
-          <div class="form-group">
-            <input class="form-control" type="text" name="radius" placeholder="radius">
-          </div>
-            <div class="form-group">
+          <input class="form-control" type="text" name="longitude" placeholder="longitude">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" name="radius" placeholder="radius">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" name="limit" placeholder="limit">
+        </div>
+        <div class="form-group">
           <button class="btn btn-md btn-block btn-primary">Search</button>
-          </div>
+        </div>
     </form>
   </div>
-  
+
 </body>
+
 </html>
