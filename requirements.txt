@@ -10,5 +10,4 @@ twint
 numpy
 wordcloud
 pillow
-json
 lxml
