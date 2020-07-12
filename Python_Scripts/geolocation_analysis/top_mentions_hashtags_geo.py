@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 import os
 
 def get_top_mentions_hashtags_geo(lat_long, radius, limit):
+    os.chdir("Python_Scripts")
+    currentDir = os.getcwd() + "/result/twitter/"
+    os.chdir(currentDir)
     twint.output.tweets_list = []
     c = twint.Config()
     c.Hide_output = True  # hides command line verbose output
@@ -42,9 +45,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.yticks(range(len(mentions_ranked)), list(mentions_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Trending Mentions from the Geo-location: " + lat_long)
-    os.chdir("Python_Scripts")
-    currentDir = os.getcwd() + "/result/twitter/"
-    os.chdir(currentDir)
+    
     plt.savefig(lat_long + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     plt.barh(range(len(hashtags_ranked)), list(hashtags_ranked.values()), align='center', color='maroon')
@@ -58,14 +59,16 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     print(top_mentions)  # displays the top 10 hashtags as a list.
     print("List of Top 10 hashtags " + lat_long + " :")
     print(top_hashtags)  # displays the top 15 hashtags as a list.
+    exit()  
 
 
 def main():
-    seed_coordinates = [sys.argv[1]+", "+sys.argv[2]]
+    seed_coordinates = ["28.617245604288797, 77.20818042755127"]
     radius = "1km"
     limit = 1000  # limits the number of tweets to pull
     for coordinate in seed_coordinates:
         get_top_mentions_hashtags_geo(coordinate, radius, limit)
+      
 
 if __name__ == "__main__":
 	main()
