@@ -70,9 +70,12 @@ def print_wordcloud(combi,username):
     plt.imshow(wordCloud, interpolation="bilinear")
     plt.axis('off')
     # plt.show()
+    os.chdir('Python_Scripts')
+    currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    plt.savefig(os.getcwd()+'/result/'+'twitter_'+ 'wordcloud_' + username + '.png', bbox_inches='tight')
+    os.chdir(currentDirectory + '/result/twitter/')
+    plt.savefig(os.getcwd()+'twitter_'+ 'wordcloud_' + username + '.png', bbox_inches='tight')
     plt.close()
     
 # Show the dataframe
@@ -110,9 +113,12 @@ def plotting(combi,username):
     plt.xlabel('Polarity') 
     plt.ylabel('Subjectivity') 
     # plt.show()
+    os.chdir('Python_Scripts')
+    currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    plt.savefig(os.getcwd()+'/result/'+'tweets_'+ 'sentiments_plot_' + username + '.png', bbox_inches='tight')
+    os.chdir(currentDirectory + '/result/twitter/')
+    plt.savefig(os.getcwd()+'tweets_'+ 'sentiments_plot_' + username + '.png', bbox_inches='tight')
 
 
 def print_values(combi,username):
@@ -136,10 +142,11 @@ def print_values(combi,username):
     plt.ylabel('Counts')
     df['Analysis'].value_counts().plot(kind = 'bar')
     # plt.show()
-    # os.chdir('..')
-    # currentDirectory = os.getcwd()
+    os.chdir('Python_Scripts')
+    currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    plt.savefig(os.getcwd()+'/result/'+'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
+    os.chdir(currentDirectory + '/result/twitter/')
+    plt.savefig(os.getcwd() +'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
 
 

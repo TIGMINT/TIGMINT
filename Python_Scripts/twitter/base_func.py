@@ -76,14 +76,16 @@ def get_user_following(username,search):
 
 def save_result(c, filename):
     # timestr = time.strftime("%Y%m%d-%H%M%S")
-    # os.chdir('..')
-    # currentDirectory = os.getcwd()
-
+    
+    os.chdir('Python_Scripts')
+    retval = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
+    os.chdir(retval + '/result/twitter/')
+
     c.Store_csv = True
     # 
-    c.Output = os.getcwd()+'/result/' + filename + ".csv"
+    c.Output = os.getcwd()+ filename + ".csv"
     return True
 
 def available_columns():
