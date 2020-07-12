@@ -2,7 +2,7 @@ import twint
 import heapq
 import sys
 import matplotlib.pyplot as plt
-
+import os
 
 def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     twint.output.tweets_list = []
@@ -42,12 +42,16 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.yticks(range(len(mentions_ranked)), list(mentions_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Trending Mentions from the Geo-location: " + lat_long)
+    os.chdir("Python_Scripts")
+    currentDir = os.getcwd() + "/result/twitter/"
+    os.chdir(currentDir)
     plt.savefig(lat_long + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     plt.barh(range(len(hashtags_ranked)), list(hashtags_ranked.values()), align='center', color='maroon')
     plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Trending Hashtags from the Geo-location:" + lat_long)
+    os.chdir(currentDir)
     plt.savefig(lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     print("List of Top 10 mentions " + lat_long + " :")
