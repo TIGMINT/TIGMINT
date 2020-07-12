@@ -42,11 +42,13 @@ def get_top_mentions_hashtags(username, limit=500):
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Most Mentions of username: " + username)
     # currentDirectory = os.getcwd()
-    os.chdir('..')
+    os.chdir('Python_Scripts')
     currentDirectory = os.getcwd()
+
     if not os.path.exists('result'):
         os.makedirs('result')
-    plt.savefig(currentDirectory + '/result/' +username + '_mentions.png', bbox_inches='tight')  # saves the visualization as png
+    os.chdir(currentDirectory + '/result/twitter/')
+    plt.savefig(os.getcwd() +username + '_mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     # plt.show()
     plt.close()
