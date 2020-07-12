@@ -31,9 +31,9 @@ def Username(user):
         'external_url': json_data['external_url']
         }
 	# print(output)
-	os.chdir('..')
+	os.chdir('Python_Scripts')
 	retval = os.getcwd()
-	os.chdir(retval +'/result/')
+	os.chdir(retval +'/result/instagram/')
 	# if not os.path.exists('result'):
 	# 	os.makedirs('result')
 	if not os.path.exists('instagram_'+user):
