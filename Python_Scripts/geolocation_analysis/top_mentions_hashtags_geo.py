@@ -63,8 +63,8 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
 
 
 def main():
-    seed_coordinates = ["28.617245604288797, 77.20818042755127"]
-    radius = "1km"
+    seed_coordinates = [sys.argv[1]+", "+ sys.argv[2]]
+    radius = sys.argv[3]+"km"
     limit = 1000  # limits the number of tweets to pull
     for coordinate in seed_coordinates:
         get_top_mentions_hashtags_geo(coordinate, radius, limit)
