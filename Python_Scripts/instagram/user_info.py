@@ -39,6 +39,8 @@ def Username(user):
 	if not os.path.exists('instagram_'+user):
 			os.makedirs('instagram_'+user)
 	retval = os.getcwd()
+	if not os.path.exists(retval + '/instagram_'+user):
+		os.makedirs(retval + '/instagram_'+user)
 	os.chdir(retval + '/instagram_'+user)
 
 	
