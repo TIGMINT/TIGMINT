@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as insta
 import requests 
 import json
 import os
-from json import loads 
+import json
 
 def Username(user):
 	url = f"https://www.instagram.com/{user}"  #Instagram URL
@@ -13,7 +13,11 @@ def Username(user):
 	required_script = jscript[4]        #Using Script number 4
 	data = required_script.contents[0]
 	D_object = data[data.find('{"config"') : -1]
-	json_data = loads(D_object)
+	# encoded_hand = json.dumps(D_object)
+
+	json_data = json.loads(D_object, strict=False)
+	
+	# print(json_data)
 	json_data = json_data['entry_data']['ProfilePage'][0]['graphql']['user']
 	output = {
 	    'full_name': json_data['full_name'],

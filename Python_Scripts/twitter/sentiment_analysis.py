@@ -57,9 +57,9 @@ def analysis(tweets_df,username):
     # Show the new dataframe with columns 'Subjectivity' & 'Polarity'
     # combi
     combi['Analysis'] = combi['Polarity'].apply(getAnalysis)
-    # print_wordcloud(combi)
+    print_wordcloud(combi)
     print_values(combi,username)
-    # plotting(combi,username)
+    plotting(combi,username)
 
 def print_wordcloud(combi,username):
     # Creation of wordcloud
@@ -148,5 +148,3 @@ def print_values(combi,username):
         os.makedirs('result')
     os.chdir(currentDirectory + '/result/twitter/')
     plt.savefig(os.getcwd() +'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
-
-

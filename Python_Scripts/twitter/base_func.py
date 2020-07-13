@@ -57,7 +57,9 @@ def get_user_bio(username,search):
     save_result(c,username + "_user_bio")
     twint.run.Lookup(c)
     # df = pd.read_csv (r'user_bio')
-    get_user_followers(username,search)
+    # get_user_followers(username,search)
+    get_user_tweets(username,search,True)
+
 
 def get_user_followers(username,search):
     c = twint.Config()
