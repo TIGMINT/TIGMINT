@@ -80,9 +80,8 @@ app.get('/twitter/result',(req,res)=>{
 	PythonShell.run('func_call.py', options, function (err, results) {
 		if (err) throw err;
 		else{
-			// console.log(results)
-			// let coordinates = `${lattitude}, ${longitude}`
-			// res.render('twitterOutput.ejs',{data:coordinates});
+
+			 res.render('twitterUserOutput.ejs',{data:});
 		}
 		
 	});
