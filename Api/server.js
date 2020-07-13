@@ -19,6 +19,11 @@ const port = process.env.port || 3000;
 app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
+app.get('/test',(req,res)=>{
+
+	res.render('twitterOutput.ejs',{data:"28.617245604288797, 77.20818042755127"});
+
+})
 
 app.get('/contact', (req, res) => {
 	res.render('contact.ejs');
