@@ -14,24 +14,27 @@ let radius="";
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
+app.use(express.static(__dirname+"/../Python_Scripts/result"));
 const port = process.env.port || 3000;
 //* GET Routes
 app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
-
 app.get('/contact', (req, res) => {
 	res.render('contact.ejs');
 });
 app.get('/geotagging',(req,res)=>{
 	res.render('map.ejs')
 })
-
+app.get('/test',(req,res)=>{
+	let coordinates = "28.617245604288797, 77.20818042755127"
+	res.render('twitterOutput.ejs',{data:coordinates});
+})
 app.get('/instagram/result',(req,res)=>{
 	let options = {
 		mode: 'text', 
 		pythonOptions: ['-u'], // get print results in real-time
-		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram',
+		scriptPath: `${__dirname}/../Python_Scripts/instagram`,
 		args: [instaUsername]
 	}
 	PythonShell.run('main.py', options, function (err, results) {
@@ -45,28 +48,28 @@ app.get('/instagram/result',(req,res)=>{
 });
 
 app.get('/geotagging/result',(req,res)=>{
-	console.log('called')
 	let options = {
 		mode: 'text', 
-		pythonOptions: ['-u'], // get print results in real-time
-		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\geolocation_analysis',
+		scriptPath:`${__dirname}/../Python_Scripts/geolocation_analysis`,
 		args: [lattitude,longitude,radius]
 	}
 	PythonShell.run('top_mentions_hashtags_geo.py', options, function (err, results) {
 		if (err) throw err;
-		// results is an array consisting of messages collected during execution
-		// let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/instagram/instagram_${instaUsername}/instagram_${instaUsername}.json`);
-		// let data = JSON.parse(rawdata);
-		// console.log(data);
-		res.render('map.ejs')
+		else{
+			console.log(results)
+			let coordinates = `${lattitude}, ${longitude}`
+			res.render('twitterOutput.ejs',{data:coordinates});
+		}
+		
 	});
+	
 });
 
 app.get('/twitter/result',(req,res)=>{
 	let options = {
 		mode: 'text', 
 		pythonOptions: ['-u'], // get print results in real-time
-		scriptPath: 'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\twitter',
+		scriptPath: `${__dirname}/../Python_Scripts/twitter`,
 		args: [twitterUsername]
 	}
 })

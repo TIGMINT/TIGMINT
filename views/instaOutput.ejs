@@ -1,29 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TiGMint</title>
-  <link rel="icon" type="image/png" href="/img/favicon2.png" />
-  <link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-/>
-<style>
-  .container{
-    text-align: center;
-  }
-</style>
-</head>
-<body>
-  <div class="container">
-    <img src="<%=data.profile_pic_url%>" alt="dp">
-    <h3>Name: <%=data.full_name%></h3>
-  <h4>Total Posts: <%=data.total_posts%></h4>
-  <h4>Followers: <%=data.followers_count.count%></h4>
-  <h4>Following: <%=data.following_count.count%></h4>
-  <button class="btn btn-info" href='/'>Back</button>
-  </div>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TiGMint</title>
+    <link rel="icon" type="image/png" href="/img/favicon2.png" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/instaout.css" />
+    <style>
+      .container {
+        text-align: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: fit-content;
+        align-items: center;
+        margin-top: 2%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="profile">
+          <div class="profile-image">
+            <img src="<%=data.profile_pic_url%>" alt="Display Profile" />
+          </div>
+
+          <div class="profile-user-settings">
+            <!-- <h1 class="profile-user-name">USERNAME: janedoe_</h1> -->
+            <h1 class="profile-user-name">Full Name: <%=data.full_name%></h1>
+          </div>
+
+          <div class="profile-stats">
+            <ul>
+              <li>
+                <h4 class="profile-stat-count"><%=data.total_posts%></h4>
+                posts
+              </li>
+              <li>
+                <h4 class="profile-stat-count">
+                  <%=data.followers_count.count%>
+                </h4>
+                followers
+              </li>
+              <li>
+                <h4 class="profile-stat-count">
+                  <%=data.following_count.count%>
+                </h4>
+                following
+              </li>
+            </ul>
+          </div>
+
+          <!-- <div class="profile-bio">
+            <p>
+              <span class="profile-real-name">USERNAME's Bio:</span>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️
+            </p>
+          </div> -->
+        </div>
+        <a type="button" class="btn btn-info" href="/">
+          Back
+        </a>
+        <!-- End of profile section -->
+      </div>
+      <!-- End of container -->
+    </header>
+  </body>
 </html>
+
+<!--  this was the old 
+  <div class="container">
+      <img src="<%=data.profile_pic_url%>" alt="dp" />
+      <h3>Name: <%=data.full_name%></h3>
+      <h4>Total Posts: <%=data.total_posts%></h4>
+      <h4>Followers: <%=data.followers_count.count%></h4>
+      <h4>Following: <%=data.following_count.count%></h4>
+      <button class="btn btn-info" href="/">Back</button>
+    </div> -->
