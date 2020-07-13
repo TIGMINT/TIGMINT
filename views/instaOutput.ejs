@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TiGMint</title>
-    <link rel="icon" type="image/png" href="../public/img/favicon2.png" />
+    <link rel="icon" type="image/png" href="/img/favicon2.png" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../public/css/instaout.css" />
+    <link rel="stylesheet" href="/css/instaout.css" />
     <style>
       .container {
         text-align: center;
@@ -34,12 +34,12 @@
       <div class="container">
         <div class="profile">
           <div class="profile-image">
-            <img src="./1.jpg" alt="Display Profile" />
+            <img src="<%=data.profile_pic_url%>" alt="Display Profile" />
           </div>
 
           <div class="profile-user-settings">
             <!-- <h1 class="profile-user-name">USERNAME: janedoe_</h1> -->
-            <h1 class="profile-user-name">USERNAME: <%=data.full_name%></h1>
+            <h1 class="profile-user-name">Full Name: <%=data.full_name%></h1>
           </div>
 
           <div class="profile-stats">
@@ -63,16 +63,16 @@
             </ul>
           </div>
 
-          <div class="profile-bio">
+          <!-- <div class="profile-bio">
             <p>
               <span class="profile-real-name">USERNAME's Bio:</span>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️
             </p>
-          </div>
+          </div> -->
         </div>
-        <button type="button" class="btn btn-info" href="./index.html">
+        <a type="button" class="btn btn-info" href="/">
           Back
-        </button>
+        </a>
         <!-- End of profile section -->
       </div>
       <!-- End of container -->
