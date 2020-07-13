@@ -27,6 +27,10 @@ app.get('/contact', (req, res) => {
 app.get('/geotagging',(req,res)=>{
 	res.render('map.ejs')
 })
+app.get('/twitteranalysis',(req,res)=>{
+	res.render('twitterAnalysis.ejs')
+})
+
 app.get('/test',(req,res)=>{
 	let coordinates = "28.617245604288797, 77.20818042755127"
 	res.render('twitterOutput.ejs',{data:coordinates});
@@ -76,9 +80,9 @@ app.get('/twitter/result',(req,res)=>{
 	PythonShell.run('func_call.py', options, function (err, results) {
 		if (err) throw err;
 		else{
-			console.log(results)
-			let coordinates = `${lattitude}, ${longitude}`
-			res.render('twitterOutput.ejs',{data:coordinates});
+			// console.log(results)
+			// let coordinates = `${lattitude}, ${longitude}`
+			// res.render('twitterOutput.ejs',{data:coordinates});
 		}
 		
 	});
@@ -127,9 +131,10 @@ app.post('/instagram',(req,res)=>{
 	console.log('username',instaUsername);
 	res.redirect('/instagram/result');//redircting to send basic result
 })
-app.post('/twitter/:username',(req,res)=>{
-	twitterUsername = req.params.username;//saving username in the current session storage
-	stringToFind = req.params.string;
+app.post('/twitter',(req,res)=>{
+	twitterUsername = req.body.username//saving username in the current session storage
+	stringToFind = req.body.string;
+	console.log(twitterUsername,stringToFind)
 	res.redirect('/twitter/result');//redircting to send basic result
 })
 app.post('/geotagging',(req,res)=>{
