@@ -8,6 +8,7 @@ const app = express();
 const bodyParser = require("body-parser");
 let instaUsername = "";
 let twitterUsername = "";
+let stringToFind="";
 let lattitude="";
 let longitude="";
 let radius="";
@@ -70,8 +71,17 @@ app.get('/twitter/result',(req,res)=>{
 		mode: 'text', 
 		pythonOptions: ['-u'], // get print results in real-time
 		scriptPath: `${__dirname}/../Python_Scripts/twitter`,
-		args: [twitterUsername]
+		args: [twitterUsername,stringToFind]
 	}
+	PythonShell.run('func_call.py', options, function (err, results) {
+		if (err) throw err;
+		else{
+			console.log(results)
+			let coordinates = `${lattitude}, ${longitude}`
+			res.render('twitterOutput.ejs',{data:coordinates});
+		}
+		
+	});
 })
 	// console.log('username is',username);
 	// 	const python = spawn('python', [
@@ -119,6 +129,7 @@ app.post('/instagram',(req,res)=>{
 })
 app.post('/twitter/:username',(req,res)=>{
 	twitterUsername = req.params.username;//saving username in the current session storage
+	stringToFind = req.params.string;
 	res.redirect('/twitter/result');//redircting to send basic result
 })
 app.post('/geotagging',(req,res)=>{

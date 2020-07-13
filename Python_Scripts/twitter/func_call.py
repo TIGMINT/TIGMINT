@@ -29,8 +29,8 @@ def similar_hashtag():
 if __name__ == "__main__":
     # c = twint.Config()
     # print(os.getcwd())
-    username = input("enter username")
-    string = input("Enter string to be searched or leave blank for all tweets")
+    username = sys.argv[1]
+    string = sys.argv[2]
     # analysis = input('Enter yes/no for analysis of tweets ')
     # if analysis == 'yes':
     #     analysis = True

@@ -81,7 +81,7 @@ def save_result(c, filename):
     retval = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    os.chdir(retval + '/result/twitter/')
+    os.chdir(retval + '/result/twitterUser/')
 
     c.Store_csv = True
     # 
