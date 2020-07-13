@@ -14,24 +14,22 @@ let radius="";
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
+app.use(express.static(__dirname+"/../Python_Scripts/result"));
 const port = process.env.port || 3000;
 //* GET Routes
 app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
-app.get('/test',(req,res)=>{
-
-	res.render('twitterOutput.ejs',{data:"28.617245604288797, 77.20818042755127"});
-
-})
-
 app.get('/contact', (req, res) => {
 	res.render('contact.ejs');
 });
 app.get('/geotagging',(req,res)=>{
 	res.render('map.ejs')
 })
-
+app.get('/test',(req,res)=>{
+	let coordinates = "28.617245604288797, 77.20818042755127"
+	res.render('twitterOutput.ejs',{data:coordinates});
+})
 app.get('/instagram/result',(req,res)=>{
 	let options = {
 		mode: 'text', 
@@ -59,7 +57,8 @@ app.get('/geotagging/result',(req,res)=>{
 		if (err) throw err;
 		else{
 			console.log(results)
-			res.send('done');
+			let coordinates = `${lattitude}, ${longitude}`
+			res.render('twitterOutput.ejs',{data:coordinates});
 		}
 		
 	});
