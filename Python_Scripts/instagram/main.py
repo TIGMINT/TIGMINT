@@ -5,7 +5,7 @@ import sys
 username = sys.argv[1]
 
 # try:
-private = user_info.Username('_kaustubhsh')
+private = user_info.Username(username)
 # if private == False:
 #     insta_heighlight.main('_kaustubhsh')
 # else:
