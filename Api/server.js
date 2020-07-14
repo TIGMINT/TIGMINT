@@ -151,4 +151,4 @@ const server = app.listen(port, () =>
 ${port}!`)
 );
 
-server.timeout = 48000;
+server.timeout = 480000;
