@@ -16,6 +16,7 @@ def get_user_tweets(username,search,analyse):
     c = twint.Config()    
     c.Username = username
     c.Search = search
+    c.Limit = 100
     c.Pandas = True
     c.Pandas_clean = True
     # c.Format = "Tweet id: {id} | Date: {date} | Time: {time} | Tweet: {tweet} | Hashtags: {hashtags} "
@@ -57,8 +58,11 @@ def get_user_bio(username,search):
     save_result(c,username + "_user_bio")
     twint.run.Lookup(c)
     # df = pd.read_csv (r'user_bio')
-    get_user_followers(username,search)
+    # get_user_followers(username,search)
+    get_user_tweets(username,search,True)
 
+# sentiment_analysis
+# word cloud
 def get_user_followers(username,search):
     c = twint.Config()
     c.Username = username
@@ -76,16 +80,20 @@ def get_user_following(username,search):
 
 def save_result(c, filename):
     # timestr = time.strftime("%Y%m%d-%H%M%S")
+    # retval = os.getcwd()
+    # print(retval)
+
+    # os.chdir(os.getcwd()+'/Python_Scripts')
+    # retval = os.getcwd()
+    # print(retval)
+    # if not os.path.exists('result'):
+    #     os.makedirs('result')
     
-    os.chdir('Python_Scripts')
-    retval = os.getcwd()
-    if not os.path.exists('result'):
-        os.makedirs('result')
-    os.chdir(retval + '/result/twitter/')
+    # os.chdir(os.getcwd() + '/result/twitterUser/')
 
     c.Store_csv = True
     # 
-    c.Output = os.getcwd()+ filename + ".csv"
+    c.Output = os.getcwd()+'/Python_Scripts/result/twitterUser/'+ filename + ".csv"
     return True
 
 def available_columns():

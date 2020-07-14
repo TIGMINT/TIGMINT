@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GeoTagging</title>
+  <title>Tweet analysis</title>
   <link rel="icon" type="image/png" href="/img/favicon2.png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
   <style>
@@ -28,17 +28,14 @@
 
 <body>
   <div class="container">
-    <h3>Enter Lattitude , longitude and the Radius to search</h3>
-    <form action="/geotagging" method="post">
+    <h3>Enter Username and Keyword</h3>
+    <form action="/twitter" method="post">
       <div class="form-group">
-        <input class="form-control" type="text" name="lattitude" placeholder="lattitude">
+        <input class="form-control" type="text" name="username" placeholder="Username" required>
       </div>
       <div class="form-group">
         <div class="form-group">
-          <input class="form-control" type="text" name="longitude" placeholder="longitude">
-        </div>
-        <div class="form-group">
-          <input class="form-control" type="text" name="radius" placeholder="radius">
+          <input class="form-control" type="text" name="string" placeholder="Keyword to search in bio">
         </div>
         <div class="form-group">
           <button class="btn btn-md btn-block btn-primary">Search</button>

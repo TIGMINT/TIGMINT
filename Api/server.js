@@ -8,24 +8,36 @@ const app = express();
 const bodyParser = require("body-parser");
 let instaUsername = "";
 let twitterUsername = "";
+let stringToFind="";
 let lattitude="";
 let longitude="";
 let radius="";
 app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
+app.use(express.static(__dirname+"/../Python_Scripts/result"));
 const port = process.env.port || 3000;
 //* GET Routes
 app.get('/', (req, res) => {
 	res.render('index.ejs');
 });
-
 app.get('/contact', (req, res) => {
 	res.render('contact.ejs');
 });
 app.get('/geotagging',(req,res)=>{
 	res.render('map.ejs')
 })
+app.get('/twitteranalysis',(req,res)=>{
+	res.render('twitterAnalysis.ejs')
+})
+app.get('/instagram',(req,res)=>{
+	res.render('instagram.ejs')
+})
+// app.get('/test',(req,res)=>{
+// 	let coordinates = "28.617245604288797, 77.20818042755127"
+// 	res.render('twitterOutput.ejs',{data:coordinates});
+// })
+
 
 app.get('/instagram/result',(req,res)=>{
 	let options = {
@@ -54,7 +66,8 @@ app.get('/geotagging/result',(req,res)=>{
 		if (err) throw err;
 		else{
 			console.log(results)
-			res.send('done');
+			let coordinates = `${lattitude}, ${longitude}`
+			res.render('twitterOutput.ejs',{data:coordinates});
 		}
 		
 	});
@@ -66,8 +79,15 @@ app.get('/twitter/result',(req,res)=>{
 		mode: 'text', 
 		pythonOptions: ['-u'], // get print results in real-time
 		scriptPath: `${__dirname}/../Python_Scripts/twitter`,
-		args: [twitterUsername]
+		args: [twitterUsername,stringToFind]
 	}
+	PythonShell.run('func_call.py', options, function (err, results) {
+		if (err) throw err;
+		else{
+			 res.render('twitterUserOutput.ejs',{username:twitterUsername});
+		}
+		
+	});
 })
 	// console.log('username is',username);
 	// 	const python = spawn('python', [
@@ -113,8 +133,10 @@ app.post('/instagram',(req,res)=>{
 	console.log('username',instaUsername);
 	res.redirect('/instagram/result');//redircting to send basic result
 })
-app.post('/twitter/:username',(req,res)=>{
-	twitterUsername = req.params.username;//saving username in the current session storage
+app.post('/twitter',(req,res)=>{
+	twitterUsername = req.body.username//saving username in the current session storage
+	stringToFind = req.body.string;
+	console.log(twitterUsername,stringToFind)
 	res.redirect('/twitter/result');//redircting to send basic result
 })
 app.post('/geotagging',(req,res)=>{
