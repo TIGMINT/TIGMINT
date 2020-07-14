@@ -55,10 +55,10 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     os.chdir(currentDir)
     plt.savefig(lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-    print("List of Top 10 mentions " + lat_long + " :")
-    print(top_mentions)  # displays the top 10 hashtags as a list.
-    print("List of Top 10 hashtags " + lat_long + " :")
-    print(top_hashtags)  # displays the top 15 hashtags as a list.
+    #print("List of Top 10 mentions " + lat_long + " :")
+    #print(top_mentions)  # displays the top 10 hashtags as a list.
+    #print("List of Top 10 hashtags " + lat_long + " :")
+    #print(top_hashtags)  # displays the top 15 hashtags as a list.
     exit()  
 
 
