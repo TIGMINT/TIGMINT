@@ -60,7 +60,8 @@ def get_user_bio(username,search):
     # get_user_followers(username,search)
     get_user_tweets(username,search,True)
 
-
+sentiment_analysis
+word cloud
 def get_user_followers(username,search):
     c = twint.Config()
     c.Username = username

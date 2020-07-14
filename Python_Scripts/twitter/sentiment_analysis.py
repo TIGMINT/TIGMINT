@@ -74,8 +74,8 @@ def print_wordcloud(combi,username):
     currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    os.chdir(currentDirectory + '/result/twitter/')
-    plt.savefig(os.getcwd()+'twitter_'+ 'wordcloud_' + username + '.png', bbox_inches='tight')
+    os.chdir(currentDirectory + '/result/twitterUser/')
+    plt.savefig('wordcloud_' + username + '.png', bbox_inches='tight')
     plt.close()
     
 # Show the dataframe
@@ -117,8 +117,8 @@ def plotting(combi,username):
     currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    os.chdir(currentDirectory + '/result/twitter/')
-    plt.savefig(os.getcwd()+'tweets_'+ 'sentiments_plot_' + username + '.png', bbox_inches='tight')
+    os.chdir(currentDirectory + '/result/twitterUser/')
+    plt.savefig('sentiments_plot_' + username + '.png', bbox_inches='tight')
 
 
 def print_values(combi,username):
@@ -146,5 +146,5 @@ def print_values(combi,username):
     currentDirectory = os.getcwd()
     if not os.path.exists('result'):
         os.makedirs('result')
-    os.chdir(currentDirectory + '/result/twitter/')
+    os.chdir(currentDirectory + '/result/twitterUser/')
     plt.savefig(os.getcwd() +'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
