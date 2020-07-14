@@ -6,7 +6,7 @@ from top_mentions_hashtags import top_mentions_hashtags as mentions
 
 def basic(username,search):
     base.get_user_bio(username,search)
-    base.get_user_tweets(c,username,search,True)
+    base.get_user_tweets(username,search,True)
 
 def get_keyword(key,limit=100):
     base.get_tweets(key,limit)
