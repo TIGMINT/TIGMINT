@@ -7,6 +7,44 @@
   <title>GeoTagging</title>
   <link rel="icon" type="image/png" href="/img/favicon2.png" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <script type='text/javascript'>
+    function GetMap() {
+        var map = new Microsoft.Maps.Map('#myMap', {
+            credentials: 'Amz9eGIXBzmU92mkCzvY04luh-FWerQ_qw3uLeuJFnZz_S3xhD9xBHe8CR_EoUBp'});
+        
+        Microsoft.Maps.Events.addHandler(map, 'click', bingMapOnClick);
+        
+        //Request the user's location
+        function bingMapOnClick(e) {
+
+    if (e.targetType == "map") {
+
+        //Get map unit x,y
+        var point = new Microsoft.Maps.Point(e.getX(), e.getY());
+
+        //Convert map point to location
+        var location = e.target.tryPixelToLocation(point);
+      
+        //Print x y
+        console.log(location.longitude);
+        console.log(location.latitude);
+        document.querySelector('.coordinates').textContent = location.longitude + ", "+ location.latitude;
+        map.entities.clear(pin);
+
+        infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+            visible: false
+        });
+        infobox.setMap(null)
+        infobox.setMap(map);
+        var pin = new Microsoft.Maps.Pushpin(location);
+        map.entities.push(pin);
+
+    }
+
+}
+    }
+    </script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
   <style>
     .container {
       text-align: center;
@@ -23,10 +61,23 @@
     form {
       margin-top: 7%;
     }
+    .coordinates{
+            border: cadetblue solid 1px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .container_1{
+            width: 35%;
+            margin: auto;
+        }
   </style>
 </head>
 
 <body>
+  <div class="container_1">
+    <div id="myMap" style="position:relative;width:100%;height:250px;"></div>
+    <div class="coordinates">Click on the map to get location coordinates</div>
+</div>
   <div class="container">
     <h3>Enter Lattitude , longitude and the Radius to search</h3>
     <form action="/geotagging" method="post">
@@ -44,9 +95,6 @@
           <button class="btn btn-md btn-block btn-primary">Search</button>
         </div>
     </form>
-    <a type="button" class="btn btn-info" href="/">
-      Back
-    </a>
   </div>
 
 </body>
