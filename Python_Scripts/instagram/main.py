@@ -5,4 +5,4 @@ import sys
 username = sys.argv[1]
 
 private = user_info.Username(username)
-# insta_heighlight.main(username)
+insta_heighlight.main(username)
