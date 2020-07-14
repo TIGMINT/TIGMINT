@@ -57,9 +57,10 @@ def analysis(tweets_df,username):
     # Show the new dataframe with columns 'Subjectivity' & 'Polarity'
     # combi
     combi['Analysis'] = combi['Polarity'].apply(getAnalysis)
-    # print_wordcloud(combi)
     print_values(combi,username)
-    # plotting(combi,username)
+    print_wordcloud(combi,username)
+    # print_values(combi,username)
+    plotting(combi,username)
 
 def print_wordcloud(combi,username):
     # Creation of wordcloud
@@ -70,12 +71,14 @@ def print_wordcloud(combi,username):
     plt.imshow(wordCloud, interpolation="bilinear")
     plt.axis('off')
     # plt.show()
-    os.chdir('Python_Scripts')
+    # os.chdir(os.getcwd()+'/Python_Scripts')
     currentDirectory = os.getcwd()
-    if not os.path.exists('result'):
-        os.makedirs('result')
-    os.chdir(currentDirectory + '/result/twitter/')
-    plt.savefig(os.getcwd()+'twitter_'+ 'wordcloud_' + username + '.png', bbox_inches='tight')
+    # if not os.path.exists('result'):
+    #     os.makedirs('result')
+    # os.chdir(currentDirectory + '/result/twitterUser/')
+    # os.chdir(currentDirectory + '/Python_Scripts/result/twitterUser/')
+
+    plt.savefig(os.getcwd()+'/Python_Scripts/result/twitterUser/'+'wordcloud_' + username + '.png', bbox_inches='tight')
     plt.close()
     
 # Show the dataframe
@@ -113,12 +116,13 @@ def plotting(combi,username):
     plt.xlabel('Polarity') 
     plt.ylabel('Subjectivity') 
     # plt.show()
-    os.chdir('Python_Scripts')
+    # os.chdir(os.getcwd()+'/Python_Scripts')
     currentDirectory = os.getcwd()
-    if not os.path.exists('result'):
-        os.makedirs('result')
-    os.chdir(currentDirectory + '/result/twitter/')
-    plt.savefig(os.getcwd()+'tweets_'+ 'sentiments_plot_' + username + '.png', bbox_inches='tight')
+    # if not os.path.exists('result'):
+    #     os.makedirs('result')
+    # os.chdir(currentDirectory + '/result/twitterUser/')
+    # os.chdir(currentDirectory + '/Python_Scripts/result/twitterUser/')
+    plt.savefig(os.getcwd()+'/Python_Scripts/result/twitterUser/'+'tweet_analysis_' + username + '.png', bbox_inches='tight')
 
 
 def print_values(combi,username):
@@ -135,18 +139,17 @@ def print_values(combi,username):
 
     round( (ntweets.shape[0] / df.shape[0]) * 100, 1)
     # Show the value counts
-    print(df['Analysis'].value_counts())
+    # print(df['Analysis'].value_counts())
     # Plotting and visualizing the counts
     plt.title('Sentiment Analysis')
     plt.xlabel('Sentiment')
     plt.ylabel('Counts')
     df['Analysis'].value_counts().plot(kind = 'bar')
     # plt.show()
-    os.chdir('Python_Scripts')
-    currentDirectory = os.getcwd()
-    if not os.path.exists('result'):
-        os.makedirs('result')
-    os.chdir(currentDirectory + '/result/twitter/')
-    plt.savefig(os.getcwd() +'tweet_'+ 'analysis_' + username + '.png', bbox_inches='tight')
-
-
+    # os.chdir(os.getcwd()+'/Python_Scripts')
+    # currentDirectory = os.getcwd()
+    # if not os.path.exists('result'):
+    #     os.makedirs('result')
+    # os.chdir(currentDirectory + '/Python_Scripts/result/twitterUser/')
+    plt.savefig(os.getcwd()+'/Python_Scripts/result/twitterUser/'+'sentiments_plot_' + username + '.png', bbox_inches='tight')
+    plt.close()

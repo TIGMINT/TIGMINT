@@ -11,7 +11,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     twint.output.tweets_list = []
     c = twint.Config()
     c.Hide_output = True  # hides command line verbose output
-    c.Limit = limit  # maximum number of tweets to pull
+    c.Limit = 2000  # maximum number of tweets to pull
     c.Geo = f"{lat_long},{radius}"
     c.Store_object = True
     c.Store_csv = True
@@ -65,7 +65,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
 def main():
     seed_coordinates = [sys.argv[1]+", "+ sys.argv[2]]
     radius = sys.argv[3]+"km"
-    limit = 1000  # limits the number of tweets to pull
+    limit = 2000  # limits the number of tweets to pull
     for coordinate in seed_coordinates:
         get_top_mentions_hashtags_geo(coordinate, radius, limit)
       
