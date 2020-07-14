@@ -24,6 +24,7 @@
         //Print x y
         console.log(location.longitude);
         console.log(location.latitude);
+        document.querySelector('.coordinates').textContent = location.longitude + ", "+ location.latitude;
         map.entities.clear(pin);
 
         infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
@@ -40,8 +41,23 @@
     }
     </script>
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+    <style>
+        .coordinates{
+            border: cadetblue solid 1px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .container{
+            width: 50%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+    <div class="container">
+        <div id="myMap" style="position:relative;width:100%;height:400px;"></div>
+        <div class="coordinates">Click on the map to get location coordinates</div>
+    </div>
+    
 </body>
 </html>
