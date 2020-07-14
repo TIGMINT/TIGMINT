@@ -13,7 +13,7 @@ OSINT framework focused on gathering information from free tools or resources. T
 - NPM;
 - nltk;
 
-### Linux Meta-nalysis Requirments
+### Linux Meta-analysis Requirments
 
 ```bash
 sudo apt install exiftool
