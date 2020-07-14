@@ -30,11 +30,15 @@ app.get('/geotagging',(req,res)=>{
 app.get('/twitteranalysis',(req,res)=>{
 	res.render('twitterAnalysis.ejs')
 })
-
-app.get('/test',(req,res)=>{
-	let coordinates = "28.617245604288797, 77.20818042755127"
-	res.render('twitterOutput.ejs',{data:coordinates});
+app.get('/instagram',(req,res)=>{
+	res.render('instagram.ejs')
 })
+// app.get('/test',(req,res)=>{
+// 	let coordinates = "28.617245604288797, 77.20818042755127"
+// 	res.render('twitterOutput.ejs',{data:coordinates});
+// })
+
+
 app.get('/instagram/result',(req,res)=>{
 	let options = {
 		mode: 'text', 
