@@ -63,7 +63,7 @@ def get_top_mentions_hashtags(username, limit=500):
     # plt.show()
     plt.close()
 
-    print("List of Top 10 mentions by " + username + " :")
-    print(top_mentions)  # displays the top 10 hashtags as a list.
-    print("List of Top 10 hashtags hashtags by " + username + " :")
-    print(top_hashtags)  # displays the top 15 hashtags as a list.
+    #print("List of Top 10 mentions by " + username + " :")
+    #print(top_mentions)  # displays the top 10 hashtags as a list.
+    #print("List of Top 10 hashtags hashtags by " + username + " :")
+    #print(top_hashtags)  # displays the top 15 hashtags as a list.

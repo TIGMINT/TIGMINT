@@ -11,7 +11,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     twint.output.tweets_list = []
     c = twint.Config()
     c.Hide_output = True  # hides command line verbose output
-    c.Limit = 2000  # maximum number of tweets to pull
+    c.Limit = 500  # maximum number of tweets to pull
     c.Geo = f"{lat_long},{radius}"
     c.Store_object = True
     c.Store_csv = True
@@ -55,10 +55,11 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     os.chdir(currentDir)
     plt.savefig(lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-    print("List of Top 10 mentions " + lat_long + " :")
-    print(top_mentions)  # displays the top 10 hashtags as a list.
-    print("List of Top 10 hashtags " + lat_long + " :")
-    print(top_hashtags)  # displays the top 15 hashtags as a list.
+    #print("List of Top 10 mentions " + lat_long + " :")
+    #print(top_mentions)  # displays the top 10 hashtags as a list.
+    #print("List of Top 10 hashtags " + lat_long + " :")
+    #print(top_hashtags)  # displays the top 15 hashtags as a list.
+    plt.close()
     exit()  
 
 
