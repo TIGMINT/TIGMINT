@@ -42,13 +42,11 @@ class downloader(object):
                 parser = urlparse(url)
                 filename = os.path.basename(parser.path)
                 # print(filename)
-                os.chdir('..')
-                retval = os.getcwd()
+                # retval = os.getcwd()
                 # print("directory is")
                 # print(retval)
-                if not os.path.exists('instagram_'+self.sdname):
-                    os.makedirs('instagram_'+self.sdname)
-                os.chdir(retval+'/instagram_'+self.sdname)
+                
+                # os.chdir(retval+'/result/instagram/instagram_'+self.sdname)
 
                 # currentDirectory = os.getcwd()
                     # 'instagram_'+self.sdname + 
@@ -60,7 +58,7 @@ class downloader(object):
 
     def getHighlights(self):
             hlarray = []
-            hlnarray = []
+            hlnarray = [] 
             hnarray = []
             hdirname = []
             soup = BeautifulSoup(self.root, features="lxml")

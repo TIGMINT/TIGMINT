@@ -33,6 +33,9 @@ app.get('/twitteranalysis',(req,res)=>{
 app.get('/instagram',(req,res)=>{
 	res.render('instagram.ejs')
 })
+app.get('/documentation',(req,res)=>{
+	res.render('documentation.ejs')
+})
 // app.get('/test',(req,res)=>{
 // 	let coordinates = "28.617245604288797, 77.20818042755127"
 // 	res.render('twitterOutput.ejs',{data:coordinates});
@@ -151,4 +154,4 @@ const server = app.listen(port, () =>
 ${port}!`)
 );
 
-server.timeout = 48000;
+server.timeout = 480000;
