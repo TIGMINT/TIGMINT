@@ -14,8 +14,8 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     c.Limit = 500  # maximum number of tweets to pull
     c.Geo = f"{lat_long},{radius}"
     c.Store_object = True
-    #c.Store_csv = True
-    #c.Output = f"{lat_long}-tweets.csv"
+    c.Store_csv = True
+    c.Output = f"{lat_long}-tweets.csv"
     twint.run.Search(c)
     tweets = twint.output.tweets_list
     mentions_dict = {}
