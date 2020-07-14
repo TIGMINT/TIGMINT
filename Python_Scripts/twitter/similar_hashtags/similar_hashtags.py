@@ -39,8 +39,8 @@ def get_similar_hashtags(seed_hashtag, limit=500):
   plt.savefig(os.getcwd() + 'twitter_'+seed_hashtag + '.png', bbox_inches='tight') # saves the visualization as png
   #plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
   # plt.show()
-  print("List of most related hashtags to "+ seed_hashtag + " :")
-  print(top_hashtags) # displays the top 15 hashtags as a list.
+  #print("List of most related hashtags to "+ seed_hashtag + " :")
+  #print(top_hashtags) # displays the top 15 hashtags as a list.
   plt.close()
   twint.output.tweets_list = []
 
