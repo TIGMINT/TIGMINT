@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname+"/../public"));
 app.use(express.static(__dirname+"/../Python_Scripts/result"));
-const port = process.env.port || 3000;
+const port = process.env.port || 8080;
 //* GET Routes
 app.get('/', (req, res) => {
 	res.render('index.ejs');
