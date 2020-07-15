@@ -1,5 +1,5 @@
-# Osint Framework
-
+# TIGMINT
+### Twitter, Instagram and Geo-Tagging Media Intelligence
 ## Notes
 OSINT framework focused on gathering information from free tools or resources. The intention is to help people find free OSINT resources
 
