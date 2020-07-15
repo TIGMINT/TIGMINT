@@ -16,7 +16,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     
     currentDir = os.getcwd()+"/Python_Scripts/result/twitter/"
     # sys.path.append("/app/Python_Scripts/Python_Scripts/result/twitter/")
-    os.chdir(currentDir)
+    # os.chdir(currentDir)
     c.Store_csv = True
     c.Output = f"{lat_long}-tweets.csv"
     twint.run.Search(c)
