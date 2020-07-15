@@ -13,7 +13,9 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     c.Limit = 500  # maximum number of tweets to pull
     c.Geo = f"{lat_long},{radius}"
     c.Store_object = True
+    
     currentDir = "/app/Python_Scripts/Python_Scripts/result/twitter/"
+    sys.path.append("/app/Python_Scripts/Python_Scripts/result/twitter/")
     # os.chdir(currentDir)
     c.Store_csv = True
     c.Output = f"{lat_long}-tweets.csv"
@@ -53,8 +55,8 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Trending Hashtags from the Geo-location:" + lat_long)
-    os.chdir(currentDir)
-    plt.savefig(lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
+    # os.chdir(currentDir)
+    plt.savefig("/app/Python_Scripts/Python_Scripts/result/twitter/"+  lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     #print("List of Top 10 mentions " + lat_long + " :")
     #print(top_mentions)  # displays the top 10 hashtags as a list.
