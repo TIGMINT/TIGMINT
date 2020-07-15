@@ -5,15 +5,16 @@ import matplotlib.pyplot as plt
 import os
 
 def get_top_mentions_hashtags_geo(lat_long, radius, limit):
-    os.chdir("Python_Scripts")
-    currentDir = os.getcwd() + "/result/twitter/"
-    os.chdir(currentDir)
+    # os.chdir("Python_Scripts")
+    
     twint.output.tweets_list = []
     c = twint.Config()
     c.Hide_output = True  # hides command line verbose output
     c.Limit = 500  # maximum number of tweets to pull
     c.Geo = f"{lat_long},{radius}"
     c.Store_object = True
+    currentDir = os.getcwd() + "/Python_Scripts/result/twitter/"
+    os.chdir(currentDir)
     c.Store_csv = True
     c.Output = f"{lat_long}-tweets.csv"
     twint.run.Search(c)
