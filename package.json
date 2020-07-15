@@ -1,6 +1,6 @@
 {
-	"name": "osint-tool",
-	"version": "1.0.0",
+	"name": "tigmintv1",
+	"version": "1.0.1",
 	"description": "Osint tool for social media websites",
 	"main": "Api/server.js",
 	"scripts": {

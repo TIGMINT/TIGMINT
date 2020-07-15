@@ -149,9 +149,12 @@ app.post('/geotagging',(req,res)=>{
 	console.log(radius,lattitude,longitude)
 	res.redirect('/geotagging/result')
 })
-const server = app.listen(port, () =>
-	console.log(`Example app listening on port 
-${port}!`)
-);
+// const server = app.listen(port, () =>
+// 	console.log(`Example app listening on port 
+// ${port}!`)
+// );
+const server = app.listen(process.env.PORT || 3000, function(){
+	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
 
 server.timeout = 480000;
