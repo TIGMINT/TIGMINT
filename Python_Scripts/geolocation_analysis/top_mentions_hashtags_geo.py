@@ -13,7 +13,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     c.Limit = 500  # maximum number of tweets to pull
     c.Geo = f"{lat_long},{radius}"
     c.Store_object = True
-    # currentDir = os.getcwd() + "/Python_Scripts/result/twitter/"
+    currentDir = "/app/Python_Scripts/Python_Scripts/result/twitter/"
     # os.chdir(currentDir)
     c.Store_csv = True
     c.Output = f"{lat_long}-tweets.csv"
