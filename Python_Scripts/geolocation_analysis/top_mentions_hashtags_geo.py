@@ -49,7 +49,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Trending Mentions from the Geo-location: " + lat_long)
     
-    plt.savefig("/app/Python_Scripts/result/twitter/"+ lat_long + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
+    plt.savefig(os.getcwd()+"/Python_Scripts/result/twitter/"+ lat_long + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     plt.barh(range(len(hashtags_ranked)), list(hashtags_ranked.values()), align='center', color='maroon')
     plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
