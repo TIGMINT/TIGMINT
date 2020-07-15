@@ -1,4 +1,4 @@
-""" For linux the user must install exiftool using command sudo apt install exiftool """
+""" For linux the user must install exiftool using command sudo  apt install libimage-exiftool-perl """
 import platform
 import exiftool
 import json

@@ -1,6 +1,7 @@
 from PIL import Image
 from PIL.ExifTags import TAGS
 import json
+import os
 
 
 class MyEncoder(json.JSONEncoder):
@@ -23,4 +24,4 @@ def get_exif(fn):
     print(ret)
 
 
-get_exif("bridge.jpg")
+get_exif(os.getcwd()+"/Python_Scripts/metadata_analysis/"+"bridge.jpg")
