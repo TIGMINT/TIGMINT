@@ -2,9 +2,20 @@
 ### Twitter, Instagram and Geo-Tagging Media Intelligence
 
 An **OSINT** framework with an objective of making investigations more convinient by making **SOCMINT** tools accessible remotely on our website without having to install any dependencies.
-
-
-## Requirements
+### Preview
+![TIGMINT](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(181).png)
+#### Modules
+![Modules](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(180).png)
+## Our Team
+![Team](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(172).png)
+### Documentation
+![Docs](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(173).png)
+#### Twitter Analyser
+![Twitter Analyser](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(175).png)
+#### Account Finder
+![Account Finder](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(174).png)
+## Local Setup
+### Requirements
 - Python 3.6;
 - beautifulsoup4;
 - Nodejs;
