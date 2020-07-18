@@ -1,12 +1,28 @@
 import requests
+import json
+
+items= {}
+def save(service_name,url):
+    # items[service_name]= url
+    # if url != None:
+    global items
+    items[service_name]= url
+    # items = dict(service = service_name, profile = url)
+    
 def instagram(username):
     service_name = "Instagram"
     url  = "https://instagram.com/" + username
     response = requests.get(url + '/')
     # print(response)
     if (response.status_code == 200 ):
+        # a+
+        # sys.stdout = open("userpresent.txt", "a+")
         print("*[INSTAGRAM] " + url)
+        save(service_name,url)
+        # sys.stdout.close()
         return service_name, url
+    else:
+        return None
 
 
 
@@ -16,7 +32,10 @@ def github(username):
     response = requests.get(url+'/')
     if(response.status_code == 200):
         print("*[Github] " + url)
+        save(service_name,url)
         return service_name, url
+    else:
+        return None
 
 
 
@@ -26,7 +45,11 @@ def twitter(username):
     response = requests.get(url)
     if(response.status_code == 200):
         print("*[Twitter] " + url)
+        save(service_name,url)
         return service_name, url
+    else:
+        return None
+
 
 def reddit(username):
     service_name = "Reddit"
@@ -34,6 +57,7 @@ def reddit(username):
     response = requests.get(url)
     if(response.status_code == 200):
         print("*[Reddit] " + url)
+        save(service_name,url)
         return service_name, url
     else:
         return None
@@ -44,6 +68,7 @@ def facebook(username):
     response = requests.get(url)
     if(response.status_code == 200):
         print("*[Facebook] " + url)
+        save(service_name,url)
         return service_name, url
     else:
         return None
@@ -54,6 +79,7 @@ def youtube(username):
     response = requests.get(url)
     if(response.status_code == 200):
         print("*[Youtube] " + url)
+        save(service_name,url)
         return service_name, url
     else:
         return None
@@ -64,9 +90,17 @@ def medium(username):
     response = requests.get(url)
     if(response.status_code == 200):
         print("*[Medium] " + url)
+        save(service_name,url)
         return service_name, url
     else:
         return None
 
-
-        
+def check(username):
+    instagram(username)
+    github(username)
+    twitter(username)
+    reddit(username)
+    facebook(username)
+    youtube(username)
+    # print(items)
+    return items
