@@ -7,7 +7,11 @@ import sys
 def get_similar_hashtags(seed_hashtag, limit=500):
   os.chdir("Python_Scripts")
   currentDir = os.getcwd() + "/result/twitter/"
-  os.mkdir(currentDir)
+
+  try:
+    os.mkdir(currentDir)
+  except:
+    pass
   os.chdir(currentDir)
   c = twint.Config()
   c.Hide_output = True  # hides command line verbose output
