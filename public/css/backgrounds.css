@@ -59,7 +59,7 @@ h6 {
 
 /* Add an active class to highlight the current page */
 .topnav a.active {
-  background-color: #4bff9a;
+  background-color:rgb(251,110,112);
   color: black;
   font-size: 22px;
   font-weight: bold;
