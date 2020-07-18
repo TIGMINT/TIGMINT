@@ -30,6 +30,9 @@ app.get('/geotagging',(req,res)=>{
 app.get('/twitteranalysis',(req,res)=>{
 	res.render('twitterAnalysis.ejs')
 })
+app.get('/similarhashtags',(req,res)=>{
+	res.render('hashtagAnalysis.ejs')
+})
 app.get('/instagram',(req,res)=>{
 	res.render('instagram.ejs')
 })
@@ -92,6 +95,24 @@ app.get('/twitter/result',(req,res)=>{
 		
 	});
 })
+
+app.get('/similarhashtags/result',(req,res)=>{
+	let options = {
+		mode: 'text',
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: `${__dirname}/../Python_Scripts/twitter/similar_hashtags`,
+		args: [twitterHashtag]
+	}
+	PythonShell.run('similar_hashtags.py', options, function (err, results) {
+		if (err) throw err;
+		else{
+			 twitterHashtag = twitterHashtag.replace("#","");
+			 //console.log(twitterHashtag);
+			 res.render('hashtagsOutput.ejs',{data:twitterHashtag});
+		}
+
+	});
+})
 	// console.log('username is',username);
 	// 	const python = spawn('python', [
 	// 	'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram\\main.py'
@@ -141,6 +162,11 @@ app.post('/twitter',(req,res)=>{
 	stringToFind = req.body.string;
 	console.log(twitterUsername,stringToFind)
 	res.redirect('/twitter/result');//redircting to send basic result
+})
+app.post('/hashtags',(req,res)=>{
+	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
+	console.log(twitterHashtag)
+	res.redirect('/similarhashtags/result');//redircting to send basic result
 })
 app.post('/geotagging',(req,res)=>{
 	lattitude = req.body.lattitude;
