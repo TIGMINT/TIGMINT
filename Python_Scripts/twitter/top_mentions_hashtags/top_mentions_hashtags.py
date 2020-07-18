@@ -8,6 +8,7 @@ import sys
 def get_top_mentions_hashtags(username, limit=100):
     os.chdir("Python_Scripts")
     currentDir = os.getcwd() + "/result/twitter/"
+    os.mkdir(currentDir)
     os.chdir(currentDir)
     twint.output.tweets_list = []
     c = twint.Config()

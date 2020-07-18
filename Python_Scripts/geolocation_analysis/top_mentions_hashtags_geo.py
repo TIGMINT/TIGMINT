@@ -7,6 +7,7 @@ import os
 def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     os.chdir("Python_Scripts")
     currentDir = os.getcwd() + "/result/twitter/"
+    os.mkdir(currentDir)
     os.chdir(currentDir)
     twint.output.tweets_list = []
     c = twint.Config()

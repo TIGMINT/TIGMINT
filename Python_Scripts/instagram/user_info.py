@@ -37,6 +37,7 @@ def Username(user):
 	# print(output)
 	os.chdir('Python_Scripts')
 	retval = os.getcwd()
+	os.mkdir(retval +'/result/instagram/')
 	os.chdir(retval +'/result/instagram/')
 	# if not os.path.exists('result'):
 	# 	os.makedirs('result')
