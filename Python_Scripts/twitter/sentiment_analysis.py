@@ -151,5 +151,9 @@ def print_values(combi,username):
     # if not os.path.exists('result'):
     #     os.makedirs('result')
     # os.chdir(currentDirectory + '/Python_Scripts/result/twitterUser/')
+    try:
+        os.mkdir(os.getcwd()+'/Python_Scripts/result/twitterUser/')
+    except:
+        pass
     plt.savefig(os.getcwd()+'/Python_Scripts/result/twitterUser/'+'sentiments_plot_' + username + '.png', bbox_inches='tight')
     plt.close()
