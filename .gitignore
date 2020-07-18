@@ -2,11 +2,12 @@ node_modules/
 package-lock.json
 twitter/__pycache__
 img-metadata/__pycache__
-twitter/similar_hashtags/__pycache__
-twitter/top_mentions_hashtags/__pycache__
+Python_Scripts/twitter/similar_hashtags/__pycache__
+Python_Scripts/twitter/top_mentions_hashtags/__pycache__
 Python_Scripts/instagram/__pycache__
 Python_Scripts/twitter/__pycache__
-Python_Scripts/geotagging/__pycache__
+Python_Scripts/geolocation_analysis/__pycache__
+Python_Scripts/metadata_analysis/__pycache__
 Python_Scripts/twitter/__pycache__
 Python_Scripts/result/twitter/*
 Python_Scripts/result/instagram/*
