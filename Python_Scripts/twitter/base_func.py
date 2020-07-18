@@ -93,6 +93,10 @@ def save_result(c, filename):
 
     c.Store_csv = True
     #
+    try:
+        os.mkdir(os.getcwd()+'/Python_Scripts/result/twitterUser/')
+    except:
+        pass
     c.Output = os.getcwd()+'/Python_Scripts/result/twitterUser/'+ filename + ".csv"
     return True
 
