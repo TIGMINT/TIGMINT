@@ -2,16 +2,21 @@ import twint
 import heapq
 import matplotlib.pyplot as plt
 import os
-
+import sys
 
 """ This script is used to generate top 10 mentions and hashtags for a particular username."""
-def get_top_mentions_hashtags(username, limit=500):
+def get_top_mentions_hashtags(username, limit=100):
+    os.chdir("Python_Scripts")
+    currentDir = os.getcwd() + "/result/twitter/"
+    os.chdir(currentDir)
     twint.output.tweets_list = []
     c = twint.Config()
     c.Username = username
     c.Hide_output = True  # hides command line verbose output
     c.Limit = limit  # maximum number of tweets to pull
     c.Store_object = True
+    c.Store_csv = True
+    c.Output = f"{username}-tweets.csv"
     twint.run.Search(c)
     tweets = twint.output.tweets_list
     mentions_dict = {}
@@ -42,13 +47,8 @@ def get_top_mentions_hashtags(username, limit=500):
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Most Mentions of username: " + username)
     # currentDirectory = os.getcwd()
-    os.chdir('Python_Scripts')
-    currentDirectory = os.getcwd()
-
-    if not os.path.exists('result'):
-        os.makedirs('result')
-    os.chdir(currentDirectory + '/result/twitter/')
-    plt.savefig(os.getcwd() +username + '_mentions.png', bbox_inches='tight')  # saves the visualization as png
+    os.chdir(currentDir)
+    plt.savefig(username + '-mentions.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     # plt.show()
     plt.close()
@@ -56,9 +56,8 @@ def get_top_mentions_hashtags(username, limit=500):
     plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
     plt.gca().invert_yaxis()  # just to have the highest bar at the top
     plt.title("Top 10 Hashtags of " + username)
-    if not os.path.exists('result'):
-        os.makedirs('result')
-    plt.savefig(currentDirectory + '/result/' +username + '_hashtags.png', bbox_inches='tight')  # saves the visualization as png
+    os.chdir(currentDir)
+    plt.savefig(username + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
     # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
     # plt.show()
     plt.close()
@@ -67,3 +66,10 @@ def get_top_mentions_hashtags(username, limit=500):
     #print(top_mentions)  # displays the top 10 hashtags as a list.
     #print("List of Top 10 hashtags hashtags by " + username + " :")
     #print(top_hashtags)  # displays the top 15 hashtags as a list.
+def main():
+  limit = 100  # limits the number of tweets to pull
+  inputUsername = sys.argv[1]
+  get_top_mentions_hashtags(inputUsername)
+
+if __name__ == "__main__":
+	main()

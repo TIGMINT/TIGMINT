@@ -33,6 +33,9 @@ app.get('/twitteranalysis',(req,res)=>{
 app.get('/similarhashtags',(req,res)=>{
 	res.render('hashtagAnalysis.ejs')
 })
+app.get('/usertrends',(req,res)=>{
+	res.render('trendsAnalysis.ejs')
+})
 app.get('/instagram',(req,res)=>{
 	res.render('instagram.ejs')
 })
@@ -90,7 +93,7 @@ app.get('/twitter/result',(req,res)=>{
 	PythonShell.run('func_call.py', options, function (err, results) {
 		if (err) throw err;
 		else{
-			 res.render('twitterUserOutput.ejs',{username:twitterUsername});
+			 res.render('twitterUserOutput.ejs',{data:twitterUsername});
 		}
 		
 	});
@@ -109,6 +112,22 @@ app.get('/similarhashtags/result',(req,res)=>{
 			 twitterHashtag = twitterHashtag.replace("#","");
 			 //console.log(twitterHashtag);
 			 res.render('hashtagsOutput.ejs',{data:twitterHashtag});
+		}
+
+	});
+})
+
+app.get('/usertrends/result',(req,res)=>{
+	let options = {
+		mode: 'text',
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: `${__dirname}/../Python_Scripts/twitter/top_mentions_hashtags`,
+		args: [twitterUsername]
+	}
+	PythonShell.run('top_mentions_hashtags.py', options, function (err, results) {
+		if (err) throw err;
+		else{
+			 res.render('twitterOutput.ejs',{data:twitterUsername});
 		}
 
 	});
@@ -167,6 +186,11 @@ app.post('/hashtags',(req,res)=>{
 	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
 	console.log(twitterHashtag)
 	res.redirect('/similarhashtags/result');//redircting to send basic result
+})
+app.post('/userTrendsAction',(req,res)=>{
+	twitterUsername = req.body.username//saving hashtag in the current session storage
+	console.log(twitterUsername)
+	res.redirect('/usertrends/result');//redircting to send basic result
 })
 app.post('/geotagging',(req,res)=>{
 	lattitude = req.body.lattitude;
