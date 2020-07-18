@@ -6,6 +6,7 @@ const fs = require('fs');
 
 const app = express();
 const bodyParser = require("body-parser");
+let checkusername = "";
 let instaUsername = "";
 let twitterUsername = "";
 let stringToFind="";
@@ -35,6 +36,9 @@ app.get('/similarhashtags',(req,res)=>{
 })
 app.get('/usertrends',(req,res)=>{
 	res.render('trendsAnalysis.ejs')
+})
+app.get('/accountcheck',(req,res)=>{
+	res.render('accountcheck.ejs')
 })
 app.get('/instagram',(req,res)=>{
 	res.render('instagram.ejs')
@@ -132,6 +136,21 @@ app.get('/usertrends/result',(req,res)=>{
 
 	});
 })
+
+app.get('/username/result',(req,res)=>{
+	let options = {
+		mode: 'text',
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: `${__dirname}/../Python_Scripts/username_check/`,
+		args: [checkusername]
+	}
+	PythonShell.run('check.py', options, function (err, results) {
+		if (err) throw err;
+		else{
+			 res.render('accountcheckOutput.ejs',{data:checkusername});
+		}
+	});
+})
 	// console.log('username is',username);
 	// 	const python = spawn('python', [
 	// 	'D:\\Web Development\\OSINT-Tool\\Python_Scripts\\instagram\\main.py'
@@ -171,6 +190,11 @@ app.get('/usertrends/result',(req,res)=>{
 // 		});
 // });
 //*POST
+app.post('/accountcheck',(req,res)=>{
+	checkusername = req.body.username;//saving username in the current session storage
+	console.log('username',checkusername);
+	res.redirect('/username/result');//redircting to send basic result
+})
 app.post('/instagram',(req,res)=>{
 	instaUsername = req.body.username;//saving username in the current session storage
 	console.log('username',instaUsername);
@@ -182,11 +206,11 @@ app.post('/twitter',(req,res)=>{
 	console.log(twitterUsername,stringToFind)
 	res.redirect('/twitter/result');//redircting to send basic result
 })
-app.post('/hashtags',(req,res)=>{
-	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
-	console.log(twitterHashtag)
-	res.redirect('/similarhashtags/result');//redircting to send basic result
-})
+// app.post('/hashtags',(req,res)=>{
+// 	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
+// 	console.log(twitterHashtag)
+// 	res.redirect('/similarhashtags/result');//redircting to send basic result
+// })
 app.post('/userTrendsAction',(req,res)=>{
 	twitterUsername = req.body.username//saving hashtag in the current session storage
 	console.log(twitterUsername)
@@ -199,7 +223,7 @@ app.post('/geotagging',(req,res)=>{
 	console.log(radius,lattitude,longitude)
 	res.redirect('/geotagging/result')
 })
-const server = app.listen(port, () =>
+const server = app.listen(process.env.port || 3000, () =>
 	console.log(`Example app listening on port 
 ${port}!`)
 );
