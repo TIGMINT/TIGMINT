@@ -128,8 +128,14 @@ def main(user):
     # print(args)
     # usern = input()
     a= downloader(user, 'True')
-    a.getStories()
-    downloader.getStories(user)
-    a.getHighlights()
-    downloader.getHighlights(user)
+    try:
+    	a.getStories()
+    except:
+    	pass
+    #downloader.getStories(user)
+    try:
+    	a.getHighlights()
+    except:
+    	pass
+    #downloader.getHighlights(user)
 
