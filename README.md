@@ -5,7 +5,7 @@ An **OSINT** framework with an objective of making investigations more convinien
 ### Preview
 ![TIGMINT](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(181).png)
 #### Modules
-![Modules](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(180).png)
+![Modules](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/2.png)
 ## Our Team
 ![Team](https://github.com/Yajassardana/TIGMINT/blob/master/ReadMeImages/Screenshot%20(172).png)
 ### Documentation
