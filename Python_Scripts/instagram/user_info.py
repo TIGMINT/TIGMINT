@@ -54,8 +54,9 @@ def Username(user):
 	
 	with open('instagram_'+user+'.json', 'w') as json_file:
 		json.dump(output, json_file)
+	#shutil.make_archive(user+'-data', 'zip', os.getcwd())
 
-	return json_data['is_private']
+	return os.getcwd()
 	
 # user = input("Enter Username : ")
 # # Username(user)

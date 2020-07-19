@@ -1,5 +1,6 @@
 import requests, urllib3
 import os, re
+import user_info
 from tqdm import tqdm
 from sys import exit
 from html import unescape
@@ -41,7 +42,7 @@ class downloader(object):
                 r = requests.get(url, verify=False)
                 parser = urlparse(url)
                 filename = os.path.basename(parser.path)
-                # print(filename)
+                print(filename)
                 # retval = os.getcwd()
                 # print("directory is")
                 # print(retval)
@@ -138,4 +139,5 @@ def main(user):
     except:
     	pass
     #downloader.getHighlights(user)
+    #shutil.make_archive(user, 'zip', user_info)
 
