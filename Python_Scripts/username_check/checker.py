@@ -41,9 +41,12 @@ def github(username):
 
 def twitter(username):
     service_name = "Twitter"
-    url = "https://twitter.com/" + username
+    url = "https://mobile.twitter.com/" + username
     response = requests.get(url)
+    #response_text = response.text
+    #print(response_text)
     if(response.status_code == 200):
+        url = url.replace("mobile.","")
         print("*[Twitter] " + url)
         save(service_name,url)
         return service_name, url
