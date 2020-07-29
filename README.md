@@ -25,7 +25,7 @@ An **OSINT** framework with an objective of making investigations more convinien
 - NPM;
 - nltk;
 
-### Linux Meta-analysis Requirments
+### Linux Meta-Analysis Requirment
 
 ```bash
 sudo apt install exiftool
