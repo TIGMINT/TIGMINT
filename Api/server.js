@@ -61,11 +61,17 @@ app.get('/instagram/result',(req,res)=>{
 	}
 	PythonShell.run('main.py', options, function (err, results) {
 		// if (err) throw err;
+		if (err) {
+			res.render('error.ejs');
+		}
 		// results is an array consisting of messages collected during execution
-		let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/instagram/instagram_${instaUsername}/instagram_${instaUsername}.json`);
-		let data = JSON.parse(rawdata);
-		console.log(data);
-		res.render('instaOutput.ejs',{data:data})
+		else
+		{
+			let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/instagram/instagram_${instaUsername}/instagram_${instaUsername}.json`);
+			let data = JSON.parse(rawdata);
+			console.log(data);
+			res.render('instaOutput.ejs',{data:data})
+		}
 	});
 });
 
