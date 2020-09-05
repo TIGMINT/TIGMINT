@@ -6,6 +6,7 @@ const fs = require('fs');
 
 const app = express();
 const bodyParser = require("body-parser");
+let checkusername = "";
 let instaUsername = "";
 let twitterUsername = "";
 let stringToFind="";
@@ -29,6 +30,15 @@ app.get('/geotagging',(req,res)=>{
 })
 app.get('/twitteranalysis',(req,res)=>{
 	res.render('twitterAnalysis.ejs')
+})
+app.get('/similarhashtags',(req,res)=>{
+	res.render('hashtagAnalysis.ejs')
+})
+app.get('/usertrends',(req,res)=>{
+	res.render('trendsAnalysis.ejs')
+})
+app.get('/accountcheck',(req,res)=>{
+	res.render('accountcheck.ejs')
 })
 app.get('/instagram',(req,res)=>{
 	res.render('instagram.ejs')
@@ -66,7 +76,9 @@ app.get('/geotagging/result',(req,res)=>{
 		args: [lattitude,longitude,radius]
 	}
 	PythonShell.run('top_mentions_hashtags_geo.py', options, function (err, results) {
-		if (err) throw err;
+		if (err) {
+			res.render('error.ejs');
+		}
 		else{
 			console.log(results)
 			let coordinates = `${lattitude}, ${longitude}`
@@ -85,11 +97,68 @@ app.get('/twitter/result',(req,res)=>{
 		args: [twitterUsername,stringToFind]
 	}
 	PythonShell.run('func_call.py', options, function (err, results) {
-		if (err) throw err;
+		if (err) {
+			res.render('error.ejs');
+		}
 		else{
 			 res.render('twitterUserOutput.ejs',{username:twitterUsername});
 		}
 		
+	});
+})
+
+app.get('/similarhashtags/result',(req,res)=>{
+	let options = {
+		mode: 'text',
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: `${__dirname}/../Python_Scripts/twitter/similar_hashtags`,
+		args: [twitterHashtag]
+	}
+	PythonShell.run('similar_hashtags.py', options, function (err, results) {
+		if (err) {
+			res.render('error.ejs');
+		}
+		else{
+			 twitterHashtag = twitterHashtag.replace("#","");
+			 //console.log(twitterHashtag);
+			 res.render('hashtagsOutput.ejs',{data:twitterHashtag});
+		}
+
+	});
+})
+
+app.get('/usertrends/result',(req,res)=>{
+	let options = {
+		mode: 'text',
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: `${__dirname}/../Python_Scripts/twitter/top_mentions_hashtags`,
+		args: [twitterUsername]
+	}
+	PythonShell.run('top_mentions_hashtags.py', options, function (err, results) {
+		if (err) {
+			res.render('error.ejs');
+		}
+		else{
+			 res.render('twitterOutput.ejs',{data:twitterUsername});
+		}
+
+	});
+})
+
+app.get('/username/result',(req,res)=>{
+	let options = {
+		mode: 'text',
+		pythonOptions: ['-u'], // get print results in real-time
+		scriptPath: `${__dirname}/../Python_Scripts/username_check/`,
+		args: [checkusername]
+	}
+	PythonShell.run('check.py', options, function (err, results) {
+		if (err) {
+			res.render('error.ejs');
+		}
+		else{
+			 res.render('accountcheckOutput.ejs',{data:checkusername});
+		}
 	});
 })
 	// console.log('username is',username);
@@ -131,6 +200,11 @@ app.get('/twitter/result',(req,res)=>{
 // 		});
 // });
 //*POST
+app.post('/accountcheck',(req,res)=>{
+	checkusername = req.body.username;//saving username in the current session storage
+	console.log('username',checkusername);
+	res.redirect('/username/result');//redircting to send basic result
+})
 app.post('/instagram',(req,res)=>{
 	instaUsername = req.body.username;//saving username in the current session storage
 	console.log('username',instaUsername);
@@ -141,6 +215,16 @@ app.post('/twitter',(req,res)=>{
 	stringToFind = req.body.string;
 	console.log(twitterUsername,stringToFind)
 	res.redirect('/twitter/result');//redircting to send basic result
+})
+// app.post('/hashtags',(req,res)=>{
+// 	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
+// 	console.log(twitterHashtag)
+// 	res.redirect('/similarhashtags/result');//redircting to send basic result
+// })
+app.post('/userTrendsAction',(req,res)=>{
+	twitterUsername = req.body.username//saving hashtag in the current session storage
+	console.log(twitterUsername)
+	res.redirect('/usertrends/result');//redircting to send basic result
 })
 app.post('/geotagging',(req,res)=>{
 	lattitude = req.body.lattitude;
@@ -156,5 +240,9 @@ app.post('/geotagging',(req,res)=>{
 const server = app.listen(process.env.PORT || 3000, function(){
 	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
+// const server = app.listen(process.env.port || 3000, () =>
+// 	console.log(`Example app listening on port 
+// ${port}!`)
+// );
 
 server.timeout = 480000;

@@ -6,8 +6,11 @@ html {
 
 body {
   background-color: #242f3f;
+  font-family: sans-serif;
 }
-
+.full-form{
+  font-weight: 600;
+}
 .loader {
   display: inline-block;
   width: 100px;

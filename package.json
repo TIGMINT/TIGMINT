@@ -1,5 +1,5 @@
 {
-	"name": "tigmintv1",
+	"name": "tigmint",
 	"version": "1.0.1",
 	"description": "Osint tool for social media websites",
 	"main": "Api/server.js",
@@ -8,14 +8,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Yajassardana/Osint-Tool-.git"
+		"url": "git+https://github.com/TIGMINT/TIGMINT.git"
 	},
 	"author": "GPCSI Team of 9",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Yajassardana/Osint-Tool-/issues"
+		"url": "https://github.com/TIGMINT/TIGMINT/issues"
 	},
-	"homepage": "https://github.com/Yajassardana/Osint-Tool-#readme",
+	"homepage": "https://github.com/TIGMINT/TIGMINT#readme",
 	"dependencies": {
 		"body-parser": "^1.19.0",
 		"csvtojson": "^2.0.10",
@@ -23,5 +23,7 @@
 		"express": "^4.17.1",
 		"nodemon": "^2.0.4",
 		"python-shell": "^2.0.1"
-	}
+	},
+	"publishConfig": { "registry": "https://npm.pkg.github.com/" }
+
 }

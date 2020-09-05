@@ -92,7 +92,11 @@ def save_result(c, filename):
     # os.chdir(os.getcwd() + '/result/twitterUser/')
 
     c.Store_csv = True
-    # 
+    #
+    try:
+        os.mkdir(os.getcwd()+'/Python_Scripts/result/twitterUser/')
+    except:
+        pass
     c.Output = os.getcwd()+'/Python_Scripts/result/twitterUser/'+ filename + ".csv"
     return True
 

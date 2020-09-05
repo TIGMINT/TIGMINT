@@ -41,6 +41,13 @@
             <!-- <h1 class="profile-user-name">USERNAME: janedoe_</h1> -->
             <h1 class="profile-user-name">Full Name: <%=data.full_name%></h1>
           </div>
+          <div class="profile-user-settings">
+            <!-- <h1 class="profile-user-name">USERNAME: janedoe_</h1> -->
+            <h1 class="profile-user-name" style="font-size: 2em;"><b>Biography:</b><em> <%=data.biography%></em></h1>
+            <br><br>
+            <h5><b>External Url: &nbsp;</b><em><%=data.external_url%></em> </h5>
+          </div>
+          
 
           <div class="profile-stats">
             <ul>
@@ -70,14 +77,38 @@
             </p>
           </div> -->
         </div>
+
+        <div class="container-fluid" style="width: 100%;">
+        	<div class="row">
+        	<div class="col-md-4">
+        		<button class="btn btn-warning" type="button">
+ Private Account:<span class="badge"><%=data.Private_Account%></span>
+</button>
+        	</div>
+        	<div class="col-md-4">
+        		<button class="btn btn-primary" type="button">
+  Verified Account: <span class="badge"><%=data.Verified_Account%></span>
+</button>
+        	</div>
+        	<div class="col-md-4">
+        		<button class="btn btn-info" type="button">
+  Business Account: <span class="badge"><%=data.Business_Account%></span>
+</button>
+        	</div>
+        	
+</div>
+        	
+        </div>
+        <br>
         <a type="button" class="btn btn-info" href="/">
           Back
         </a>
-        <a type="button" class="btn btn-success" href="/instagram/instagram_rakshit.tandon/instagram_rakshit.tandon.jpg" download="story">
-          Download Latest Story
+        <a type="button" class="btn btn-success" href="/instagram/instagram_<%=data.username%>/<%=data.username%>-data.zip" download="story">
+          Download Profile Stories & Data
         </a>
         <!-- End of profile section -->
       </div>
+      
       <!-- End of container -->
     </header>
   </body>

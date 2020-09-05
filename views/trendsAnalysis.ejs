@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter User Trends Analysis</title>
+  <link rel="icon" type="image/png" href="/img/favicon2.png" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <style>
+    .container {
+      text-align: center;
+      width: fit-content;
+      max-width: fit-content;
+      margin-top: 5%;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      width: fit-content;
+      align-items: center;
+      padding: 5%;
+    }
+
+    form {
+      margin-top: 7%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>Enter Username:</h3>
+    <form action="/userTrendsAction" method="post">
+      <div class="form-group">
+        <input class="form-control" type="text" name="username" placeholder="Username">
+      </div>
+        <div class="form-group">
+          <button class="btn btn-md btn-block btn-primary">Analyze</button>
+          </div>
+    </form>
+    <a type="button" class="btn btn-info" href="/">
+      Back
+    </a>
+  </div>
+
+</body>
+
+</html>

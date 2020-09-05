@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Similar Hashtags Output</title>
   <link
   rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -26,13 +26,17 @@
   <div class="container">
     <h1>Results</h1>
     <div class="row">
-      <div class="col-md-6">
-        <img src="28.704060, 77.102493-mentions.png" alt="mentions">
-      </div>
-      <div class="col-md-6">
-        <img src="28.704060, 77.102493-hashtags.png" alt="hashtags">
+      
+      <div class="col-md-12">
+        <center><img src="/twitter/twitter-hashtag_<%=data%>.png" alt="hashtags" class="img-responsive" style="width:70%"></center>
       </div>
     </div>
+    <a type="button" class="btn btn-info" href="/">
+      Back
+    </a>
+    <a type="button" class="btn btn-success" href="/twitter/twitter-hashtag_<%=data%>-tweets.csv" download>
+      Download Tweets
+    </a>
   </div>
 </body>
 </html>
