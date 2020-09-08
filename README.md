@@ -1,21 +1,28 @@
-# TIGMINT
-### Twitter, Instagram and Geo-Tagging Media Intelligence
+<p align="center">
+ <img width="200px" src="https://avatars2.githubusercontent.com/u/70790075?s=400&u=933035c29b4ba713545ee7fd956abfdaa564e5d5&v=4" align="center" alt="TIGMINT" />
+ <h2 align="center">TIGMINT : Twitter, Instagram and Geo-Tagging Media Intelligence</h2>
 
-An **OSINT** framework with an objective of making investigations more convinient by making **SOCMINT** tools accessible remotely on our website without having to install any dependencies.
-### Preview
+</p>
+
+## Introduction
+
+An **OSINT (Open Source Intelligence)** software framework with an objective of making cyber investigations more convinient by implementing abstraction mechanisms to hide the background technical complexity also bundling different analysis techniques for **social media Intelligence** together providing a simple intuitive web interface for the user to work with.
+
+## Preview
 ![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(181).png)
-#### Modules
+### Modules
 ![Modules](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/2.png)
-## Our Team
+### Our Team
 ![Team](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(172).png)
 ### Documentation
 ![Docs](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(173).png)
-#### Account Finder
+### Account Finder
 ![Account Finder](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(174).png)
-#### Twitter Analyser
+### Twitter Analyser
 ![Twitter Analyser](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(175).png)
 
 ## Local Setup
+
 ### Requirements
 - Python 3.6;
 - beautifulsoup4;
