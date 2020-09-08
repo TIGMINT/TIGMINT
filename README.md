@@ -3,6 +3,21 @@
  <h2 align="center">TIGMINT : Twitter, Instagram and Geo-Tagging Media Intelligence</h2>
 </p>
 
+<p align="center">
+    <a href="https://github.com/TIGMINT/TIGMINT/graphs/contributors">
+      <img alt="Tests Passing" src="https://img.shields.io/github/contributors/tigmint/tigmint" />
+    </a>
+    <a href="https://github.com/TIGMINT/TIGMINT">
+      <img src="https://img.shields.io/github/languages/count/tigmint/tigmint" />
+    </a>
+    <a href="https://github.com/TIGMINT/TIGMINT/network/members">
+      <img alt="Forks" src="https://img.shields.io/github/forks/tigmint/tigmint?style=social" />
+    </a>
+    <a href="https://github.com/TIGMINT/TIGMINT/stargazers">
+      <img alt="Github Stars" src="https://img.shields.io/github/stars/tigmint/tigmint?style=social" />
+    </a>
+  </p>
+  
 ## Introduction
 
 An **OSINT (Open Source Intelligence)** software framework with an objective of making cyber investigations more convinient by implementing abstraction mechanisms to hide the background technical complexity also bundling different analysis techniques for **social media Intelligence** together providing a simple intuitive web interface for the user to work with.
