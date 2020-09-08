@@ -41,29 +41,6 @@ def get_similar_hashtags(seed_hashtag, limit=500):
   plt.yticks(range(len(hashtags_ranked)), list(hashtags_ranked.keys()))
   plt.gca().invert_yaxis()  # just to have the highest bar at the top
   plt.title("Most Related Hashtags to " + seed_hashtag)
-<<<<<<< HEAD
-  os.chdir('Python_Scripts')
-  currentDirectory = os.getcwd()
-  if not os.path.exists('result'):
-        os.makedirs('result')
-  os.chdir(currentDirectory + '/result/twitter/')
-
-  plt.savefig(os.getcwd() + '/twitter_'+seed_hashtag + '.png', bbox_inches='tight') # saves the visualization as png
-  # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-  plt.show()
-  print("List of most related hashtags to "+ seed_hashtag + " :")
-  print(top_hashtags) # displays the top 15 hashtags as a list.
-  plt.close()
-  twint.output.tweets_list = []
-
-def main(): 
-  # seed_hashtags =["#tiktok", "#blacklivesmatter", "#google", "#covid19"]
-  seed_hashtags =["#blacklivesmatter"]
-  limit = 500  # limits the number of tweets to pull
-  for seed_hashtag in seed_hashtags:
-    get_similar_hashtags(seed_hashtag, limit)
-main()
-=======
   os.chdir(currentDir)
   seed_hashtag = seed_hashtag.replace("#", "")
   plt.savefig('twitter-hashtag_'+seed_hashtag + '.png', bbox_inches='tight') # saves the visualization as png
@@ -81,5 +58,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
->>>>>>> 982a1bfbb212dc17e466d4a5af6034b3ae90d823
