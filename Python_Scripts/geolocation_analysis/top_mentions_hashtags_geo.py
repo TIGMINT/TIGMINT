@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import os
 
 def get_top_mentions_hashtags_geo(lat_long, radius, limit):
+    os.chdir("Python_Scripts")
     currentDir = os.getcwd() + "/result/twitter/"
     try:
         os.mkdir(currentDir)
