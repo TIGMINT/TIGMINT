@@ -104,8 +104,8 @@ app.get('/twitter/result',(req,res)=>{
 	}
 	PythonShell.run('func_call.py', options, function (err, results) {
 		if (err) {
-			//res.render('error.ejs');
-			throw err;
+			res.render('error.ejs');
+			//throw err;
 		}
 		else{
 			 res.render('twitterUserOutput.ejs',{username:twitterUsername});
