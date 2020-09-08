@@ -163,7 +163,11 @@ app.get('/username/result',(req,res)=>{
 			res.render('error.ejs');
 		}
 		else{
-			 res.render('accountcheckOutput.ejs',{data:checkusername});
+			 let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/userpresent.json`);
+			 let data = JSON.parse(rawdata);
+			 data = JSON.stringify(data);
+			 console.log(data);
+			 res.render('accountcheckOutput.ejs',{data:data});
 		}
 	});
 })

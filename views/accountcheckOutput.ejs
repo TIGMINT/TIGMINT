@@ -19,6 +19,32 @@
     text-align: center;
     margin-top: 1rem;
   }
+  th, td {
+    border: 1px solid;
+}
+th {
+    font-weight : bold
+}
+#testing {
+  font-family:"Helvetica", sans-serif;
+  font-size:17px;
+  background: #3e3e3e;
+  color: #ffffff;
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  top: 40px;
+  padding: 20px;
+  text-align: center;
+  border-top: 3px solid #ababab;
+  border-bottom: 3px solid #ababab;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.53);
+  -webkit-box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.53);
+}
  
 </style>
 </head>
@@ -26,63 +52,29 @@
   <div class="container">
     <h1>Results</h1>
     <div class="row">
-    <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
-    <p id="showData"></p>
+    <!-- <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" /> -->
+    <div id="testing">
+      <script>
+        let raw = "<%= data %>";
+        raw = raw.replaceAll('{','');
+        raw = raw.replaceAll('}','');
+        raw = raw.replaceAll("https://", "");
+        raw = raw.split(',');
+        for (i = 0; i < raw.length; i++) {
+        var urls = raw[i].split(':');
+        urls[1] =urls[1].replaceAll('/"','');
+    document.getElementById("testing").innerHTML += "<p> <span style='color:red;'>" + urls[0] + "</span> : " + " <span style='color:green;'>" + urls[1] + " </span>" + "</p>";
+}
+      </script>
+
+      <p style="color:red;"></p></div>
+    
     <!-- need works= -->
       <!-- <div class="col-md-12">
         <center><img src="/twitter/twitter-hashtag_<%=data%>.png" alt="hashtags" class="img-responsive" style="width:70%"></center>
       </div> -->
-      <script>
-        // fetch('userpresent.json')
-        //     .then(function (response) {
-        //         return response.json();
-        //     })
-        //     .then(function (data) {
-        //         appendData(data);
-        //     })
-        //     .catch(function (err) {
-        //         console.log('error: ' + err);
-        //     });
-        // var readJson = (path, cb) => {
-        // fs.readFile(require.resolve(path), (err, data) => {
-        //     if (err)
-        //     cb(err)
-        //     else
-        //     cb(null, JSON.parse(data))
-        // })
-        // }
-        // function CreateTableFromJSON() {
-        var json = JSON.parse(fs.readFileSync('./userpresent.json').toString());
-        console.log(json)
-        var col = [];
-        for (var i = 0; i < json.length; i++) {
-            for (var key in json[i]) {
-                if (col.indexOf(key) === -1) {
-                    col.push(key);
-                }
-            }
-        }
-        var table = document.createElement("table");
-        var tr = table.insertRow(-1);                   // TABLE ROW.
-        for (var i = 0; i < col.length; i++) {
-            var th = document.createElement("th");      // TABLE HEADER.
-            th.innerHTML = col[i];
-            tr.appendChild(th);
-        }
-        for (var i = 0; i < json.length; i++) {
-
-        tr = table.insertRow(-1);
-
-        for (var j = 0; j < col.length; j++) {
-            var tabCell = tr.insertCell(-1);
-            tabCell.innerHTML = json[i][col[j]];
-        }
-        }
-        var divContainer = document.getElementById("showData");
-        divContainer.innerHTML = "";
-        divContainer.appendChild(table);
-    // }
-      </script>
+      
+     
 
     </div>
     <a type="button" class="btn btn-info" href="/">
