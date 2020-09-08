@@ -11,7 +11,7 @@
 		"url": "git+https://github.com/TIGMINT/TIGMINT.git"
 	},
 	"author": "GPCSI Team of 9",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/TIGMINT/TIGMINT/issues"
 	},
