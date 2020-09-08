@@ -5,10 +5,6 @@ import matplotlib.pyplot as plt
 import os
 
 def get_top_mentions_hashtags_geo(lat_long, radius, limit):
-<<<<<<< HEAD
-    # os.chdir("Python_Scripts")
-    
-=======
     os.chdir("Python_Scripts")
     currentDir = os.getcwd() + "/result/twitter/"
     try:
@@ -16,7 +12,6 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     except:
         pass
     os.chdir(currentDir)
->>>>>>> 982a1bfbb212dc17e466d4a5af6034b3ae90d823
     twint.output.tweets_list = []
     c = twint.Config()
     c.Hide_output = True  # hides command line verbose output
