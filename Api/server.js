@@ -84,6 +84,7 @@ app.get('/geotagging/result',(req,res)=>{
 	PythonShell.run('top_mentions_hashtags_geo.py', options, function (err, results) {
 		if (err) {
 			res.render('error.ejs');
+			//throw err;
 		}
 		else{
 			console.log(results)
@@ -227,11 +228,11 @@ app.post('/twitter',(req,res)=>{
 	console.log(twitterUsername,stringToFind)
 	res.redirect('/twitter/result');//redircting to send basic result
 })
-// app.post('/hashtags',(req,res)=>{
-// 	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
-// 	console.log(twitterHashtag)
-// 	res.redirect('/similarhashtags/result');//redircting to send basic result
-// })
+app.post('/hashtags',(req,res)=>{
+ 	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
+ 	console.log(twitterHashtag)
+ 	res.redirect('/similarhashtags/result');//redircting to send basic result
+})
 app.post('/userTrendsAction',(req,res)=>{
 	twitterUsername = req.body.username//saving hashtag in the current session storage
 	console.log(twitterUsername)
