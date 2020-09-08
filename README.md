@@ -1,5 +1,5 @@
 <p align="center">
- <img width="400px" src="https://github.com/TIGMINT/TIGMINT/raw/master/TIGMINT.png" align="center" alt="TIGMINT" />
+ <img width="400px" src="https://github.com/TIGMINT/TIGMINT/raw/master/TIGMINT-logo.png" align="center" alt="TIGMINT" />
  <h2 align="center">TIGMINT : Twitter, Instagram and Geo-Tagging Media Intelligence</h2>
 </p>
 
