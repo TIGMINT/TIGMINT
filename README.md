@@ -4,8 +4,11 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/TIGMINT/TIGMINT/graphs/contributors">
-      <img alt="Tests Passing" src="https://img.shields.io/github/contributors/tigmint/tigmint" />
+    <a href="https://github.com/TIGMINT/TIGMINT/blob/master/LICENSE">
+      <img alt="License" src="https://img.shields.io/github/license/tigmint/tigmint?color=orange" />
+    </a>
+ <a href="https://github.com/TIGMINT/TIGMINT/graphs/contributors">
+      <img alt="Contributors" src="https://img.shields.io/badge/Contributors-9-green" />
     </a>
     <a href="https://github.com/TIGMINT/TIGMINT">
       <img src="https://img.shields.io/github/languages/count/tigmint/tigmint" />
