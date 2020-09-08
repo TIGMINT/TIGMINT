@@ -4,6 +4,9 @@
 </p>
 
 <p align="center">
+ <a href="https://github.com/TIGMINT/TIGMINT/blob/master/LICENSE">
+      <img alt="Releases" src="https://img.shields.io/github/v/release/tigmint/tigmint?include_prereleases&color=blueviolet" />
+    </a>
     <a href="https://github.com/TIGMINT/TIGMINT/blob/master/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/tigmint/tigmint?color=orange" />
     </a>
