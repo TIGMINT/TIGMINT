@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
- <a href="https://github.com/TIGMINT/TIGMINT/blob/master/LICENSE">
+ <a href="https://github.com/TIGMINT/TIGMINT/releases">
       <img alt="Releases" src="https://img.shields.io/github/v/release/tigmint/tigmint?include_prereleases&color=blueviolet" />
     </a>
     <a href="https://github.com/TIGMINT/TIGMINT/blob/master/LICENSE">
