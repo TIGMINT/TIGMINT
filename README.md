@@ -1,7 +1,6 @@
 <p align="center">
  <img width="200px" src="https://avatars2.githubusercontent.com/u/70790075?s=400&u=933035c29b4ba713545ee7fd956abfdaa564e5d5&v=4" align="center" alt="TIGMINT" />
  <h2 align="center">TIGMINT : Twitter, Instagram and Geo-Tagging Media Intelligence</h2>
-
 </p>
 
 ## Introduction
