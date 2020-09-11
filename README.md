@@ -48,6 +48,8 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 ![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/4.png)
 ![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/8.png)
 ![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/9.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/10.png)
+
 
 ## Local Setup
 
