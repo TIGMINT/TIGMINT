@@ -62,6 +62,7 @@ app.get('/instagram/result',(req,res)=>{
 	PythonShell.run('main.py', options, function (err, results) {
 		// if (err) throw err;
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		// results is an array consisting of messages collected during execution
@@ -83,6 +84,7 @@ app.get('/geotagging/result',(req,res)=>{
 	}
 	PythonShell.run('top_mentions_hashtags_geo.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 			//throw err;
 		}
@@ -105,6 +107,7 @@ app.get('/twitter/result',(req,res)=>{
 	}
 	PythonShell.run('func_call.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 			//throw err;
 		}
@@ -124,6 +127,7 @@ app.get('/similarhashtags/result',(req,res)=>{
 	}
 	PythonShell.run('similar_hashtags.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		else{
@@ -144,6 +148,7 @@ app.get('/usertrends/result',(req,res)=>{
 	}
 	PythonShell.run('top_mentions_hashtags.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		else{
@@ -162,6 +167,7 @@ app.get('/username/result',(req,res)=>{
 	}
 	PythonShell.run('check.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		else{
