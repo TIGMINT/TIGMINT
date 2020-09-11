@@ -31,7 +31,7 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 ## Preview
 ![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(181).png)
 ### Modules
-![Modules](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/2.png)
+![Modules](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20from%202020-09-11%2012-17-33.png)
 ### Our Team
 ![Team](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(172).png)
 ### Documentation
@@ -40,6 +40,14 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 ![Account Finder](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(174).png)
 ### Twitter Analyser
 ![Twitter Analyser](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(175).png)
+
+## Working Tool Screenshots
+
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/1.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/2.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/4.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/8.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/9.png)
 
 ## Local Setup
 
