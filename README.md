@@ -62,7 +62,7 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 - NPM;
 - nltk;
 
-## Note
+## Windows Setup Issues
 For windows users, if the setup fails or application is redirecting to 404 error page always. You can verify the below steps.
 1. Verify all the modules in requirements.txt are successfully installed using <b>pip3 install -r requirements.txt </b> Command . In windows you have to manually install wordcloud module based on your python version. <br>
 [WordCloud module download Link](https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud) &nbsp;&nbsp;|&nbsp;&nbsp; [StackOverflow Help Thread](https://stackoverflow.com/questions/41409570/cant-install-wordcloud-in-python-anaconda) <br>
