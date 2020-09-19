@@ -62,6 +62,16 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 - NPM;
 - nltk;
 
+## Note
+For windows users, if the setup fails or application is redirecting to 404 error page always. You can verify the below steps.
+1. Verify all the modules in requirements.txt are successfully installed using <b>pip3 install -r requirements.txt </b> Command . In windows you have to manually install wordcloud module based on your python version. <br>
+[WordCloud module download Link](https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud) &nbsp;&nbsp;|&nbsp;&nbsp; [StackOverflow Help Thread](https://stackoverflow.com/questions/41409570/cant-install-wordcloud-in-python-anaconda) <br>
+Ex: If you had python 3.6 installed, then you have to install <i></b>wordcloud‑1.8.0‑cp36‑cp36m‑win_amd64.whl</i></b> module from the above link. 
+<br> After installing the wordcloud module, run command <b> pip install -r requirements.txt </b> again to check if all requirements are installed successfully.
+2. Check if all Node requirements are installed using <b>npm install</b> command.
+
+If you still had any problems please open a issue with module name, operating system, input and output and console log. We will try to fix the issue as soon as possible.
+
 ### Linux Meta-Analysis Requirment
 
 ```bash
