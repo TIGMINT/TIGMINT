@@ -62,6 +62,7 @@ app.get('/instagram/result',(req,res)=>{
 	PythonShell.run('main.py', options, function (err, results) {
 		// if (err) throw err;
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		// results is an array consisting of messages collected during execution
@@ -83,7 +84,9 @@ app.get('/geotagging/result',(req,res)=>{
 	}
 	PythonShell.run('top_mentions_hashtags_geo.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
+			//throw err;
 		}
 		else{
 			console.log(results)
@@ -104,7 +107,9 @@ app.get('/twitter/result',(req,res)=>{
 	}
 	PythonShell.run('func_call.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
+			//throw err;
 		}
 		else{
 			 res.render('twitterUserOutput.ejs',{username:twitterUsername});
@@ -122,6 +127,7 @@ app.get('/similarhashtags/result',(req,res)=>{
 	}
 	PythonShell.run('similar_hashtags.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		else{
@@ -142,6 +148,7 @@ app.get('/usertrends/result',(req,res)=>{
 	}
 	PythonShell.run('top_mentions_hashtags.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		else{
@@ -160,10 +167,15 @@ app.get('/username/result',(req,res)=>{
 	}
 	PythonShell.run('check.py', options, function (err, results) {
 		if (err) {
+			console.log(err);
 			res.render('error.ejs');
 		}
 		else{
-			 res.render('accountcheckOutput.ejs',{data:checkusername});
+			 let rawdata = fs.readFileSync(`${__dirname}/../Python_Scripts/result/userpresent.json`);
+			 let data = JSON.parse(rawdata);
+			 data = JSON.stringify(data);
+			 console.log(data);
+			 res.render('accountcheckOutput.ejs',{data:data});
 		}
 	});
 })
@@ -222,11 +234,11 @@ app.post('/twitter',(req,res)=>{
 	console.log(twitterUsername,stringToFind)
 	res.redirect('/twitter/result');//redircting to send basic result
 })
-// app.post('/hashtags',(req,res)=>{
-// 	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
-// 	console.log(twitterHashtag)
-// 	res.redirect('/similarhashtags/result');//redircting to send basic result
-// })
+app.post('/hashtags',(req,res)=>{
+ 	twitterHashtag = req.body.hashtag//saving hashtag in the current session storage
+ 	console.log(twitterHashtag)
+ 	res.redirect('/similarhashtags/result');//redircting to send basic result
+})
 app.post('/userTrendsAction',(req,res)=>{
 	twitterUsername = req.body.username//saving hashtag in the current session storage
 	console.log(twitterUsername)

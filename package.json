@@ -11,7 +11,7 @@
 		"url": "git+https://github.com/TIGMINT/TIGMINT.git"
 	},
 	"author": "GPCSI Team of 9",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/TIGMINT/TIGMINT/issues"
 	},
@@ -24,6 +24,7 @@
 		"nodemon": "^2.0.4",
 		"python-shell": "^2.0.1"
 	},
-	"publishConfig": { "registry": "https://npm.pkg.github.com/" }
-
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	}
 }

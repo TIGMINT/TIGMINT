@@ -31,7 +31,7 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 ## Preview
 ![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(181).png)
 ### Modules
-![Modules](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/2.png)
+![Modules](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20from%202020-09-11%2012-17-33.png)
 ### Our Team
 ![Team](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(172).png)
 ### Documentation
@@ -40,6 +40,16 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 ![Account Finder](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(174).png)
 ### Twitter Analyser
 ![Twitter Analyser](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/Screenshot%20(175).png)
+
+## Working Tool Screenshots
+
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/1.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/2.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/4.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/8.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/9.png)
+![TIGMINT](https://github.com/TIGMINT/TIGMINT/blob/master/ReadMeImages/10.png)
+
 
 ## Local Setup
 
@@ -51,6 +61,16 @@ An **OSINT (Open Source Intelligence)** software framework with an objective of 
 - pandas;
 - NPM;
 - nltk;
+
+## Windows Setup Issues
+For windows users, if the setup fails or application is redirecting to 404 error page always. You can verify the below steps.
+1. Verify all the modules in requirements.txt are successfully installed using <b>pip3 install -r requirements.txt </b> Command . In windows you have to manually install wordcloud module based on your python version. <br>
+[WordCloud module download Link](https://www.lfd.uci.edu/~gohlke/pythonlibs/#wordcloud) &nbsp;&nbsp;|&nbsp;&nbsp; [StackOverflow Help Thread](https://stackoverflow.com/questions/41409570/cant-install-wordcloud-in-python-anaconda) <br>
+Ex: If you had python 3.6 installed, then you have to install <i></b>wordcloud‑1.8.0‑cp36‑cp36m‑win_amd64.whl</i></b> module from the above link. 
+<br> After installing the wordcloud module, run command <b> pip install -r requirements.txt </b> again to check if all requirements are installed successfully.
+2. Check if all Node requirements are installed using <b>npm install</b> command.
+
+If you still had any problems please open a issue with module name, operating system, input and output and console log. We will try to fix the issue as soon as possible.
 
 ### Linux Meta-Analysis Requirment
 
@@ -74,7 +94,8 @@ node Api/server.js
 
 [//]: contributor-faces
 
- <a href="https://github.com/Yajassardana"><img src="https://avatars0.githubusercontent.com/u/62782513?s=400&u=8f9cba3e81ba81ae4fbc2032926da55bc1bcc23c&v=4" title="Yajassardana" width="80" height="80"></a> <a href="https://github.com/kiranbabumuddam"><img src="https://avatars2.githubusercontent.com/u/26572836?s=400&u=81fb75089e21563554cf375f73030a44b69efae2&v=4" title="kiranbabumuddam" width="80" height="80"></a> <a href="https://github.com/kaustubhsh"><img src="https://avatars0.githubusercontent.com/u/37601331?s=400&u=1ae319dd3c0b399465bc90fb8948f80136fad164&v=4" title="kaustubhsh" width="80" height="80"></a>  <a href="https://github.com/Sumit-sah"><img src="https://avatars0.githubusercontent.com/u/67474183?s=400&v=4" title="Sumit-sah" width="80" height="80"></a>  <a href="https://github.com/Sakshi-25"><img src="https://avatars2.githubusercontent.com/u/49511150?s=400&u=a96a65bb47f7c65a27c246390d41ef8028017619&v=4" title="Sakshi-25" width="80" height="80"></a>
+ <a href="https://github.com/Yajassardana"><img src="https://avatars0.githubusercontent.com/u/62782513?s=400&u=8f9cba3e81ba81ae4fbc2032926da55bc1bcc23c&v=4" title="Yajassardana" width="80" height="80"></a> <a href="https://github.com/kiranbabumuddam"><img src="https://avatars2.githubusercontent.com/u/26572836?s=400&u=81fb75089e21563554cf375f73030a44b69efae2&v=4" title="Kiran Babu Muddam" width="80" height="80"></a> <a href="https://github.com/kaustubhsh"><img src="https://avatars0.githubusercontent.com/u/37601331?s=400&u=1ae319dd3c0b399465bc90fb8948f80136fad164&v=4" title="kaustubhsh" width="80" height="80"></a>  <a href="https://github.com/Sumit-sah"><img src="https://avatars0.githubusercontent.com/u/67474183?s=400&v=4" title="Sumit-sah" width="80" height="80"></a>  <a href="https://github.com/Sakshi-25"><img src="https://avatars2.githubusercontent.com/u/49511150?s=400&u=a96a65bb47f7c65a27c246390d41ef8028017619&v=4" title="Sakshi-25" width="80" height="80"></a><a href="https://github.com/chaudharypawansohlot"><img src="https://avatars0.githubusercontent.com/u/67505465?s=460&u=6dfd7c5977d79eeae206169c42e798830877d549&v=4" title="Chaudhary Pawan sohlot" width="80" height="80"></a><a href="https://github.com/niSarg1910"><img src="https://avatars2.githubusercontent.com/u/50866039?s=460&v=4" title="Nisarg Shah" width="80" height="80"></a><a href="https://github.com/Rishabh-2802"><img src="https://avatars1.githubusercontent.com/u/63997779?s=460&u=c652b258d1c88eac6b995db4f159508bebe805c6&v=4" title="Rishabh Sharma
+" width="80" height="80"></a>
 
 
 ## Note

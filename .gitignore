@@ -13,3 +13,6 @@ Python_Scripts/metadata_analysis/__pycache__
 Python_Scripts/twitter/__pycache__
 Python_Scripts/result/twitter/*
 Python_Scripts/result/instagram/*
+Python_Scripts/result/userpresent.json
+Python_Scripts/username_check/__pycache__/*
+Python_Scripts/result/twitterUser/*
