@@ -77,6 +77,7 @@ If you still had any problems please open a issue with module name, operating sy
 ```bash
 sudo apt install exiftool
 ```
+The above tool is required to retreive metadata from various file formats.
 
 ## Installing and running
 
