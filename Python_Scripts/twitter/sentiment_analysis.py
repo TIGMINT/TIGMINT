@@ -45,7 +45,7 @@ def getAnalysis(score):
 
 
 def analysis(tweets_df,username):
-    # train  = pd.read_csv('user_tweets.csv')
+    # train  = pd.read_csv('user_tweets.csv')   # training on the data 
     # test = pd.read_csv('test_data.csv')
 
     # combi = train.append(test, ignore_index=True)
@@ -55,7 +55,6 @@ def analysis(tweets_df,username):
     combi['Subjectivity'] = combi['tweet'].apply(getSubjectivity)
     combi['Polarity'] = combi['tweet'].apply(getPolarity)
     # Show the new dataframe with columns 'Subjectivity' & 'Polarity'
-    # combi
     combi['Analysis'] = combi['Polarity'].apply(getAnalysis)
     print_values(combi,username)
     print_wordcloud(combi,username)
@@ -146,11 +145,6 @@ def print_values(combi,username):
     plt.ylabel('Counts')
     df['Analysis'].value_counts().plot(kind = 'bar')
     # plt.show()
-    # os.chdir(os.getcwd()+'/Python_Scripts')
-    # currentDirectory = os.getcwd()
-    # if not os.path.exists('result'):
-    #     os.makedirs('result')
-    # os.chdir(currentDirectory + '/Python_Scripts/result/twitterUser/')
     try:
         os.mkdir(os.getcwd()+'/Python_Scripts/result/twitterUser/')
     except:

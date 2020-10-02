@@ -3,14 +3,6 @@ import sys,os
 import time
 import sentiment_analysis
 
-class HiddenPrints:
-    def __enter__(self):
-        self._original_stdout = sys.stdout
-        sys.stdout = open(os.devnull, 'w')
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        sys.stdout.close()
-        sys.stdout = self._original_stdout
 
 def get_user_tweets(username,search,analyse):
     c = twint.Config()    
@@ -47,17 +39,13 @@ def get_tweets(key, limit=100):
     if analyse == True:
         display_analysis_result(Tweets_df,key)
     
-    # with HiddenPrints():
-    #     print(twint.run.Search(c))
-    #     return twint.output.panda.Tweets_df[["username","tweet"]]
+    
 
 def get_user_bio(username,search):
     c = twint.Config()
-    # a = input("Enter username: ")
     c.Username = username
     save_result(c,username + "_user_bio")
     twint.run.Lookup(c)
-    # df = pd.read_csv (r'user_bio')
     # get_user_followers(username,search)
     get_user_tweets(username,search,True)
 
@@ -68,7 +56,6 @@ def get_user_followers(username,search):
     c.Username = username
     save_result(c,username + "user_followers")
     twint.run.Followers(c)
-    # save_result(c,username + "user_followers")
     get_user_following(username,search)
     
 def get_user_following(username,search):
@@ -79,20 +66,8 @@ def get_user_following(username,search):
     get_user_tweets(username,search,True)
 
 def save_result(c, filename):
-    # timestr = time.strftime("%Y%m%d-%H%M%S")
-    # retval = os.getcwd()
-    # print(retval)
-
-    # os.chdir(os.getcwd()+'/Python_Scripts')
-    # retval = os.getcwd()
-    # print(retval)
-    # if not os.path.exists('result'):
-    #     os.makedirs('result')
-    
-    # os.chdir(os.getcwd() + '/result/twitterUser/')
 
     c.Store_csv = True
-    #
     try:
         os.mkdir(os.getcwd()+'/Python_Scripts/result/twitterUser/')
     except:
@@ -108,7 +83,3 @@ def twint_to_pandas(columns):
 
 def display_analysis_result(twets_df,username):
     sentiment_analysis.analysis(twets_df,username)
-
-# if __name__ == "__main__":
-#     c = twint.Config()
-#     get_user_tweets(c,'kaustubhsh_','',False)
