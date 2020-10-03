@@ -18,7 +18,6 @@ class downloader(object):
         self.user = self.api + '?username=' + self.username
         self.root = requests.get(self.user, verify=False).text
         self.sdname = self.username 
-        # + "_{}".format(datetime.now().strftime("%m%d%Y-%H%M%S"))
 
     def getStories(self):
         r = requests.get(self.storiesLink, verify=False).text
@@ -42,15 +41,7 @@ class downloader(object):
                 r = requests.get(url, verify=False)
                 parser = urlparse(url)
                 filename = os.path.basename(parser.path)
-                print(filename)
-                # retval = os.getcwd()
-                # print("directory is")
-                # print(retval)
-                
-                # os.chdir(retval+'/result/instagram/instagram_'+self.sdname)
-
-                # currentDirectory = os.getcwd()
-                    # 'instagram_'+self.sdname + 
+                print(filename) 
                 with open( filename, 'wb') as f:
                     f.write(r.content)
                     f.close()
@@ -124,10 +115,6 @@ class downloader(object):
             os.mkdir(self.sdname)
 def main(user):
     urllib3.disable_warnings(InsecureRequestWarning)
-    # downloader('', 'stories')
-    # args = usage()
-    # print(args)
-    # usern = input()
     a= downloader(user, 'True')
     try:
     	a.getStories()
@@ -138,6 +125,5 @@ def main(user):
     	a.getHighlights()
     except:
     	pass
-    #downloader.getHighlights(user)
     #shutil.make_archive(user, 'zip', user_info)
 
