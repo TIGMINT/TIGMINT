@@ -58,11 +58,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     plt.title("Top 10 Trending Hashtags from the Geo-location:" + lat_long)
     os.chdir(currentDir)
     plt.savefig(lat_long + '-hashtags.png', bbox_inches='tight')  # saves the visualization as png
-    # plt.savefig(seed_hashtag + '.pdf', bbox_inches='tight')
-    #print("List of Top 10 mentions " + lat_long + " :")
-    #print(top_mentions)  # displays the top 10 hashtags as a list.
-    #print("List of Top 10 hashtags " + lat_long + " :")
-    #print(top_hashtags)  # displays the top 15 hashtags as a list.
+    
     plt.close()
     exit()  
 
@@ -70,7 +66,7 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
 def main():
     seed_coordinates = [sys.argv[1]+", "+ sys.argv[2]]
     radius = sys.argv[3]+"km"
-    limit = 2000  # limits the number of tweets to pull
+    limit = 1000  # limits the number of tweets to pull
     for coordinate in seed_coordinates:
         get_top_mentions_hashtags_geo(coordinate, radius, limit)
       
