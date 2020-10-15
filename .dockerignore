@@ -1,0 +1,8 @@
+.circleci
+node_modules
+__pycache__
+ReadMeImages
+
+Dockerfile
+.gitignore
+.gitattributes
