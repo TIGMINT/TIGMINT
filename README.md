@@ -91,11 +91,28 @@ npm install
 node Api/server.js
 ```
 
+## Using Docker
+
+you can run with docker with this command
+
+```
+docker run --name tigmint -p 3000:3000 k1m0ch1/tigmint
+```
+
+and open the `http://localhost:3000`
+
+or you can build the image by yourself with command
+
+```
+docker build -t tigmint .
+```
+
 ## Contributors
 
 [//]: contributor-faces
 
  <a href="https://github.com/Yajassardana"><img src="https://avatars0.githubusercontent.com/u/62782513?s=400&u=8f9cba3e81ba81ae4fbc2032926da55bc1bcc23c&v=4" title="Yajassardana" width="80" height="80"></a> <a href="https://github.com/kiranbabumuddam"><img src="https://avatars2.githubusercontent.com/u/26572836?s=400&u=81fb75089e21563554cf375f73030a44b69efae2&v=4" title="Kiran Babu Muddam" width="80" height="80"></a> <a href="https://github.com/kaustubhsh"><img src="https://avatars0.githubusercontent.com/u/37601331?s=400&u=1ae319dd3c0b399465bc90fb8948f80136fad164&v=4" title="kaustubhsh" width="80" height="80"></a>  <a href="https://github.com/Sumit-sah"><img src="https://avatars0.githubusercontent.com/u/67474183?s=400&v=4" title="Sumit-sah" width="80" height="80"></a>  <a href="https://github.com/Sakshi-25"><img src="https://avatars2.githubusercontent.com/u/49511150?s=400&u=a96a65bb47f7c65a27c246390d41ef8028017619&v=4" title="Sakshi-25" width="80" height="80"></a><a href="https://github.com/chaudharypawansohlot"><img src="https://avatars0.githubusercontent.com/u/67505465?s=460&u=6dfd7c5977d79eeae206169c42e798830877d549&v=4" title="Chaudhary Pawan sohlot" width="80" height="80"></a><a href="https://github.com/niSarg1910"><img src="https://avatars2.githubusercontent.com/u/50866039?s=460&v=4" title="Nisarg Shah" width="80" height="80"></a><a href="https://github.com/Rishabh-2802"><img src="https://avatars1.githubusercontent.com/u/63997779?s=460&u=c652b258d1c88eac6b995db4f159508bebe805c6&v=4" title="Rishabh Sharma
+" width="80" height="80"></a><a href="https://github.com/k1m0ch1"><img src="https://avatars1.githubusercontent.com/u/5756522?s=460&v=4" title="Yahya F. Al Fatih
 " width="80" height="80"></a>
 
 
