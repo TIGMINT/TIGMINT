@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import sys
 
-def get_similar_hashtags(seed_hashtag, limit=500):
+def get_similar_hashtags(seed_hashtag, limit=100):
   os.chdir("Python_Scripts")
   currentDir = os.getcwd() + "/result/twitter/"
 

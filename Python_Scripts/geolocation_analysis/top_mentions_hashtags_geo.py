@@ -26,10 +26,10 @@ def get_top_mentions_hashtags_geo(lat_long, radius, limit):
     hashtags_dict = {}
     for tweet in tweets:
         for mention in tweet.mentions:
-            if mention in mentions_dict:
-                mentions_dict[mention] += 1
+            if mention['screen_name'] in mentions_dict:
+                mentions_dict[mention['screen_name']] += 1
             else:
-                mentions_dict[mention] = 1
+                mentions_dict[mention['screen_name']] = 1
         for hashtag in tweet.hashtags:
             if hashtag in hashtags_dict:
                 hashtags_dict[hashtag] += 1

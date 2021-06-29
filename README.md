@@ -86,10 +86,16 @@ The above tool is required to retreive metadata from various file formats.
 git clone https://github.com/TIGMINT/TIGMINT
 cd TIGMINT
 pip3 install -r requirements.txt
+pip3 install --user --upgrade git+https://github.com/twintproject/twint.git@origin/master#egg=twint
 
 npm install
 node Api/server.js
 ```
+
+## Tool not working?
+1. Update python dependencies. (pip3 install --user --upgrade git+https://github.com/twintproject/twint.git@origin/master#egg=twint)
+2. Reinstall from the github repo.
+3. Raise an issue with the error logs. We will fix it asap !.
 
 ## Using Docker
 
