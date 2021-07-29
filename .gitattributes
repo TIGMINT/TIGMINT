@@ -1,4 +1,6 @@
 # Basic .gitattributes for a python repo.
+* linguist-vendored
+*.js linguist-vendored=false
 
 # Source files
 # ============
